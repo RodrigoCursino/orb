@@ -1,22 +1,30 @@
 <template>
     <v-tabs
             dark
-            color="blue darken-3"
+            color="#892f16"
             show-arrows
             :value.sync="currentItem"
     >
         <v-tabs-slider color="yellow"></v-tabs-slider>
 
         <v-tab  v-for="i in menu"
-                v-show="i.showNav"
+                v-show.prevent="i.showNav"
                 :key="i.position"
                 :href="i.link"
-                @dblclick="DISABLE_TAB(i.action)"
         >
-            {{ i.text }}
+            <a class="btn-close"
+               @click="DISABLE_TAB(i.action)"
+               style="margin-right: 5px"
+            >
+                <i class="icon-times">&times</i>
+            </a>
+            <div>
+                {{ i.text }}
+            </div>
+
         </v-tab>
 
-        <v-tabs-items  :value.sync="currentItem">
+        <v-tabs-items :value.sync="currentItem">
             <v-tab-item
                     v-show="menu[0].showPage"
                     :value="menu[0].action"
@@ -64,3 +72,13 @@
         }
     }
 </script>
+<style lang="scss">
+    .btn-close {
+        height: 15px;
+        width: 15px;
+        background-color: #59000e;
+        border-radius: 50%;
+        margin: 1.2%;
+        display: inline-block;
+    }
+</style>

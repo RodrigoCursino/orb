@@ -21,7 +21,9 @@
                         item-key="id"
                         select-all
                 >
-                    <v-progress-linear v-slot:progress color="blue" indeterminate></v-progress-linear>
+                    <v-progress-linear v-slot:progress
+                                       color="blue"
+                                       indeterminate></v-progress-linear>
                     <template v-slot:items="props">
                         <td>
                             <v-checkbox
