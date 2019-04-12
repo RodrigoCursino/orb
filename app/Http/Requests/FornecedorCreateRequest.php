@@ -25,6 +25,7 @@ class FornecedorCreateRequest extends FormRequest
     {
         return [
              "cnpj"            => "required",
+             "forn_mercadoria" => "required",
              "ie"              => "required",
              "nome_fantasia"   => "required",
              "razao_social"    => "required",

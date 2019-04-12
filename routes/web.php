@@ -12,23 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect("/home");
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-
-//Route::group(['middleware' => ['auth']], function () {
-//    //Route::get('/home', 'Web\HomeController@index')->name('home');
-//    foreach (File::files(app()->path() . '/Routes/auth') as $file) {
-//        require $file;
-//    }
-//});
-
-Route::group([], function () {
-    //Route::get('/home', 'Web\HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
     foreach (File::files(app()->path() . '/Routes/auth') as $file) {
         require $file;
     }

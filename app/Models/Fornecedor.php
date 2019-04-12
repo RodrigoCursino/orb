@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\TmontecHelper;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fornecedor extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, TmontecHelper;
     protected $table = 'fornecedores';
 
     protected $dates = ['deleted_at'];

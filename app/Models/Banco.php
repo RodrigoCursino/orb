@@ -17,4 +17,9 @@ class Banco extends Model
         'nome',
         'cod'
     ];
+
+    public static function list($columns = ['*'])
+    {
+        return parent::all($columns)->where('ativo','=',1);
+    }
 }

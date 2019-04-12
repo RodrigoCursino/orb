@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\TmontecHelper;
 use Artesaos\Defender\Traits\HasDefender;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, HasDefender, SoftDeletes;
+    use Notifiable, HasApiTokens, HasDefender, SoftDeletes, TmontecHelper;
 
     protected $dates = ['deleted_at'];
 
