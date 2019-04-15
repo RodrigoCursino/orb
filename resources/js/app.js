@@ -1,21 +1,11 @@
 import Vuetify from 'vuetify';
+import VeeValidate from 'vee-validate'
 import 'vuetify/dist/vuetify.min.css'
 import store from "./components/store/store";
 
 require('./bootstrap');
 
 window.Vue = require('vue');
-// let particles = window.particlesJS = require('particlesjs/dist/particles.min');
-//
-// console.log('pa', particles);
-//
-// particles.load('particles-js', './partials/particles.json', function() {
-//     console.log('callback - particles.json config loaded');
-// });
-
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('main-component', require('./components/main/main-componet.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
@@ -30,6 +20,7 @@ import pt from 'vuetify/es5/locale/pt.js'
 import colors from 'vuetify/es5/util/colors'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
+// Vuetify configurações vizuais como cor e outras coisas
 Vue.use(Vuetify, {
     iconfont: 'md',
     lang: {
@@ -37,11 +28,16 @@ Vue.use(Vuetify, {
         current: 'pt'
     },
     theme: {
-        primary:   colors.red.darken1,  // #E53935
+        //primary:   colors.red.darken1,  // #E53935
+        primary:   '#892f16',  // #E53935
         secondary: colors.red.lighten4, // #FFCDD2
         accent:    colors.indigo.base   // #3F51B5
     }
-})
+});
+
+Vue.use(VeeValidate);
+
+
 const app = new Vue({
     store,
     el: '#app',

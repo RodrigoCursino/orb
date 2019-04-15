@@ -26,7 +26,9 @@
                         </v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
-                <h1>Fornecedor</h1>
+                <v-container>
+                    <fornecedor-edit></fornecedor-edit>
+                </v-container>
             </v-card>
         </v-dialog>
     </v-layout>
@@ -34,8 +36,10 @@
 
 <script>
     import {mapActions,mapState} from 'vuex'
+    import FornecedorEdit from "./fornecedor-edit";
     export default {
         name: "fornecedor-view",
+        components: {FornecedorEdit},
         data () {
             return {
                 dialog: false,

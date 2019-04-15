@@ -23,10 +23,9 @@ class FornecedoresController extends Controller
         $fornecedores = Fornecedor::with('contato')
                                   ->with('endereco')
                                   ->with('dadosBancarios')
-                                  ->where('ativo','=',1)
-                                  ->paginate(5);
+                                  ->where('ativo','=',1);
 
-        return view('fornecedor.index',compact('fornecedores'));
+        return $fornecedores->get();
     }
 
 

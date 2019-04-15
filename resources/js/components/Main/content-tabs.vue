@@ -23,7 +23,6 @@
             </div>
 
         </v-tab>
-
         <v-tabs-items :value.sync="currentItem">
             <v-tab-item
                     v-show="menu[0].showPage"
@@ -52,8 +51,9 @@
 <script>
     import {mapState, mapMutations} from "vuex"
     import FornecedorIndex from "../Fornecedor/fornecedor-index.vue";
+    import Pages from "./pages";
     export default {
-        components: {FornecedorIndex},
+        components: {Pages, FornecedorIndex},
         data () {
             return {
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -78,7 +78,12 @@
         width: 15px;
         background-color: #59000e;
         border-radius: 50%;
-        margin: 1.2%;
+        margin: 1.5%;
+        font-style: normal;
         display: inline-block;
+    }
+
+    .icon-times {
+        font-style: normal;
     }
 </style>
