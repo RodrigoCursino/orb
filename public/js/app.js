@@ -1895,17 +1895,105 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/EnderecoForm/EnderecoForm */ "./resources/js/components/shared/EnderecoForm/EnderecoForm.vue");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "dados-fornecedor",
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
+    fornecedor: function fornecedor(state) {
+      return state.fornecedor;
+    }
+  }))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1999,16 +2087,183 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "fornecedor-form-dados",
+  $_veeValidate: {
+    validator: 'new'
+  },
+  props: {
+    model: {
+      required: true
+    }
+  },
+  mounted: function mounted() {
+    this.set_fornecedor(this.model);
+    this.$validator.localize('en', this.dictionary);
+  },
+  computed: {},
+  data: function data() {
+    return {
+      //20.031.397/0001-96
+      cnpj: "##.###.###/####-##",
+      dictionary: {
+        custom: {
+          cnpj: {
+            required: function required() {
+              return 'O CNPJ é obrigatório';
+            }
+          },
+          ie: {
+            required: function required() {
+              return 'A Inscrição Estadual é obrigatória';
+            }
+          },
+          nome_fantasia: {
+            required: function required() {
+              return 'O Nome Fantasia é obrigatório';
+            }
+          },
+          razao_social: {
+            required: function required() {
+              return 'A Razão Social é obrigatória';
+            }
+          },
+          observacao: {
+            required: function required() {
+              return 'O campo de observações é obrigatória';
+            }
+          }
+        }
+      }
+    };
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Fornecedor', ['viewFornecedor', 'set_fornecedor']), {
+    submit: function submit() {
+      console.log('Ops ', this.model);
+      this.set_fornecedor(this.model);
+      this.$validator.validateAll();
+
+      if (this.errors.items.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    clear: function clear() {
+      this.name = '';
+      this.email = '';
+      this.select = null;
+      this.checkbox = null;
+      this.$validator.reset();
+    }
+  })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _form_confirm_dados_fornecedor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-confirm/dados-fornecedor */ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "fornecedor-edit",
+  name: "fornecedor-confirm",
   components: {
-    EnderecoForm: _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+    DadosFornecedor: _form_confirm_dados_fornecedor__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      e1: 2
+      tab: '#dados_fornecedor'
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
@@ -2016,6 +2271,256 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return state.fornecedor;
     }
   }))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/EnderecoForm/EnderecoForm */ "./resources/js/components/shared/EnderecoForm/EnderecoForm.vue");
+/* harmony import */ var _shared_ContatoForm_ContatoForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/ContatoForm/ContatoForm */ "./resources/js/components/shared/ContatoForm/ContatoForm.vue");
+/* harmony import */ var _shared_DadosBancariosForm_DadosBancariosFormForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/DadosBancariosForm/DadosBancariosFormForm */ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue");
+/* harmony import */ var _form_fornecedor_form_dados__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form/fornecedor-form-dados */ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue");
+/* harmony import */ var _fornecedor_confirm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fornecedor-confirm */ "./resources/js/components/Fornecedor/fornecedor-confirm.vue");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "fornecedor-edit",
+  components: {
+    FornecedorConfirm: _fornecedor_confirm__WEBPACK_IMPORTED_MODULE_5__["default"],
+    FornecedorFormDados: _form_fornecedor_form_dados__WEBPACK_IMPORTED_MODULE_4__["default"],
+    DadosBancariosForm: _shared_DadosBancariosForm_DadosBancariosFormForm__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ContatoForm: _shared_ContatoForm_ContatoForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+    EnderecoForm: _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      e1: 0
+    };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
+    fornecedor: function fornecedor(state) {
+      return state.fornecedor;
+    }
+  })),
+  methods: {
+    validateAddress: function validateAddress() {
+      var isValidAddress = this.$refs.endereco.submit();
+
+      if (isValidAddress) {
+        this.e1 = 3;
+      }
+    },
+    validateContacts: function validateContacts() {
+      var isValid = this.$refs.contato.submit();
+
+      if (isValid) {
+        this.e1 = 4;
+      }
+    },
+    validateFornecedor: function validateFornecedor() {
+      var isValid = this.$refs.fornecedor.submit();
+
+      if (isValid) {
+        this.e1 = 2;
+      }
+    },
+    validateDadosBancarios: function validateDadosBancarios() {
+      var isValid = this.$refs.dados_bancarios.submit();
+
+      if (isValid) {
+        this.e1 = 5;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2806,6 +3311,345 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'contato-form',
+  $_veeValidate: {
+    validator: 'new'
+  },
+  props: {
+    model: {
+      required: true
+    }
+  },
+  mounted: function mounted() {
+    this.set_contato(this.model);
+    this.$validator.localize('en', this.dictionary);
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Contato', {
+    contato: function contato(state) {
+      return state.contato;
+    }
+  })),
+  data: function data() {
+    return {
+      celularMask: '(##) #####-####',
+      telefoneMask: '(##) ####-####',
+      dictionary: {
+        attributes: {
+          email: 'E-mail Address'
+        },
+        custom: {
+          email: {
+            required: function required() {
+              return 'O celular é obrigatório';
+            },
+            email: 'Por favor Insira um endereço de email válido'
+          },
+          celular: {
+            required: function required() {
+              return 'O celular é obrigatório';
+            }
+          },
+          telefone: {
+            required: function required() {
+              return 'O telefone é obrigatório';
+            }
+          },
+          nome: {
+            required: function required() {
+              return 'O nome é obrigatório';
+            } // custom messages
+
+          }
+        }
+      }
+    };
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Contato', ['set_contato']), {
+    submit: function submit() {
+      this.set_contato(this.model);
+      this.$validator.validateAll();
+      console.log("Contato", this.errors.items.length);
+
+      if (this.errors.items.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'dados-bancarios-form',
+  $_veeValidate: {
+    validator: 'new'
+  },
+  props: {
+    model: {
+      required: true
+    }
+  },
+  mounted: function mounted() {
+    this.get_list_bancos();
+    this.set_dados_bancarios(this.model);
+    this.$validator.localize('en', this.dictionary);
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Banco', {
+    list_bancos: function list_bancos(state) {
+      return state.list_bancos;
+    }
+  })),
+  data: function data() {
+    return {
+      tipos: [{
+        value: 'POUPANCA',
+        text: 'Poupança'
+      }, {
+        value: 'CORRENTE',
+        text: 'Corrente'
+      }],
+      dictionary: {
+        custom: {
+          agencia: {
+            required: function required() {
+              return 'A agência é obrigatória';
+            }
+          },
+          conta: {
+            required: function required() {
+              return 'A conta é obrigatória';
+            }
+          },
+          tipo: {
+            required: function required() {
+              return 'Selecione um tipo';
+            }
+          },
+          banco_id: {
+            required: function required() {
+              return 'Selecione um banco';
+            }
+          }
+        }
+      }
+    };
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('DadosBancarios', ['set_dados_bancarios']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Banco', ['get_list_bancos']), {
+    submit: function submit() {
+      this.set_dados_bancarios(this.model);
+      this.$validator.validateAll();
+
+      if (this.errors.items.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  })
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/EnderecoForm/EnderecoForm.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/EnderecoForm/EnderecoForm.vue?vue&type=script&lang=js& ***!
@@ -2970,12 +3814,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   data: function data() {
     return {
+      end: {},
       mask: '#####-###',
       dictionary: {
-        attributes: {
-          email: 'E-mail Address' // custom attributes
-
-        },
         custom: {
           logradouro: {
             required: function required() {
@@ -3024,9 +3865,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Endereco', ['get_CEP', 'set_endereco']), {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Endereco', ['get_cep', 'set_endereco']), {
     submit: function submit() {
+      this.model.pais = "Brasil";
+      this.set_endereco(this.model);
       this.$validator.validateAll();
+
+      if (this.errors.items.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
     },
     clear: function clear() {
       this.name = '';
@@ -50688,6 +51537,504 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-layout",
+        [
+          _c("v-flex", { attrs: { xs12: "", md6: "", lg6: "" } }, [
+            _c("h5", { staticClass: "font-weight-bold" }, [
+              _vm._v(_vm._s("Nome Fantasia: " + _vm.fornecedor.nome_fantasia))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("v-flex", { attrs: { xs12: "", md6: "", lg6: "" } }, [
+            _c("h5", { staticClass: "font-weight-bold" }, [
+              _vm._v(_vm._s("Razão Social: " + _vm.fornecedor.razao_social))
+            ])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        [
+          _c("v-flex", { attrs: { xs12: "", md6: "", lg6: "" } }, [
+            _c("h5", { staticClass: "font-weight-light" }, [
+              _vm._v(_vm._s("CNPJ : " + _vm.fornecedor.cnpj))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("v-flex", { attrs: { xs12: "", md4: "", lg4: "" } }, [
+            _c("h5", { staticClass: "font-weight-light" }, [
+              _vm._v(_vm._s("Inscrição Estadual : " + _vm.fornecedor.ie))
+            ])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider", { attrs: { inset: "" } }),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", md12: "", lg12: "" } },
+            [
+              _c("v-textarea", {
+                attrs: {
+                  box: "",
+                  disabled: "",
+                  label: "Observação",
+                  value: _vm.fornecedor.observacao
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        [
+          _c("v-flex", { attrs: { xs12: "", md12: "", lg12: "" } }, [
+            _c("h5", { staticClass: "font-weight-bold text-lg-right" }, [
+              _vm._v(
+                _vm._s(
+                  _vm.fornecedor.forn_mercadoria
+                    ? "Fornecedor de Mercadoria "
+                    : "Não Fornece Mercadoria "
+                )
+              )
+            ])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-form",
+    [
+      _c(
+        "v-container",
+        [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.model.id,
+                expression: "model.id"
+              }
+            ],
+            attrs: { type: "hidden" },
+            domProps: { value: _vm.model.id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.model, "id", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.model.endereco_id,
+                expression: "model.endereco_id"
+              }
+            ],
+            attrs: { type: "hidden" },
+            domProps: { value: _vm.model.endereco_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.model, "endereco_id", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.model.contato_id,
+                expression: "model.contato_id"
+              }
+            ],
+            attrs: { type: "hidden" },
+            domProps: { value: _vm.model.contato_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.model, "contato_id", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.model.dados_bancarios_id,
+                expression: "model.dados_bancarios_id"
+              }
+            ],
+            attrs: { type: "hidden" },
+            domProps: { value: _vm.model.dados_bancarios_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.model, "dados_bancarios_id", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      mask: _vm.cnpj,
+                      "return-masked-value": "",
+                      "error-messages": _vm.errors.collect("cnpj"),
+                      label: "CNPJ",
+                      "data-vv-name": "cnpj",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.cnpj,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "cnpj", $$v)
+                      },
+                      expression: "model.cnpj"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("ie"),
+                      label: "Inscrição Estadual",
+                      "data-vv-name": "ie",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.ie,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "ie", $$v)
+                      },
+                      expression: "model.ie"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("nome_fantasia"),
+                      label: "Nome Fantasia",
+                      "data-vv-name": "nome_fantasia",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.nome_fantasia,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "nome_fantasia", $$v)
+                      },
+                      expression: "model.nome_fantasia"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("razao_social"),
+                      label: "Razão Social",
+                      "data-vv-name": "razao_social",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.razao_social,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "razao_social", $$v)
+                      },
+                      expression: "model.razao_social"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg12: "" } },
+                [
+                  _c("v-textarea", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      name: "observacao",
+                      box: "",
+                      label: "Observacao",
+                      "error-messages": _vm.errors.collect("observacao"),
+                      "auto-grow": "",
+                      "row-height": "12",
+                      "data-vv-name": "razao_social",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.observacao,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "observacao", $$v)
+                      },
+                      expression: "model.observacao"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-switch", {
+            attrs: { right: "", label: "Fornece Mercadoria" },
+            model: {
+              value: _vm.model.forn_mercadoria,
+              callback: function($$v) {
+                _vm.$set(_vm.model, "forn_mercadoria", $$v)
+              },
+              expression: "model.forn_mercadoria"
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-tabs",
+    { attrs: { "fixed-tabs": "" } },
+    [
+      _c("v-tabs-slider", { attrs: { color: "primary" } }),
+      _vm._v(" "),
+      _c("v-tab", { attrs: { href: "#tab-1" } }, [
+        _vm._v("\n        Dados Fornecedor\n    ")
+      ]),
+      _vm._v(" "),
+      _c("v-tab", { attrs: { href: "#tab-2" } }, [
+        _vm._v("\n        Dados de Endereço\n    ")
+      ]),
+      _vm._v(" "),
+      _c("v-tab", { attrs: { href: "#tab-3" } }, [
+        _vm._v("\n        Dados de Contato\n    ")
+      ]),
+      _vm._v(" "),
+      _c("v-tab", { attrs: { href: "#tab-4" } }, [
+        _vm._v("\n        Dados Bancários\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-tab-item",
+        { attrs: { value: "tab-1" } },
+        [_c("dados-fornecedor", { staticStyle: { "margin-top": "15px" } })],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-tab-item", { attrs: { value: "tab-2" } }),
+      _vm._v(" "),
+      _c(
+        "v-tab-item",
+        { attrs: { value: "tab-3" } },
+        [
+          _c(
+            "v-card",
+            { attrs: { flat: "" } },
+            [_c("v-card-text", [_vm._v("ops")])],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-tab-item",
+        { attrs: { value: "tab-4" } },
+        [
+          _c(
+            "v-card",
+            { attrs: { flat: "" } },
+            [_c("v-card-text", [_vm._v("ops")])],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=template&id=3fe17b73&scoped=true&":
 /*!*****************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fornecedor/fornecedor-edit.vue?vue&type=template&id=3fe17b73&scoped=true& ***!
@@ -50719,19 +52066,31 @@ var render = function() {
         "v-stepper-header",
         [
           _c("v-stepper-step", { attrs: { complete: _vm.e1 > 1, step: "1" } }, [
-            _vm._v("\n            Dados\n        ")
+            _vm._v("\n                Dados\n            ")
           ]),
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
           _c("v-stepper-step", { attrs: { complete: _vm.e1 > 2, step: "2" } }, [
-            _vm._v("\n            Endereco\n        ")
+            _vm._v("\n                Endereco\n            ")
           ]),
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
           _c("v-stepper-step", { attrs: { complete: _vm.e1 > 3, step: "3" } }, [
-            _vm._v("\n            Contato\n        ")
+            _vm._v("\n                Contato\n            ")
+          ]),
+          _vm._v(" "),
+          _c("v-divider"),
+          _vm._v(" "),
+          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 4, step: "4" } }, [
+            _vm._v("\n                Dados Bancários\n            ")
+          ]),
+          _vm._v(" "),
+          _c("v-divider"),
+          _vm._v(" "),
+          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 5, step: "5" } }, [
+            _vm._v("\n            Comfirmar Dados\n        ")
           ])
         ],
         1
@@ -50744,10 +52103,28 @@ var render = function() {
             "v-stepper-content",
             { attrs: { step: "1" } },
             [
-              _c("v-card", {
-                staticClass: "mb-5",
-                attrs: { color: "grey lighten-1", height: "200px" }
-              })
+              _c(
+                "v-card",
+                { staticClass: "mb-5", attrs: { height: "360px" } },
+                [
+                  _vm.fornecedor
+                    ? _c("fornecedor-form-dados", {
+                        ref: "fornecedor",
+                        attrs: { model: _vm.fornecedor }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.validateFornecedor }
+                },
+                [_vm._v("\n                Continue\n            ")]
+              )
             ],
             1
           ),
@@ -50758,10 +52135,11 @@ var render = function() {
             [
               _c(
                 "v-card",
-                { staticClass: "mb-5" },
+                { staticClass: "mb-5", attrs: { height: "360px" } },
                 [
                   _vm.fornecedor.endereco
                     ? _c("endereco-form", {
+                        ref: "endereco",
                         attrs: { model: _vm.fornecedor.endereco }
                       })
                     : _vm._e()
@@ -50775,7 +52153,7 @@ var render = function() {
                   attrs: { color: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.e1 = 3
+                      return _vm.validateAddress()
                     }
                   }
                 },
@@ -50802,22 +52180,106 @@ var render = function() {
             "v-stepper-content",
             { attrs: { step: "3" } },
             [
-              _c("v-card", {
-                staticClass: "mb-5",
-                attrs: { color: "grey lighten-1" }
-              }),
+              _c(
+                "v-card",
+                { staticClass: "mb-5", attrs: { height: "360px" } },
+                [
+                  _vm.fornecedor.contato
+                    ? _c("contato-form", {
+                        ref: "contato",
+                        attrs: { model: _vm.fornecedor.contato }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "v-btn",
                 {
                   attrs: { color: "primary" },
+                  on: { click: _vm.validateContacts }
+                },
+                [_vm._v("\n                Continue\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { flat: "" },
                   on: {
                     click: function($event) {
-                      _vm.e1 = 1
+                      _vm.e1--
                     }
                   }
                 },
+                [_vm._v("\n                Voltar\n            ")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-content",
+            { attrs: { step: "4" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "mb-5", attrs: { height: "360px" } },
+                [
+                  _vm.fornecedor.dados_bancarios
+                    ? _c("dados-bancarios-form", {
+                        ref: "dados_bancarios",
+                        attrs: { model: _vm.fornecedor.dados_bancarios }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: _vm.validateDadosBancarios }
+                },
                 [_vm._v("\n                Continue\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { flat: "" },
+                  on: {
+                    click: function($event) {
+                      _vm.e1--
+                    }
+                  }
+                },
+                [_vm._v("\n                Voltar\n            ")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-content",
+            { attrs: { step: "5" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "mb-5", attrs: { height: "360px" } },
+                [_c("fornecedor-confirm")],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { color: "primary" },
+                  on: { click: function($event) {} }
+                },
+                [_vm._v("\n                Salvar\n            ")]
               ),
               _vm._v(" "),
               _c(
@@ -51470,7 +52932,9 @@ var render = function() {
                   _c("v-toolbar-title", [
                     _vm._v(
                       "\n                    " +
-                        _vm._s("Fornecedor : " + _vm.fornecedor.nome_fantasia) +
+                        _vm._s(
+                          "Nome do Fornecedor " + _vm.fornecedor.nome_fantasia
+                        ) +
                         "\n                "
                     )
                   ]),
@@ -52043,6 +53507,361 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-form",
+    [
+      _c(
+        "v-container",
+        [
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg12: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("nome"),
+                      label: "Nome",
+                      "data-vv-name": "nome",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.nome,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "nome", $$v)
+                      },
+                      expression: "model.nome"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md12: "", lg12: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required|email",
+                        expression: "'required|email'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("email"),
+                      label: "Email",
+                      "data-vv-name": "email",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.email,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "email", $$v)
+                      },
+                      expression: "model.email"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      mask: _vm.celularMask,
+                      counter: 150,
+                      "error-messages": _vm.errors.collect("celular"),
+                      label: "Celular",
+                      "data-vv-name": "celular",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.celular,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "celular", $$v)
+                      },
+                      expression: "model.celular"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      mask: _vm.telefoneMask,
+                      "error-messages": _vm.errors.collect("telefone"),
+                      label: "Telefone",
+                      "data-vv-name": "telefone",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.telefone,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "telefone", $$v)
+                      },
+                      expression: "model.telefone"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-form",
+    [
+      _c(
+        "v-container",
+        [
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-select", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      items: _vm.list_bancos,
+                      "item-value": "id",
+                      "item-text": "nome",
+                      "error-messages": _vm.errors.collect("banco_id"),
+                      label: "Banco",
+                      "data-vv-name": "banco_id",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.banco_id,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "banco_id", $$v)
+                      },
+                      expression: "model.banco_id"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("agencia"),
+                      label: "Agência",
+                      "data-vv-name": "agencia",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.agencia,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "agencia", $$v)
+                      },
+                      expression: "model.agencia"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-select", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      items: _vm.tipos,
+                      "item-value": "value",
+                      "error-messages": _vm.errors.collect("tipo"),
+                      label: "Tipo de Conta",
+                      "data-vv-name": "tipo",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.tipo,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "tipo", $$v)
+                      },
+                      expression: "model.tipo"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", md6: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.collect("conta"),
+                      label: "CC",
+                      "data-vv-name": "conta",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.model.conta,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "conta", $$v)
+                      },
+                      expression: "model.conta"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/EnderecoForm/EnderecoForm.vue?vue&type=template&id=593d9f70&scoped=true&":
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shared/EnderecoForm/EnderecoForm.vue?vue&type=template&id=593d9f70&scoped=true& ***!
@@ -52082,18 +53901,19 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.cep,
                       mask: _vm.mask,
                       "error-messages": _vm.errors.collect("cep"),
                       label: "CEP",
                       "data-vv-name": "cep",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "cep", $event)
+                    on: { change: _vm.get_cep },
+                    model: {
+                      value: _vm.model.cep,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "cep", $$v)
                       },
-                      change: _vm.get_CEP
+                      expression: "model.cep"
                     }
                   })
                 ],
@@ -52121,17 +53941,18 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.logradouro,
                       counter: 150,
                       "error-messages": _vm.errors.collect("logradouro"),
                       label: "Logradouro",
                       "data-vv-name": "logradouro",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "logradouro", $event)
-                      }
+                    model: {
+                      value: _vm.model.logradouro,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "logradouro", $$v)
+                      },
+                      expression: "model.logradouro"
                     }
                   })
                 ],
@@ -52152,16 +53973,17 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.numero,
                       "error-messages": _vm.errors.collect("numero"),
                       label: "N°",
                       "data-vv-name": "numero",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "numero", $event)
-                      }
+                    model: {
+                      value: _vm.model.numero,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "numero", $$v)
+                      },
+                      expression: "model.numero"
                     }
                   })
                 ],
@@ -52189,17 +54011,18 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.bairro,
                       counter: 150,
                       "error-messages": _vm.errors.collect("bairro"),
                       label: "Bairro",
                       "data-vv-name": "bairro",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "bairro", $event)
-                      }
+                    model: {
+                      value: _vm.model.bairro,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "bairro", $$v)
+                      },
+                      expression: "model.bairro"
                     }
                   })
                 ],
@@ -52220,16 +54043,17 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.cidade,
                       "error-messages": _vm.errors.collect("cidade"),
                       label: "Cidade",
                       "data-vv-name": "cidade",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "cidade", $event)
-                      }
+                    model: {
+                      value: _vm.model.cidade,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "cidade", $$v)
+                      },
+                      expression: "model.cidade"
                     }
                   })
                 ],
@@ -52257,16 +54081,17 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.estado,
                       "error-messages": _vm.errors.collect("estado"),
                       label: "Estado",
                       "data-vv-name": "estado",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "estado", $event)
-                      }
+                    model: {
+                      value: _vm.model.estado,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "estado", $$v)
+                      },
+                      expression: "model.estado"
                     }
                   })
                 ],
@@ -52287,16 +54112,17 @@ var render = function() {
                       }
                     ],
                     attrs: {
-                      value: _vm.endereco.pais,
                       "error-messages": _vm.errors.collect("pais"),
                       label: "País",
                       "data-vv-name": "pais",
                       required: ""
                     },
-                    on: {
-                      "update:value": function($event) {
-                        return _vm.$set(_vm.endereco, "pais", $event)
-                      }
+                    model: {
+                      value: _vm.model.pais,
+                      callback: function($$v) {
+                        _vm.$set(_vm.model, "pais", $$v)
+                      },
+                      expression: "model.pais"
                     }
                   })
                 ],
@@ -91926,6 +93752,142 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Banco/Banco/actions.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Banco/Banco/actions.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var get_list_bancos =
+/*#__PURE__*/
+function () {
+  var _ref2 = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+    var commit, list;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            commit = _ref.commit;
+            _context.next = 3;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/bancos');
+
+          case 3:
+            list = _context.sent.data;
+            console.log('Bancos', list);
+            commit('SET_LIST_BANCOS', {
+              list: list
+            });
+
+          case 6:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function get_list_bancos(_x) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  get_list_bancos: get_list_bancos
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Banco/Banco/getters.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Banco/Banco/getters.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/components/Banco/Banco/index.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Banco/Banco/index.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/components/Banco/Banco/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/components/Banco/Banco/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/components/Banco/Banco/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/components/Banco/Banco/getters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Banco/Banco/mutations.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Banco/Banco/mutations.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var SET_LIST_BANCOS = function SET_LIST_BANCOS(state, obj) {
+  state.list_bancos = obj.list;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  SET_LIST_BANCOS: SET_LIST_BANCOS
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Banco/Banco/state.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Banco/Banco/state.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  list_bancos: []
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue ***!
@@ -92021,7 +93983,7 @@ var setList =
 function () {
   var _ref2 = _asyncToGenerator(
   /*#__PURE__*/
-  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref, obj) {
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
     var commit, list;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
@@ -92045,7 +94007,7 @@ function () {
     }, _callee);
   }));
 
-  return function setList(_x, _x2) {
+  return function setList(_x) {
     return _ref2.apply(this, arguments);
   };
 }();
@@ -92058,8 +94020,16 @@ var viewFornecedor = function viewFornecedor(_ref3, obj) {
   });
 };
 
+var set_fornecedor = function set_fornecedor(_ref4, fornecedor) {
+  var commit = _ref4.commit;
+  commit('SET_FORNECEDOR', {
+    fornecedor: fornecedor
+  });
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   setList: setList,
+  set_fornecedor: set_fornecedor,
   viewFornecedor: viewFornecedor
 });
 
@@ -92123,9 +94093,14 @@ var VIEW_FORNECEDOR = function VIEW_FORNECEDOR(state, obj) {
   state.fornecedor = obj.fornecedor;
 };
 
+var SET_FORNECEDOR = function SET_FORNECEDOR(state, obj) {
+  state.fornecedor_edit.cnpj = obj.fornecedor.cnpj, state.fornecedor_edit.contato_id = obj.fornecedor.contato_id, state.fornecedor_edit.dados_bancarios_id = obj.fornecedor.dados_bancarios_id, state.fornecedor_edit.endereco_id = obj.fornecedor.endereco_id, state.fornecedor_edit.forn_mercadoria = obj.fornecedor.forn_mercadoria, state.fornecedor_edit.id = obj.fornecedor.id, state.fornecedor_edit.ie = obj.fornecedor.ie, state.fornecedor_edit.nome_fantasia = obj.fornecedor.nome_fantasia, state.fornecedor_edit.observacao = obj.fornecedor.observacao, state.fornecedor_edit.razao_social = obj.fornecedor.razao_social, state.fornecedor_edit.endereco = obj.fornecedor.endereco, state.fornecedor_edit.contato = obj.fornecedor.contato, state.fornecedor_edit.dados_bancarios = obj.fornecedor.dados_bancarios;
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   SET_LIST_FORNECEDORES: SET_LIST_FORNECEDORES,
-  VIEW_FORNECEDOR: VIEW_FORNECEDOR
+  VIEW_FORNECEDOR: VIEW_FORNECEDOR,
+  SET_FORNECEDOR: SET_FORNECEDOR
 });
 
 /***/ }),
@@ -92142,8 +94117,216 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   list_fornecedores: [],
   view_fornecedor: false,
-  fornecedor: {}
+  fornecedor: {},
+  fornecedor_edit: {}
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true& */ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true&");
+/* harmony import */ var _dados_fornecedor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dados-fornecedor.vue?vue&type=script&lang=js& */ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _dados_fornecedor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "f3c7ce40",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_dados_fornecedor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./dados-fornecedor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_dados_fornecedor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form-confirm/dados-fornecedor.vue?vue&type=template&id=f3c7ce40&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_dados_fornecedor_vue_vue_type_template_id_f3c7ce40_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true& */ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true&");
+/* harmony import */ var _fornecedor_form_dados_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fornecedor-form-dados.vue?vue&type=script&lang=js& */ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _fornecedor_form_dados_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "dc14ca64",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Fornecedor/form/fornecedor-form-dados.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_form_dados_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./fornecedor-form-dados.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_form_dados_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue?vue&type=template&id=dc14ca64&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_form_dados_vue_vue_type_template_id_dc14ca64_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/fornecedor-confirm.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/fornecedor-confirm.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true& */ "./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true&");
+/* harmony import */ var _fornecedor_confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fornecedor-confirm.vue?vue&type=script&lang=js& */ "./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _fornecedor_confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "d2952832",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Fornecedor/fornecedor-confirm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./fornecedor-confirm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true& ***!
+  \**************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fornecedor/fornecedor-confirm.vue?vue&type=template&id=d2952832&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_fornecedor_confirm_vue_vue_type_template_id_d2952832_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -92986,6 +95169,343 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/shared/ContatoForm/Contato/actions.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/Contato/actions.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var set_contato = function set_contato(_ref, endereco) {
+  var commit = _ref.commit;
+  commit('SET_CONTATO', endereco);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  set_contato: set_contato
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/Contato/getters.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/Contato/getters.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/Contato/index.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/Contato/index.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/components/shared/ContatoForm/Contato/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/components/shared/ContatoForm/Contato/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/components/shared/ContatoForm/Contato/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/components/shared/ContatoForm/Contato/getters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/Contato/mutations.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/Contato/mutations.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var SET_CONTATO = function SET_CONTATO(state, contato) {
+  state.contato.celular = contato.celular, state.contato.email = contato.email, state.contato.id = contato.id, state.contato.nome = contato.nome, state.contato.telefone = contato.telefone;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  SET_CONTATO: SET_CONTATO
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/Contato/state.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/Contato/state.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  contato: {
+    celular: "",
+    email: "",
+    id: "",
+    nome: "",
+    telefone: ""
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/ContatoForm.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/ContatoForm.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true& */ "./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true&");
+/* harmony import */ var _ContatoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContatoForm.vue?vue&type=script&lang=js& */ "./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ContatoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3dad39a4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/shared/ContatoForm/ContatoForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContatoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContatoForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContatoForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/ContatoForm/ContatoForm.vue?vue&type=template&id=3dad39a4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContatoForm_vue_vue_type_template_id_3dad39a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/actions.js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancarios/actions.js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var set_dados_bancarios = function set_dados_bancarios(_ref, dados_bancarios) {
+  var commit = _ref.commit;
+  commit('SET_DADOS_BANCARIOS', dados_bancarios);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  set_dados_bancarios: set_dados_bancarios
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/getters.js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancarios/getters.js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/index.js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancarios/index.js ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/getters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/mutations.js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancarios/mutations.js ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var SET_DADOS_BANCARIOS = function SET_DADOS_BANCARIOS(state, dados_bancarios) {
+  state.dados_bancarios.agencia = dados_bancarios.agencia, state.dados_bancarios.banco_id = dados_bancarios.banco_id, state.dados_bancarios.conta = dados_bancarios.conta, state.dados_bancarios.tipo = dados_bancarios.tipo;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  SET_DADOS_BANCARIOS: SET_DADOS_BANCARIOS
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/state.js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancarios/state.js ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  dados_bancarios: {
+    agencia: "",
+    banco_id: "",
+    conta: "",
+    tipo: ""
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true& */ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true&");
+/* harmony import */ var _DadosBancariosFormForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DadosBancariosFormForm.vue?vue&type=script&lang=js& */ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DadosBancariosFormForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "b9a3aa58",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DadosBancariosFormForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DadosBancariosFormForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DadosBancariosFormForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue?vue&type=template&id=b9a3aa58&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DadosBancariosFormForm_vue_vue_type_template_id_b9a3aa58_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/shared/EnderecoForm/Endereco/actions.js":
 /*!*************************************************************************!*\
   !*** ./resources/js/components/shared/EnderecoForm/Endereco/actions.js ***!
@@ -92997,17 +95517,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-
-
-var get_CEP =
+var get_cep =
 /*#__PURE__*/
 function () {
   var _ref2 = _asyncToGenerator(
@@ -93019,7 +95535,6 @@ function () {
         switch (_context.prev = _context.next) {
           case 0:
             commit = _ref.commit;
-            // const endereco = (await axios.get('https://viacep.com.br/ws/' + CEP + '/json/')).data
             url_ = 'https://viacep.com.br/ws/' + CEP + '/json/';
             endereco = {
               logradouro: "",
@@ -93053,7 +95568,7 @@ function () {
     }, _callee);
   }));
 
-  return function get_CEP(_x, _x2) {
+  return function get_cep(_x, _x2) {
     return _ref2.apply(this, arguments);
   };
 }();
@@ -93064,7 +95579,7 @@ var set_endereco = function set_endereco(_ref3, endereco) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  get_CEP: get_CEP,
+  get_cep: get_cep,
   set_endereco: set_endereco
 });
 
@@ -93123,7 +95638,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var SET_ENDERECO = function SET_ENDERECO(state, obj) {
-  console.log("Ops ", obj);
   state.endereco.logradouro = obj.endereco.logradouro;
   state.endereco.cep = obj.endereco.cep;
   state.endereco.cidade = obj.endereco.cidade;
@@ -93133,7 +95647,6 @@ var SET_ENDERECO = function SET_ENDERECO(state, obj) {
 };
 
 var GET_ENDERECO = function GET_ENDERECO(state, obj) {
-  console.log('teste ', obj);
   state.endereco = obj;
 };
 
@@ -93254,9 +95767,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Fornecedor/Fornecedor */ "./resources/js/components/Fornecedor/Fornecedor/index.js");
-/* harmony import */ var _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/EnderecoForm/Endereco */ "./resources/js/components/shared/EnderecoForm/Endereco/index.js");
-/* harmony import */ var _Main_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Main/store */ "./resources/js/components/Main/store/index.js");
+/* harmony import */ var _Banco_Banco__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Banco/Banco */ "./resources/js/components/Banco/Banco/index.js");
+/* harmony import */ var _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Fornecedor/Fornecedor */ "./resources/js/components/Fornecedor/Fornecedor/index.js");
+/* harmony import */ var _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/EnderecoForm/Endereco */ "./resources/js/components/shared/EnderecoForm/Endereco/index.js");
+/* harmony import */ var _shared_ContatoForm_Contato__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/ContatoForm/Contato */ "./resources/js/components/shared/ContatoForm/Contato/index.js");
+/* harmony import */ var _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/DadosBancariosForm/DadosBancarios */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/index.js");
+/* harmony import */ var _Main_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Main/store */ "./resources/js/components/Main/store/index.js");
+
+
+/**
+ * importação de modulos
+**/
+
+
 
 
 
@@ -93264,9 +95787,12 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var modules = {
-  Fornecedor: _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_2__["default"],
-  Main: _Main_store__WEBPACK_IMPORTED_MODULE_4__["default"],
-  Endereco: _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_3__["default"]
+  Banco: _Banco_Banco__WEBPACK_IMPORTED_MODULE_2__["default"],
+  Fornecedor: _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_3__["default"],
+  Main: _Main_store__WEBPACK_IMPORTED_MODULE_7__["default"],
+  Endereco: _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_4__["default"],
+  Contato: _shared_ContatoForm_Contato__WEBPACK_IMPORTED_MODULE_5__["default"],
+  DadosBancarios: _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_6__["default"]
 };
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: modules

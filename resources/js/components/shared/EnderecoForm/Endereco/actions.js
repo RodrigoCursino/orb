@@ -1,7 +1,6 @@
-import axios from 'axios'
 
-const get_CEP = async ({ commit }, CEP ) => {
-    // const endereco = (await axios.get('https://viacep.com.br/ws/' + CEP + '/json/')).data
+
+const get_cep = async ({ commit }, CEP ) => {
     let url_ = 'https://viacep.com.br/ws/' + CEP + '/json/';
 
     let endereco = {
@@ -16,6 +15,7 @@ const get_CEP = async ({ commit }, CEP ) => {
              url: url_,
              method: 'GET',
              success: function (response) {
+
                  console.log('cep ', response);
                  endereco.logradouro = response.logradouro;
                  endereco.cep        = response.cep;
@@ -34,6 +34,6 @@ const set_endereco = ({commit},endereco) => {
 };
 
 export default {
-    get_CEP,
+    get_cep,
     set_endereco
 }

@@ -1,5 +1,4 @@
 const SET_ENDERECO = (state, obj) => {
-    console.log("Ops ", obj);
     state.endereco.logradouro = obj.endereco.logradouro;
     state.endereco.cep        = obj.endereco.cep;
     state.endereco.cidade     = obj.endereco.cidade;
@@ -9,11 +8,10 @@ const SET_ENDERECO = (state, obj) => {
 };
 
 const GET_ENDERECO = (state, obj) => {
-  console.log('teste ', obj);
   state.endereco = obj;
 };
 
 export default {
-    SET_ENDERECO,
-    GET_ENDERECO
+   SET_ENDERECO,
+   GET_ENDERECO
 }

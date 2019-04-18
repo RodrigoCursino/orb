@@ -51,7 +51,7 @@ class UnidadesService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Fornecedor
+            //Banco
             $unidade = Unidade::findOrFail($id);
 
             $unidade->cnpj                = $request->input('cnpj');
@@ -64,10 +64,10 @@ class UnidadesService
             $unidade->observacao          = $request->input('observacao');
             $unidade->save();
 
-            // Endereco
+            // DadosBancarios
             DadosComunsCadastro::findEndereco($request, $unidade->endereco_id);
 
-            //Contato
+            //DadosBancarios
             DadosComunsCadastro::findContato($request, $unidade->contato_id);
 
 
@@ -83,10 +83,10 @@ class UnidadesService
       return DB::transaction(function () use ($id) {
        $unidade = Unidade::findOrFail($id);
 
-       // Contato
+       // DadosBancarios
        DadosComunsCadastro::deleteContato($unidade->contato_id);
 
-       // Endereco
+       // DadosBancarios
        DadosComunsCadastro::deleteEndereco($unidade->endereco_id);
 
        $unidade->ativo = 0;

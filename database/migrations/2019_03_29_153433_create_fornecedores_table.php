@@ -34,7 +34,7 @@ class CreateFornecedoresTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            // Contato
+            // DadosBancarios
             $table->integer('contato_id')->unsigned();
             $table->foreign('contato_id')->references('id')
                 ->on('contatos')

@@ -50,7 +50,7 @@ class FornecedorService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Fornecedor
+            //Banco
             $fornecedor = Fornecedor::findOrFail($id);
 
             $fornecedor->cnpj             = $request->input('cnpj');
@@ -61,10 +61,10 @@ class FornecedorService
             $fornecedor->forn_mercadoria  = $request->input('forn_mercadoria');
             $fornecedor->save();
 
-            // Endereco
+            // DadosBancarios
             DadosComunsCadastro::findEndereco($request, $fornecedor->endereco_id);
 
-            //Contato
+            //DadosBancarios
             DadosComunsCadastro::findContato($request, $fornecedor->contato_id);
 
             // Dados Bancários
@@ -82,10 +82,10 @@ class FornecedorService
       return DB::transaction(function () use ($id) {
        $fornecedor = Fornecedor::findOrFail($id);
 
-       // Contato
+       // DadosBancarios
        DadosComunsCadastro::deleteContato($fornecedor->contato_id);
 
-       // Endereco
+       // DadosBancarios
        DadosComunsCadastro::deleteEndereco($fornecedor->endereco_id);
 
        // Dados Bancários

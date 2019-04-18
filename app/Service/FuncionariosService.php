@@ -63,7 +63,7 @@ class FuncionariosService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Fornecedor
+            //Banco
             $funcionario = Funcionario::findOrFail($id);
 
             $departamentoId                 = str_replace("'","",$request->input('departamento_select'));
@@ -88,10 +88,10 @@ class FuncionariosService
 
             $funcionario->save();
 
-            // Endereco
+            // DadosBancarios
             DadosComunsCadastro::findEndereco($request, $funcionario->endereco_id);
 
-            //Contato
+            //DadosBancarios
             DadosComunsCadastro::findContato($request, $funcionario->contato_id);
 
             // Dados Bancários
@@ -109,10 +109,10 @@ class FuncionariosService
       return DB::transaction(function () use ($id) {
        $funcionario = Funcionario::findOrFail($id);
 
-       // Contato
+       // DadosBancarios
        DadosComunsCadastro::deleteContato($funcionario->contato_id);
 
-       // Endereco
+       // DadosBancarios
        DadosComunsCadastro::deleteEndereco($funcionario->endereco_id);
 
        // Dados Bancários

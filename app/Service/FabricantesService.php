@@ -51,7 +51,7 @@ class FabricantesService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Fornecedor
+            //Banco
             $fabricante = Fabricante::findOrFail($id);
 
             $fabricante->cnpj                = $request->input('cnpj');
@@ -63,10 +63,10 @@ class FabricantesService
             $fabricante->natureza_juridica   = $request->input('natureza_juridica');
             $fabricante->save();
 
-            // Endereco
+            // DadosBancarios
             DadosComunsCadastro::findEndereco($request, $fabricante->endereco_id);
 
-            //Contato
+            //DadosBancarios
             DadosComunsCadastro::findContato($request, $fabricante->contato_id);
 
 
@@ -82,10 +82,10 @@ class FabricantesService
       return DB::transaction(function () use ($id) {
        $fabricante = Fabricante::findOrFail($id);
 
-       // Contato
+       // DadosBancarios
        DadosComunsCadastro::deleteContato($fabricante->contato_id);
 
-       // Endereco
+       // DadosBancarios
        DadosComunsCadastro::deleteEndereco($fabricante->endereco_id);
 
        $fabricante->ativo = 0;

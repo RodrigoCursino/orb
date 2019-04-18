@@ -1,5 +1,6 @@
 export default {
    list_fornecedores : [],
    view_fornecedor   : false,
-   fornecedor        : {}
+   fornecedor        : {},
+   fornecedor_edit   : {},
 }

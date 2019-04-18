@@ -9,13 +9,13 @@
                             lg4
                     >
                         <v-text-field
-                                :value.sync="endereco.cep"
+                                v-model="model.cep"
                                 :mask="mask"
                                 v-validate="'required'"
                                 :error-messages="errors.collect('cep')"
                                 label="CEP"
                                 data-vv-name="cep"
-                                @change="get_CEP"
+                                @change="get_cep"
                                 required
                         ></v-text-field>
                     </v-flex>
@@ -30,7 +30,7 @@
                                 lg10
                         >
                                 <v-text-field
-                                        :value.sync="endereco.logradouro"
+                                        v-model="model.logradouro"
                                         v-validate="'required|max:150'"
                                         :counter="150"
                                         :error-messages="errors.collect('logradouro')"
@@ -46,7 +46,7 @@
                                 lg2
                         >
                                 <v-text-field
-                                              :value.sync="endereco.numero"
+                                              v-model="model.numero"
                                               v-validate="'required'"
                                               :error-messages="errors.collect('numero')"
                                               label="N°"
@@ -64,7 +64,7 @@
                             lg6
                     >
                         <v-text-field
-                                :value.sync="endereco.bairro"
+                                v-model="model.bairro"
                                 v-validate="'required'"
                                 :counter="150"
                                 :error-messages="errors.collect('bairro')"
@@ -80,7 +80,7 @@
                             lg6
                     >
                         <v-text-field
-                                :value.sync="endereco.cidade"
+                                v-model="model.cidade"
                                 v-validate="'required'"
                                 :error-messages="errors.collect('cidade')"
                                 label="Cidade"
@@ -98,7 +98,7 @@
                             lg6
                     >
                         <v-text-field
-                                :value.sync="endereco.estado"
+                                v-model="model.estado"
                                 v-validate="'required'"
                                 :error-messages="errors.collect('estado')"
                                 label="Estado"
@@ -113,7 +113,7 @@
                             lg6
                     >
                         <v-text-field
-                                :value.sync="endereco.pais"
+                                v-model="model.pais"
                                 v-validate="'required'"
                                 :error-messages="errors.collect('pais')"
                                 label="País"
@@ -148,12 +148,9 @@
                     })
                 },
                 data: () => ({
+                        end:  {},
                         mask: '#####-###',
                         dictionary: {
-                                attributes: {
-                                        email: 'E-mail Address'
-                                        // custom attributes
-                                },
                                 custom: {
                                         logradouro: {
                                             required: () => 'O lougradouro é obrigatório',
@@ -192,11 +189,20 @@
 
                 methods: {
                         ...mapActions('Endereco',
-                            ['get_CEP','set_endereco']
+                            ['get_cep','set_endereco']
                         ),
+
                         submit () {
-                                this.$validator.validateAll()
+                            this.model.pais = "Brasil";
+                            this.set_endereco(this.model);
+                            this.$validator.validateAll();
+                            if (this.errors.items.length > 0) {
+                                return false;
+                            } else{
+                                return true;
+                            }
                         },
+
                         clear () {
                                 this.name = ''
                                 this.email = ''
