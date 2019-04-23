@@ -7,6 +7,10 @@ const VIEW_FORNECEDOR = (state, obj) => {
     state.fornecedor      = obj.fornecedor;
 }
 
+const CLOSE_VIEW_FORNECEDOR = (state) => {
+    state.view_fornecedor = !state.view_fornecedor;
+}
+
 const SET_FORNECEDOR = (state, obj) => {
 
         state.fornecedor_edit.cnpj               = obj.fornecedor.cnpj,

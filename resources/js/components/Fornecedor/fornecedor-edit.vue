@@ -151,18 +151,21 @@
                     <fornecedor-confirm></fornecedor-confirm>
                 </v-card>
 
-                <v-btn
-                        color="primary"
-                        @click=""
-                >
-                    Salvar
-                </v-btn>
+                <v-layout align-center justify-end row>
+                    <v-btn  color="primary"
+                            outline
+                            round
+                            @click="save_fornecedor(fornecedor)"
+                    >
+                        Salvar
+                    </v-btn>
 
-                <v-btn flat
-                       @click="e1--"
-                >
-                    Voltar
-                </v-btn>
+                    <v-btn flat
+                           @click="e1--"
+                    >
+                        Voltar
+                    </v-btn>
+                </v-layout>
             </v-stepper-content>
             <!-- Confimação -->
 
@@ -171,7 +174,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex';
+    import {mapState, mapActions} from 'vuex';
     import EnderecoForm from "../shared/EnderecoForm/EnderecoForm";
     import ContatoForm from "../shared/ContatoForm/ContatoForm";
     import DadosBancariosForm from "../shared/DadosBancariosForm/DadosBancariosFormForm";
@@ -191,6 +194,9 @@
             })
         },
         methods: {
+
+            ...mapActions('Fornecedor', ['save_fornecedor']),
+
             validateAddress () {
                var isValidAddress = this.$refs.endereco.submit();
                if(isValidAddress) {

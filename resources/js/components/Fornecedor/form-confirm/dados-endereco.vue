@@ -3,60 +3,16 @@
         <v-layout>
             <v-flex
                     xs12
-                    md8
-                    lg8
-            >
-                <h5 class="font-weight-bold">{{`Lougradouro : ${fornecedor.endereco.lougradouro}`}}</h5>
-            </v-flex>
-
-            <v-flex
-                    xs12
-                    md4
-                    lg4
-            >
-                <h5 class="font-weight-bold">{{`Razão Social : ${fornecedor.razao_social}`}}</h5>
-            </v-flex>
-
-        </v-layout>
-        <v-layout>
-            <v-flex
-                    xs12
-                    md6
-                    lg6
-            >
-                <h5 class="font-weight-light">{{`CNPJ : ${fornecedor.cnpj}`}}</h5>
-            </v-flex>
-            <v-flex
-                    xs12
-                    md4
-                    lg4
-            >
-                <h5 class="font-weight-light">{{`Inscrição Estadual : ${fornecedor.ie}`}}</h5>
-            </v-flex>
-        </v-layout>
-        <v-divider inset></v-divider>
-        <v-layout>
-            <v-flex
-                    xs12
                     md12
                     lg12
             >
-                <v-textarea
-                        box
-                        disabled
-                        label="Observação"
-                        :value="fornecedor.observacao"
-                ></v-textarea>
+                <div>
+                    <p class="text-lg-center font-weight-bold">{{`Lougradouro : ${fornecedor.endereco.logradouro} Nº ${fornecedor.endereco.numero}`}}</p>
+                    <p class="text-lg-center font-weight-bold">{{`CEP : ${fornecedor.endereco.cep}               Bairro : ${fornecedor.endereco.bairro}` }}</p>
+                    <p class="text-lg-center font-weight-bold">{{`${fornecedor.endereco.cidade} - ${fornecedor.endereco.estado} - ${fornecedor.endereco.pais}` }}</p>
+                </div>
             </v-flex>
-        </v-layout>
-        <v-layout>
-            <v-flex
-                    xs12
-                    md12
-                    lg12
-            >
-                <h5 class="font-weight-bold text-lg-right">{{fornecedor.forn_mercadoria ? "Fornecedor de Mercadoria "  : "Não Fornece Mercadoria "}}</h5>
-            </v-flex>
+
         </v-layout>
     </div>
 </template>

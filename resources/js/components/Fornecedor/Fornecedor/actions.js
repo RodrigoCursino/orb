@@ -1,9 +1,28 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 const setList = async ({ commit }) => {
     const list = (await axios.get('/fornecedores')).data;
     commit('SET_LIST_FORNECEDORES',{list});
 };
+
+const save_fornecedor = async ({ commit }, fornecedor) => {
+    let fornecedorRequest = JSON.parse(JSON.stringify(fornecedor));
+    const saved = (await axios.put(`/fornecedores/${fornecedorRequest}`,fornecedorRequest));
+    if(saved.status === 200) {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "success",
+            buttons: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    commit('CLOSE_VIEW_FORNECEDOR');
+                }
+            });
+    }
+
+}
 
 const viewFornecedor = ({ commit },obj) => {
     const fornecedor = obj;
@@ -17,5 +36,6 @@ const set_fornecedor = ({ commit }, fornecedor) => {
 export default {
     setList,
     set_fornecedor,
-    viewFornecedor
+    viewFornecedor,
+    save_fornecedor
 }

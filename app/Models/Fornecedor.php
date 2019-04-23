@@ -35,6 +35,6 @@ class Fornecedor extends Model
 
     public function dadosBancarios ()
     {
-       return $this->belongsTo(DadosBancarios::class);
+       return $this->belongsTo(DadosBancarios::class)->with('banco');
     }
 }

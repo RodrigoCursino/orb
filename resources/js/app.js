@@ -1,11 +1,14 @@
+require('./bootstrap');
+
+import swal from 'sweetalert';
 import Vuetify from 'vuetify';
 import VeeValidate from 'vee-validate'
 import 'vuetify/dist/vuetify.min.css'
 import store from "./components/store/store";
 
-require('./bootstrap');
+window.Vue  = require('vue');
+window.swal = swal;
 
-window.Vue = require('vue');
 
 Vue.component('main-component', require('./components/main/main-componet.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);

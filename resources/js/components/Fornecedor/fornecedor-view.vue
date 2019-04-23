@@ -21,7 +21,7 @@
                         <v-btn
                                 dark
                                 flat
-                                @click="viewFornecedor({})">
+                                @click="save_fornecedor(fornecedor)">
                             Save
                         </v-btn>
                     </v-toolbar-items>
@@ -59,7 +59,7 @@
             })
         },
         methods: {
-            ...mapActions('Fornecedor', ['viewFornecedor'])
+            ...mapActions('Fornecedor', ['viewFornecedor','save_fornecedor'])
         }
     }
 </script>

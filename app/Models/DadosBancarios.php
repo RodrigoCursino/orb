@@ -17,4 +17,9 @@ class DadosBancarios extends Model
         'agencia',
         'conta'
     ];
+
+    public function banco()
+    {
+        return $this->belongsTo(Banco::class);
+    }
 }

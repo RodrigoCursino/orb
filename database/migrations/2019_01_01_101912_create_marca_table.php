@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDadosBancariosTable extends Migration
+class CreateMarcaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,20 @@ class CreateDadosBancariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('dados_bancarios', function (Blueprint $table) {
-
+        Schema::create('marca', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('agencia',20);
-            $table->string('conta',20);
-            $table->enum('tipo',['CORRENTE','POUPANÇA'])->default('CORRENTE');
+            $table->string('nome',100);
 
-            //Banco
-            $table->integer('banco_id')->unsigned();
-            $table->foreign('banco_id')->references('id')
-                ->on('bancos')
+            //ForeignKeys
+
+            //Marca
+            $table->integer('fabricante_id')->unsigned();
+            $table->foreign('fabricante_id')->references('id')
+                ->on('fabricantes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
+            $table->boolean('ativo')->default(1);
 
             $table->timestamps();
             $table->softDeletes();
@@ -39,6 +40,6 @@ class CreateDadosBancariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dados_bancarios');
+        Schema::dropIfExists('marca');
     }
 }

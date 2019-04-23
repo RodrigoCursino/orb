@@ -2,6 +2,7 @@
 
 @section('app_css')
     <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 @endsection
 
@@ -11,8 +12,8 @@
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img"
-                 class="profile-img-card"
-                 src="https://webmail.convex.com.br/skins/classic/images/roundcube_logo.png"
+
+                 src="https://www.encontrasapopemba.com/wp-content/uploads/2015/03/deposito-da-lingerie-sapopemba-1427759269.png"
             />
             <p id="profile-name"
                class="profile-name-card"

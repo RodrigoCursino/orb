@@ -35,7 +35,7 @@
             </v-flex>
         </v-layout>
         <v-divider inset></v-divider>
-        <v-layout>
+        <v-layout style="margin-top: 15px">
             <v-flex
                     xs12
                     md12

@@ -16,6 +16,7 @@
                                 label="CEP"
                                 data-vv-name="cep"
                                 @change="get_cep"
+                                return-masked-value
                                 required
                         ></v-text-field>
                     </v-flex>

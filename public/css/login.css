@@ -2,7 +2,7 @@ body,
 html {
   height: 100%;
   background-repeat: no-repeat;
-  background-image: linear-gradient(#59000e, #eb2a14);
+  background-image: linear-gradient(#ff1578, #0089c7);
 }
 
 #particles-js {

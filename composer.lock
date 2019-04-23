@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4123acfcb5884d31126a1725188ab14a",
+    "content-hash": "6c0de5d0ad911c9ceca30d8752fa4342",
     "packages": [
         {
             "name": "artesaos/defender",

@@ -20,14 +20,14 @@ trait DadosComunsCadastro
     {
         $endereco = new Endereco();
 
-        $endereco->cep             = $request->input('cep');
-        $endereco->logradouro      = $request->input('logradouro');
-        $endereco->numero          = $request->input('numero');
-        $endereco->bairro          = $request->input('bairro');
-        $endereco->complemento     = $request->input('complemento') ? $request->input('complemento') : '' ;
-        $endereco->cidade          = $request->input('cidade');
-        $endereco->estado          = $request->input('estado');
-        $endereco->pais            = $request->input('pais');
+        $endereco->cep             = $request->endereco["cep"];
+        $endereco->logradouro      = $request->endereco["logradouro"];
+        $endereco->numero          = $request->endereco["numero"];
+        $endereco->bairro          = $request->endereco["bairro"];
+        $endereco->complemento     = $request->endereco["complemento"] ? $request->input('complemento') : '' ;
+        $endereco->cidade          = $request->endereco["cidade"];
+        $endereco->estado          = $request->endereco["estado"];
+        $endereco->pais            = $request->endereco["pais"];
 
         $endereco->save();
 
@@ -38,10 +38,10 @@ trait DadosComunsCadastro
     {
         $dados_bancario = new DadosBancarios();
 
-        $dados_bancario->conta         = $request->input('conta');
-        $dados_bancario->agencia       = $request->input('agencia');
-        $dados_bancario->tipo          = $request->input('tipo');
-        $dados_bancario->banco_id      = $request->input('banco_id');
+        $dados_bancario->conta         = $request->dados_bancarios['conta'];
+        $dados_bancario->agencia       = $request->dados_bancarios['agencia'];
+        $dados_bancario->tipo          = $request->dados_bancarios['tipo'];
+        $dados_bancario->banco_id      = $request->dados_bancarios['banco_id'];
 
         $dados_bancario->save();
 
@@ -52,10 +52,10 @@ trait DadosComunsCadastro
     {
         $contato = new Contato();
 
-        $contato->email           = $request->input('email');
-        $contato->telefone        = $request->input('telefone');
-        $contato->celular         = $request->input('celular');
-        $contato->nome            = $request->input('nome');
+        $contato->email           = $request->contato['email'];
+        $contato->telefone        = $request->contato['telefone'];
+        $contato->celular         = $request->contato['celular'];
+        $contato->nome            = $request->contato['nome'];
 
         $contato->save();
 
@@ -68,14 +68,14 @@ trait DadosComunsCadastro
     {
         $endereco = Endereco::findOrFail($id);
 
-        $endereco->cep             = $request->input('cep');
-        $endereco->logradouro      = $request->input('logradouro');
-        $endereco->numero          = $request->input('numero');
-        $endereco->bairro          = $request->input('bairro');
-        $endereco->complemento     = $request->input('complemento') ? $request->input('complemento') : '' ;
-        $endereco->cidade          = $request->input('cidade');
-        $endereco->estado          = $request->input('estado');
-        $endereco->pais            = $request->input('pais');
+        $endereco->cep             = $request->endereco["cep"];
+        $endereco->logradouro      = $request->endereco["logradouro"];
+        $endereco->numero          = $request->endereco["numero"];
+        $endereco->bairro          = $request->endereco["bairro"];
+        $endereco->complemento     = $request->endereco["complemento"] ? $request->input('complemento') : '' ;
+        $endereco->cidade          = $request->endereco["cidade"];
+        $endereco->estado          = $request->endereco["estado"];
+        $endereco->pais            = $request->endereco["pais"];
 
         $endereco->save();
     }
@@ -84,10 +84,10 @@ trait DadosComunsCadastro
     {
         $dados_bancario = DadosBancarios::findOrFail($id);
 
-        $dados_bancario->conta         = $request->input('conta');
-        $dados_bancario->agencia       = $request->input('agencia');
-        $dados_bancario->tipo          = $request->input('tipo');
-        $dados_bancario->banco_id      = $request->input('banco_id');
+        $dados_bancario->conta         = $request->dados_bancarios['conta'];
+        $dados_bancario->agencia       = $request->dados_bancarios['agencia'];
+        $dados_bancario->tipo          = $request->dados_bancarios['tipo'];
+        $dados_bancario->banco_id      = $request->dados_bancarios['banco_id'];
 
         $dados_bancario->save();
     }
@@ -96,10 +96,10 @@ trait DadosComunsCadastro
     {
         $contato = Contato::findOrFail($id);
 
-        $contato->email           = $request->input('email');
-        $contato->telefone        = $request->input('telefone');
-        $contato->celular         = $request->input('celular');
-        $contato->nome            = $request->input('nome');
+        $contato->email           = $request->contato['email'];
+        $contato->telefone        = $request->contato['telefone'];
+        $contato->celular         = $request->contato['celular'];
+        $contato->nome            = $request->contato['nome'];
 
         $contato->save();
     }

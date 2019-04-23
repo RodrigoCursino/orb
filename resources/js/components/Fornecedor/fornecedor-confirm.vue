@@ -23,28 +23,25 @@
         <v-tab-item
                 value="tab-1"
         >
-           <dados-fornecedor style="margin-top: 15px"></dados-fornecedor>
+           <dados-fornecedor style="margin-top: 50px"></dados-fornecedor>
         </v-tab-item>
 
         <v-tab-item
                 value="tab-2"
         >
+            <dados-endereco v-if="fornecedor.endereco" style="margin-top: 50px"></dados-endereco>
         </v-tab-item>
 
         <v-tab-item
                 value="tab-3"
         >
-            <v-card flat>
-                <v-card-text>ops</v-card-text>
-            </v-card>
+            <dados-contato v-if="fornecedor.contato" style="margin-top: 50px"></dados-contato>
         </v-tab-item>
 
         <v-tab-item
                 value="tab-4"
         >
-            <v-card flat>
-                <v-card-text>ops</v-card-text>
-            </v-card>
+            <dados-dados-bancarios v-if="fornecedor.dados_bancarios" style="margin-top: 50px"></dados-dados-bancarios>
         </v-tab-item>
     </v-tabs>
 </template>
@@ -52,9 +49,12 @@
 <script>
     import {mapState} from 'vuex';
     import DadosFornecedor from "./form-confirm/dados-fornecedor";
+    import DadosEndereco from "./form-confirm/dados-endereco";
+    import DadosContato from "./form-confirm/dados-contato";
+    import DadosDadosBancarios from "./form-confirm/dados-dados-bancarios";
     export default {
         name: "fornecedor-confirm",
-        components: {DadosFornecedor},
+        components: {DadosDadosBancarios, DadosContato, DadosEndereco, DadosFornecedor},
         data: () => ({
            tab: '#dados_fornecedor'
         }),

@@ -17,6 +17,8 @@ class CreateSubGruposTable extends Migration
             $table->increments('id');
             $table->string('nome',30);
 
+            $table->boolean('ativo')->default(1);
+
             //Grupos
             $table->integer('grupo_id')->unsigned();
             $table->foreign('grupo_id')->references('id')

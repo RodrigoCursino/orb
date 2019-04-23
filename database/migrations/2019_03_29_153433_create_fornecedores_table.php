@@ -18,6 +18,8 @@ class CreateFornecedoresTable extends Migration
             $table->string('observacao',500);
             $table->boolean('forn_mercadoria');
 
+            $table->boolean('ativo')->default(1);
+
             //forignKeys
 
             //Endereço
@@ -34,7 +36,7 @@ class CreateFornecedoresTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            // DadosBancarios
+            // Contato
             $table->integer('contato_id')->unsigned();
             $table->foreign('contato_id')->references('id')
                 ->on('contatos')

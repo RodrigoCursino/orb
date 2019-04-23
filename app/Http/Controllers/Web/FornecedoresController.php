@@ -59,10 +59,10 @@ class FornecedoresController extends Controller
         return view('fornecedor.create',compact('bancos','fornecedor'));
     }
 
-    public function update(FornecedorCreateRequest $request, $id)
+    public function update(FornecedorCreateRequest $request)
     {
-        $fornecedor = $this->service->update($request, $id);
-        return redirect(route('fornecedores.index'));
+        $fornecedor = $this->service->update($request, $request->input('id'));
+        return $fornecedor;
     }
 
 
