@@ -16,10 +16,10 @@ export default {
         },
         {
             position : 2,
-            text     : "Duplicates",
-            link     : "#duplicates",
-            action   : "duplicates",
-            icon     : "star",
+            text     : "Mercadoria",
+            link     : "#mercadoria",
+            action   : "mercadoria",
+            icon     : "featured_play_list",
             showNav  : false,
             showPage : false
         },

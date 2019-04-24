@@ -37,8 +37,7 @@ class FornecedoresController extends Controller
 
     public function store(FornecedorCreateRequest $request)
     {
-        $fornecedor = $this->service->create($request);
-        return redirect(route('fornecedores.index'));
+        return $fornecedor = $this->service->create($request);
     }
 
 
@@ -68,8 +67,8 @@ class FornecedoresController extends Controller
 
     public function destroy($id)
     {
-       if($this->service->destroy($id)){
-         return redirect(route('fornecedores.index'));
-       }
+       $foi = $this->service->destroy($id);
+       return 'foi';
+
     }
 }

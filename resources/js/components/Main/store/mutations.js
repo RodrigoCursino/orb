@@ -17,6 +17,7 @@ export default {
      * @constructor
      */
      'SELECT_TAB' (state, payload)  {
+         console.log(payload);
         let index = state.navList.findIndex(function (_navList) {
             if (payload === _navList.action) {
                 state.currentItem  = payload;
@@ -46,5 +47,14 @@ export default {
                 }
             }
         });
+
+        for (let i in state.navList) {
+            if(state.navList[i].showNav) {
+                state.currentItem           = state.navList[i].action;
+                state.navList[i].showPage   = true;
+                state.navList[i].showNav    = true;
+                state.navList[i].active     = true;
+            }
+        }
      }
 }

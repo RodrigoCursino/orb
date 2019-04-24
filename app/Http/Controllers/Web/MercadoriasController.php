@@ -32,8 +32,18 @@ class MercadoriasController extends Controller
 
     public function index()
     {
-        $mercadorias = Mercadoria::where('ativo','=',1)->paginate(15);
-        return view('mercadoria.index',compact('mercadorias'));
+        $mercadorias = Mercadoria::with('precoVenda')
+                                  ->with('PrecoCusto')
+                                  ->with('subGrupo')
+                                  ->with('grupo')
+                                  ->with('ncm')
+                                  ->with('fornecedor')
+                                  ->with('marca')
+                                  ->with('linha')
+                                  ->with('colecao')
+                                  ->with('categoria')->get();
+
+        return $mercadorias;
     }
 
     public function create()

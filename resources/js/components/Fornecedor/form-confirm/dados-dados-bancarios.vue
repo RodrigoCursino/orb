@@ -7,7 +7,9 @@
                     lg12
             >
                 <div>
-                    <p class="text-lg-center font-weight-bold">{{`Banco: : ${fornecedor.dados_bancarios.banco.nome}`}}</p>
+                    <div v-if="fornecedor.dados_bancarios.banco">
+                        <p class="text-lg-center font-weight-bold">{{`Banco: : ${fornecedor.dados_bancarios.banco.nome}`}}</p>
+                    </div>
                     <p class="text-lg-center font-weight-normal">{{`Agência : ${fornecedor.dados_bancarios.agencia}` }}</p>
                     <p class="text-lg-center font-weight-normal">{{`Conta: ${fornecedor.dados_bancarios.conta} - Tipo: ${fornecedor.dados_bancarios.tipo}` }}</p>
                 </div>

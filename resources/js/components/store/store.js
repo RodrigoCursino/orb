@@ -9,6 +9,7 @@ import Banco              from '../Banco/Banco'
 import Fornecedor         from '../Fornecedor/Fornecedor'
 import Endereco           from '../shared/EnderecoForm/Endereco'
 import Contato            from '../shared/ContatoForm/Contato'
+import Mercadoria         from '../Mercadoria/Mercadoria'
 import DadosBancarios     from '../shared/DadosBancariosForm/DadosBancarios'
 import Main               from '../Main/store'
 
@@ -20,7 +21,8 @@ const modules = {
     Main,
     Endereco,
     Contato,
-    DadosBancarios
+    DadosBancarios,
+    Mercadoria
 };
 
 const store = new Vuex.Store({

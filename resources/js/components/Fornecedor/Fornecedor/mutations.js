@@ -7,12 +7,23 @@ const VIEW_FORNECEDOR = (state, obj) => {
     state.fornecedor      = obj.fornecedor;
 }
 
+const DELETED = (state) => {
+    state.deleted = !state.deleted;
+}
+
+const CLOSE_FORM_FORNECEDOR = (state) => {
+    state.closeForm = !state.closeForm;
+}
+
 const CLOSE_VIEW_FORNECEDOR = (state) => {
     state.view_fornecedor = !state.view_fornecedor;
 }
 
-const SET_FORNECEDOR = (state, obj) => {
+const SET_ENDERECO = (state, endereco) => {
+    state.fornecedor.endereco = endereco;
+}
 
+const SET_FORNECEDOR = (state, obj) => {
         state.fornecedor_edit.cnpj               = obj.fornecedor.cnpj,
         state.fornecedor_edit.contato_id         = obj.fornecedor.contato_id,
         state.fornecedor_edit.dados_bancarios_id = obj.fornecedor.dados_bancarios_id,
@@ -28,8 +39,17 @@ const SET_FORNECEDOR = (state, obj) => {
         state.fornecedor_edit.dados_bancarios    = obj.fornecedor.dados_bancarios
 };
 
+
+const ADD_FORNECEDOR = (state, obj) => {
+  state.fornecedor = obj.fornecedor;
+};
+
 export default {
     SET_LIST_FORNECEDORES,
     VIEW_FORNECEDOR,
-    SET_FORNECEDOR
+    SET_FORNECEDOR,
+    DELETED,
+    SET_ENDERECO,
+    ADD_FORNECEDOR,
+    CLOSE_FORM_FORNECEDOR
 }

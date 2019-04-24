@@ -3,14 +3,44 @@
         <template>
             <fornecedor-view></fornecedor-view>
                 <v-card-title>
-                    <v-spacer></v-spacer>
-                    <v-text-field
-                            v-model="search"
-                            append-icon="search"
-                            label="Search"
-                            single-line
-                            hide-details
-                    ></v-text-field>
+                    <!--<v-spacer></v-spacer>-->
+                    <!--<v-spacer></v-spacer>-->
+                    <v-layout>
+                        <v-flex lg6
+                                md6
+                                sm12
+                                xs12
+                        >
+                            <v-text-field
+                                    v-model="search"
+                                    append-icon="search"
+                                    label="Buscar Fornecedor"
+                                    single-line
+                                    hide-details
+                            ></v-text-field>
+                        </v-flex>
+                        <v-flex lg6
+                                md6
+                                sm12
+                                xs12
+                        >
+
+
+                            <v-layout justify-end row class="mb-2">
+                                <span class="group pa-2">
+                                  <v-btn fab
+                                         dark
+                                         title="selecione um item para deletar"
+                                         color="danger"
+                                         @click.native="acaoComSelecionados()"
+                                  >
+                                     <v-icon dark>delete</v-icon>
+                                  </v-btn>
+                                </span>
+                            </v-layout>
+
+                        </v-flex>
+                    </v-layout>
                 </v-card-title>
                 <v-data-table
                         v-model="selected"
@@ -59,6 +89,16 @@
         mounted() {
             this.setList()
         },
+        computed: {
+            ...mapState('Fornecedor',{
+                list_fornecedores: state => {
+                    return state.list_fornecedores;
+                },
+                fornecedor: state => {
+                    return state.fornecedor;
+                }
+            })
+        },
         data () {
             return {
                 search: '',
@@ -84,17 +124,10 @@
             }
         },
         methods: {
-            ...mapActions('Fornecedor',['setList','viewFornecedor'])
-        },
-        computed: {
-            ...mapState('Fornecedor',{
-                list_fornecedores: state => {
-                    return state.list_fornecedores;
-                },
-                fornecedor: state => {
-                    return state.fornecedor;
-                }
-            })
+            acaoComSelecionados() {
+                this.delete_fornecedor(this.selected);
+            },
+            ...mapActions('Fornecedor',['setList','viewFornecedor','delete_fornecedor']),
         }
     }
 </script>

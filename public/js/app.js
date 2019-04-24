@@ -1973,6 +1973,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "dados-dados-bancarios",
@@ -2678,6 +2680,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/EnderecoForm/EnderecoForm */ "./resources/js/components/shared/EnderecoForm/EnderecoForm.vue");
+/* harmony import */ var _shared_ContatoForm_ContatoForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/ContatoForm/ContatoForm */ "./resources/js/components/shared/ContatoForm/ContatoForm.vue");
+/* harmony import */ var _shared_DadosBancariosForm_DadosBancariosFormForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/DadosBancariosForm/DadosBancariosFormForm */ "./resources/js/components/shared/DadosBancariosForm/DadosBancariosFormForm.vue");
+/* harmony import */ var _form_fornecedor_form_dados__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form/fornecedor-form-dados */ "./resources/js/components/Fornecedor/form/fornecedor-form-dados.vue");
+/* harmony import */ var _fornecedor_confirm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fornecedor-confirm */ "./resources/js/components/Fornecedor/fornecedor-confirm.vue");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2781,48 +2793,719 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'fornecedor-form',
-  props: {},
-  components: {},
-  computed: {},
+  $_veeValidate: {
+    validator: 'new'
+  },
+  components: {
+    FornecedorConfirm: _fornecedor_confirm__WEBPACK_IMPORTED_MODULE_5__["default"],
+    FornecedorFormDados: _form_fornecedor_form_dados__WEBPACK_IMPORTED_MODULE_4__["default"],
+    DadosBancariosForm: _shared_DadosBancariosForm_DadosBancariosFormForm__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ContatoForm: _shared_ContatoForm_ContatoForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+    EnderecoForm: _shared_EnderecoForm_EnderecoForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])('Endereco', ['get_endereco']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Banco', {
+    list_bancos: function list_bancos(state) {
+      return state.list_bancos;
+    }
+  }), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
+    closeForm: function closeForm(state) {
+      return state.closeForm;
+    }
+  })),
+  mounted: function mounted() {
+    this.get_list_bancos();
+  },
   data: function data() {
     return {
+      validAddress: false,
       dialog: false,
-      e6: 1,
-      valid: true,
-      name: '',
-      mask: 'NNNNN-NNNN',
-      nameRules: [function (v) {
-        return !!v || 'Name is required';
-      }, function (v) {
-        return v && v.length <= 16 || 'Name must be less than 16 characters';
+      e1: 0,
+      tipos: [{
+        value: 'POUPANCA',
+        text: 'Poupança'
+      }, {
+        value: 'CORRENTE',
+        text: 'Corrente'
       }],
-      email: '',
-      emailRules: [function (v) {
-        return !!v || 'E-mail is required';
-      }, function (v) {
-        return /.+@.+/.test(v) || 'E-mail must be valid';
-      }],
-      select: null,
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-      checkbox: false
+      fornecedor: {
+        cnpj: "00.000.000/0000-00",
+        contato: {
+          celular: "(00) 00000-0000",
+          email: "",
+          id: 0,
+          nome: "",
+          telefone: "(00) 0000-0000"
+        },
+        contato_id: 0,
+        dados_bancarios: {
+          agencia: "",
+          banco_id: null,
+          conta: "",
+          tipo: "CORRENTE"
+        },
+        dados_bancarios_id: 0,
+        endereco: {},
+        endereco_id: 0,
+        forn_mercadoria: false,
+        id: 0,
+        ie: "",
+        nome_fantasia: "",
+        observacao: "",
+        razao_social: ""
+      },
+      cnpj: "##.###.###/####-##",
+      mask: '#####-###',
+      celularMask: '(##) #####-####',
+      telefoneMask: '(##) ####-####',
+      dictionary: {
+        custom: {
+          cnpj: {
+            required: function required() {
+              return 'O CNPJ é obrigatório';
+            }
+          },
+          ie: {
+            required: function required() {
+              return 'A Inscrição Estadual é obrigatória';
+            }
+          },
+          nome_fantasia: {
+            required: function required() {
+              return 'O Nome Fantasia é obrigatório';
+            }
+          },
+          razao_social: {
+            required: function required() {
+              return 'A Razão Social é obrigatória';
+            }
+          },
+          observacao: {
+            required: function required() {
+              return 'O campo de observações é obrigatória';
+            }
+          },
+          logradouro: {
+            required: function required() {
+              return 'O lougradouro é obrigatório';
+            },
+            max: 'O maxímo de de caracters e de 150' // custom messages
+
+          },
+          numero: {
+            required: function required() {
+              return 'O número é obrigatório';
+            } // custom messages
+
+          },
+          bairro: {
+            required: function required() {
+              return 'O bairro é obrigatório';
+            } // custom messages
+
+          },
+          cidade: {
+            required: function required() {
+              return 'O cidade é obrigatório';
+            } // custom messages
+
+          },
+          estado: {
+            required: function required() {
+              return 'O estado é obrigatório';
+            } // custom messages
+
+          },
+          pais: {
+            required: function required() {
+              return 'O país é obrigatório';
+            } // custom messages
+
+          },
+          cep: {
+            required: function required() {
+              return 'O CEP é obrigatório';
+            } // custom messages
+
+          },
+          email: {
+            required: function required() {
+              return 'O celular é obrigatório';
+            },
+            email: 'Por favor Insira um endereço de email válido'
+          },
+          celular: {
+            required: function required() {
+              return 'O celular é obrigatório';
+            }
+          },
+          telefone: {
+            required: function required() {
+              return 'O telefone é obrigatório';
+            }
+          },
+          agencia: {
+            required: function required() {
+              return 'A agência é obrigatória';
+            }
+          },
+          conta: {
+            required: function required() {
+              return 'A conta é obrigatória';
+            }
+          },
+          tipo: {
+            required: function required() {
+              return 'Selecione um tipo';
+            }
+          },
+          banco_id: {
+            required: function required() {
+              return 'Selecione um banco';
+            }
+          }
+        }
+      }
     };
   },
-  methods: {
-    validate: function validate() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true;
-        this.e6 = 2;
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Fornecedor', ['save_fornecedor', 'add_fornecedor', 'close_form']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Endereco', ['get_cep', 'set_endereco']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Banco', ['get_list_bancos']), {
+    validateAddress: function validateAddress(scope) {
+      var _this = this;
+
+      console.log('Ops ', this.fornecedor);
+
+      if (this.validAddress) {
+        this.$validator.validateAll(scope).then(function (result) {
+          if (result) {
+            _this.e1++;
+            _this.validAddress = false;
+          }
+        });
+      } else {
+        alert('Preencha o CEP');
       }
     },
-    reset: function reset() {
-      this.$refs.form.reset();
+    validateContacts: function validateContacts(scope) {
+      var _this2 = this;
+
+      this.$validator.validateAll(scope).then(function (result) {
+        if (result) {
+          _this2.e1++;
+        }
+      });
     },
-    resetValidation: function resetValidation() {
-      this.$refs.form.resetValidation();
+    validateFornecedor: function validateFornecedor(scope) {
+      var _this3 = this;
+
+      this.$validator.validateAll(scope).then(function (result) {
+        if (result) {
+          _this3.e1++;
+        }
+      });
+    },
+    validateDadosBancarios: function validateDadosBancarios(scope) {
+      var _this4 = this;
+
+      this.$validator.validateAll(scope).then(function (result) {
+        if (result) {
+          _this4.add_fornecedor(_this4.fornecedor);
+
+          _this4.e1++;
+        }
+      });
+    },
+    getEndereco: function getEndereco() {
+      var cep = this.fornecedor.endereco.cep.replace('-', '');
+      this.get_cep(cep);
+      this.fornecedor.endereco = this.get_endereco;
+      this.validAddress = true;
+    },
+    open: function open() {
+      this.close_form();
+    },
+    clear: function clear() {
+      this.$validator.reset();
+      this.close_form();
     }
-  }
+  })
 });
 
 /***/ }),
@@ -2838,12 +3521,38 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fornecedor_form_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fornecedor-form.vue */ "./resources/js/components/Fornecedor/fornecedor-form.vue");
 /* harmony import */ var _fornecedor_list_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fornecedor-list.vue */ "./resources/js/components/Fornecedor/fornecedor-list.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2853,7 +3562,11 @@ __webpack_require__.r(__webpack_exports__);
     FornecedorList: _fornecedor_list_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FornecedorForm: _fornecedor_form_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  computed: {},
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])('Fornecedor', {
+    deleted: function deleted(state) {
+      return state.deleted;
+    }
+  })),
   methods: {}
 });
 
@@ -2927,6 +3640,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2936,6 +3679,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.setList();
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
+    list_fornecedores: function list_fornecedores(state) {
+      return state.list_fornecedores;
+    },
+    fornecedor: function fornecedor(state) {
+      return state.fornecedor;
+    }
+  })),
   data: function data() {
     return {
       search: '',
@@ -2961,15 +3712,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }]
     };
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Fornecedor', ['setList', 'viewFornecedor'])),
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Fornecedor', {
-    list_fornecedores: function list_fornecedores(state) {
-      return state.list_fornecedores;
-    },
-    fornecedor: function fornecedor(state) {
-      return state.fornecedor;
+  methods: _objectSpread({
+    acaoComSelecionados: function acaoComSelecionados() {
+      this.delete_fornecedor(this.selected);
     }
-  }))
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Fornecedor', ['setList', 'viewFornecedor', 'delete_fornecedor']))
 });
 
 /***/ }),
@@ -3053,6 +3800,278 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "mercadoria-form",
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Mercadoria', {
+    openFormMercadoria: function openFormMercadoria(state) {
+      return state.openFormMercadoria;
+    }
+  })),
+  data: function data() {
+    return {
+      mercadoria: {}
+    };
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Mercadoria', ['open_form_mercadoria']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mercadoria_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mercadoria-list */ "./resources/js/components/Mercadoria/mercadoria-list.vue");
+/* harmony import */ var _mercadoria_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mercadoria-form */ "./resources/js/components/Mercadoria/mercadoria-form.vue");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "mercadoria-index",
+  components: {
+    MercadoriaForm: _mercadoria_form__WEBPACK_IMPORTED_MODULE_2__["default"],
+    MercadoriaList: _mercadoria_list__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  mounted: function mounted() {
+    this.set_list_mercadorias();
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Mercadoria', ['set_list_mercadorias']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "mercadoria-list",
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Mercadoria', {
+    list_mercadorias: function list_mercadorias(state) {
+      return state.list_mercadorias;
+    }
+  })),
+  data: function data() {
+    return {
+      search: '',
+      selected: [],
+      headers: [{
+        text: 'Nome',
+        align: 'left',
+        value: 'nome'
+      }, {
+        text: 'Fornecedor',
+        value: 'fornecedor.nome_fantasia'
+      }, {
+        text: 'NCM',
+        value: 'ncm.cod'
+      }, {
+        text: 'Categoria',
+        value: 'categoria.nome'
+      }, {
+        text: 'Grupo',
+        value: 'grupo.nome'
+      }, {
+        text: 'Sub Grupo',
+        value: 'sub_grupo.nome'
+      }, {
+        text: 'Visualizar',
+        sortable: false
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/main/content-tabs.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/main/content-tabs.vue?vue&type=script&lang=js& ***!
@@ -3065,6 +4084,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _Fornecedor_fornecedor_index_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Fornecedor/fornecedor-index.vue */ "./resources/js/components/Fornecedor/fornecedor-index.vue");
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages */ "./resources/js/components/main/pages.vue");
+/* harmony import */ var _Mercadoria_mercadoria_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Mercadoria/mercadoria-index */ "./resources/js/components/Mercadoria/mercadoria-index.vue");
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3122,8 +4142,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    MercadoriaIndex: _Mercadoria_mercadoria_index__WEBPACK_IMPORTED_MODULE_3__["default"],
     Pages: _pages__WEBPACK_IMPORTED_MODULE_2__["default"],
     FornecedorIndex: _Fornecedor_fornecedor_index_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -3140,7 +4162,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return state.currentItem;
     }
   })),
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])('Main', ['DISABLE_TAB']))
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])('Main', ['DISABLE_TAB', 'SELECT_TAB']))
 });
 
 /***/ }),
@@ -51776,13 +52798,22 @@ var render = function() {
         [
           _c("v-flex", { attrs: { xs12: "", md12: "", lg12: "" } }, [
             _c("div", [
-              _c("p", { staticClass: "text-lg-center font-weight-bold" }, [
-                _vm._v(
-                  _vm._s(
-                    "Banco: : " + _vm.fornecedor.dados_bancarios.banco.nome
-                  )
-                )
-              ]),
+              _vm.fornecedor.dados_bancarios.banco
+                ? _c("div", [
+                    _c(
+                      "p",
+                      { staticClass: "text-lg-center font-weight-bold" },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            "Banco: : " +
+                              _vm.fornecedor.dados_bancarios.banco.nome
+                          )
+                        )
+                      ]
+                    )
+                  ])
+                : _vm._e(),
               _vm._v(" "),
               _c("p", { staticClass: "text-lg-center font-weight-normal" }, [
                 _vm._v(
@@ -52261,7 +53292,7 @@ var render = function() {
                       "error-messages": _vm.errors.collect("observacao"),
                       "auto-grow": "",
                       "row-height": "12",
-                      "data-vv-name": "razao_social",
+                      "data-vv-name": "observacao",
                       required: ""
                     },
                     model: {
@@ -52708,11 +53739,7 @@ var render = function() {
             dark: "",
             fixed: ""
           },
-          on: {
-            click: function($event) {
-              _vm.dialog = !_vm.dialog
-            }
-          }
+          on: { click: _vm.open }
         },
         [_c("v-icon", [_vm._v("add")])],
         1
@@ -52721,247 +53748,38 @@ var render = function() {
       _c(
         "v-dialog",
         {
-          attrs: { width: "800px" },
-          model: {
-            value: _vm.dialog,
-            callback: function($$v) {
-              _vm.dialog = $$v
-            },
-            expression: "dialog"
+          attrs: {
+            value: _vm.closeForm,
+            width: "900px",
+            persistent: "",
+            "no-click-animation": ""
+          },
+          on: {
+            "update:value": function($event) {
+              _vm.closeForm = $event
+            }
           }
         },
         [
           _c(
             "v-card",
             [
-              _c("v-card-title", { staticClass: "grey lighten-4 py-4 title" }, [
-                _vm._v("\n                Cadastrar Fornecedor\n            ")
-              ]),
-              _vm._v(" "),
               _c(
-                "v-stepper",
-                {
-                  attrs: { vertical: "" },
-                  model: {
-                    value: _vm.e6,
-                    callback: function($$v) {
-                      _vm.e6 = $$v
-                    },
-                    expression: "e6"
-                  }
-                },
+                "v-toolbar",
+                { attrs: { color: "primary", dark: "" } },
                 [
-                  _c(
-                    "v-stepper-step",
-                    { attrs: { complete: _vm.e6 > 1, step: "1" } },
-                    [
-                      _vm._v(
-                        "\n                                Select an app\n                                "
-                      ),
-                      _c("small", [_vm._v("Summarize if needed")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "1" } },
-                    [
-                      _c(
-                        "v-form",
-                        {
-                          ref: "form",
-                          attrs: { "lazy-validation": "" },
-                          model: {
-                            value: _vm.valid,
-                            callback: function($$v) {
-                              _vm.valid = $$v
-                            },
-                            expression: "valid"
-                          }
-                        },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              mask: _vm.mask,
-                              counter: 16,
-                              rules: _vm.nameRules,
-                              label: "Name",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              rules: _vm.emailRules,
-                              label: "E-mail",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.email,
-                              callback: function($$v) {
-                                _vm.email = $$v
-                              },
-                              expression: "email"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-select", {
-                            attrs: {
-                              items: _vm.items,
-                              rules: [
-                                function(v) {
-                                  return !!v || "Item is required"
-                                }
-                              ],
-                              label: "Item",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.select,
-                              callback: function($$v) {
-                                _vm.select = $$v
-                              },
-                              expression: "select"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-checkbox", {
-                            attrs: {
-                              rules: [
-                                function(v) {
-                                  return !!v || "You must agree to continue!"
-                                }
-                              ],
-                              label: "Do you agree?",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.checkbox,
-                              callback: function($$v) {
-                                _vm.checkbox = $$v
-                              },
-                              expression: "checkbox"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: { click: _vm.validate }
-                        },
-                        [_vm._v("Continue")]
-                      ),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-step",
-                    { attrs: { complete: _vm.e6 > 2, step: "2" } },
-                    [_vm._v("Configure analytics for this app")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "2" } },
-                    [
-                      _c("v-card", {
-                        staticClass: "mb-5",
-                        attrs: { color: "grey lighten-1", height: "200px" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: {
-                            click: function($event) {
-                              _vm.e6 = 3
-                            }
-                          }
-                        },
-                        [_vm._v("Continue")]
-                      ),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-step",
-                    { attrs: { complete: _vm.e6 > 3, step: "3" } },
-                    [_vm._v("Select an ad format and name ad unit")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "3" } },
-                    [
-                      _c("v-card", {
-                        staticClass: "mb-5",
-                        attrs: { color: "grey lighten-1", height: "200px" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: {
-                            click: function($event) {
-                              _vm.e6 = 4
-                            }
-                          }
-                        },
-                        [_vm._v("Continue")]
-                      ),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-stepper-step", { attrs: { step: "4" } }, [
-                    _vm._v("View setup instructions")
+                  _c("v-card-title", [
+                    _vm._v(
+                      "\n                    Cadastrar Fornecedor\n                "
+                    )
                   ]),
                   _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
                   _c(
-                    "v-stepper-content",
-                    { attrs: { step: "4" } },
-                    [
-                      _c("v-card", {
-                        staticClass: "mb-5",
-                        attrs: { color: "grey lighten-1", height: "200px" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: {
-                            click: function($event) {
-                              _vm.e6 = 1
-                            }
-                          }
-                        },
-                        [_vm._v("Continue")]
-                      ),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Cancel")])
-                    ],
+                    "v-btn",
+                    { attrs: { icon: "" }, on: { click: _vm.clear } },
+                    [_c("v-icon", [_vm._v("close")])],
                     1
                   )
                 ],
@@ -52969,38 +53787,1203 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "v-card-actions",
-                [
-                  _c("v-btn", { attrs: { flat: "", color: "primary" } }, [
-                    _vm._v("More")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: { flat: "", color: "primary" },
-                      on: {
-                        click: function($event) {
-                          _vm.dialog = false
-                        }
-                      }
+                "v-stepper",
+                {
+                  model: {
+                    value: _vm.e1,
+                    callback: function($$v) {
+                      _vm.e1 = $$v
                     },
-                    [_vm._v("Cancel")]
+                    expression: "e1"
+                  }
+                },
+                [
+                  _c(
+                    "v-stepper-header",
+                    [
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e1 > 1, step: "1" } },
+                        [
+                          _vm._v(
+                            "\n                        Dados\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e1 > 2, step: "2" } },
+                        [
+                          _vm._v(
+                            "\n                        Endereco\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e1 > 3, step: "3" } },
+                        [
+                          _vm._v(
+                            "\n                        Contato\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e1 > 4, step: "4" } },
+                        [
+                          _vm._v(
+                            "\n                        Dados Bancários\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e1 > 5, step: "5" } },
+                        [
+                          _vm._v(
+                            "\n                        Comfirmar Dados\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-btn",
-                    {
-                      attrs: { flat: "" },
-                      on: {
-                        click: function($event) {
-                          _vm.dialog = false
-                        }
-                      }
-                    },
-                    [_vm._v("Save")]
+                    "v-stepper-items",
+                    [
+                      _c(
+                        "v-stepper-content",
+                        { attrs: { step: "1" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mb-5", attrs: { height: "360px" } },
+                            [
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          mask: _vm.cnpj,
+                                          "return-masked-value": "",
+                                          "error-messages": _vm.errors.collect(
+                                            "cnpj"
+                                          ),
+                                          label: "CNPJ",
+                                          "data-vv-name": "cnpj",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.cnpj,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor,
+                                              "cnpj",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.cnpj"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "ie"
+                                          ),
+                                          label: "Inscrição Estadual",
+                                          "data-vv-name": "ie",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.ie,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.fornecedor, "ie", $$v)
+                                          },
+                                          expression: "fornecedor.ie"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "nome_fantasia"
+                                          ),
+                                          label: "Nome Fantasia",
+                                          "data-vv-name": "nome_fantasia",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.nome_fantasia,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor,
+                                              "nome_fantasia",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.nome_fantasia"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "razao_social"
+                                          ),
+                                          label: "Razão Social",
+                                          "data-vv-name": "razao_social",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.razao_social,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor,
+                                              "razao_social",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.razao_social"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg12: "" } },
+                                    [
+                                      _c("v-textarea", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          name: "observacao",
+                                          box: "",
+                                          label: "Observacao",
+                                          "error-messages": _vm.errors.collect(
+                                            "observacao"
+                                          ),
+                                          "auto-grow": "",
+                                          "row-height": "12",
+                                          "data-vv-name": "observacao",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.observacao,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor,
+                                              "observacao",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.observacao"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-switch", {
+                                attrs: {
+                                  right: "",
+                                  label: "Fornece Mercadoria"
+                                },
+                                model: {
+                                  value: _vm.fornecedor.forn_mercadoria,
+                                  callback: function($$v) {
+                                    _vm.$set(
+                                      _vm.fornecedor,
+                                      "forn_mercadoria",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "fornecedor.forn_mercadoria"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.validateFornecedor(_vm.fornecedor)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Continue\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-content",
+                        { attrs: { step: "2" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mb-5", attrs: { height: "360px" } },
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md4: "", lg4: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          mask: _vm.mask,
+                                          "error-messages": _vm.errors.collect(
+                                            "cep"
+                                          ),
+                                          label: "CEP",
+                                          "data-vv-name": "cep",
+                                          "return-masked-value": "",
+                                          required: ""
+                                        },
+                                        on: { change: _vm.getEndereco },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.cep,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "cep",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.endereco.cep"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md10: "", lg10: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|max:150",
+                                            expression: "'required|max:150'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          counter: 150,
+                                          "error-messages": _vm.errors.collect(
+                                            "logradouro"
+                                          ),
+                                          label: "Logradouro",
+                                          "data-vv-name": "logradouro",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.endereco.logradouro,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "logradouro",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.endereco.logradouro"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md2: "", lg2: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "numero"
+                                          ),
+                                          label: "N°",
+                                          "data-vv-name": "numero",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.numero,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "numero",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.endereco.numero"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          counter: 150,
+                                          "error-messages": _vm.errors.collect(
+                                            "bairro"
+                                          ),
+                                          label: "Bairro",
+                                          "data-vv-name": "bairro",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.bairro,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "bairro",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.endereco.bairro"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "cidade"
+                                          ),
+                                          label: "Cidade",
+                                          "data-vv-name": "cidade",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.cidade,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "cidade",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.endereco.cidade"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "estado"
+                                          ),
+                                          label: "Estado",
+                                          "data-vv-name": "estado",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.estado,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "estado",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.endereco.estado"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "pais"
+                                          ),
+                                          label: "País",
+                                          "data-vv-name": "pais",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.endereco.pais,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.endereco,
+                                              "pais",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.endereco.pais"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.validateAddress(
+                                    _vm.fornecedor.endereco
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Continue\n                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { flat: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.e1--
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Voltar\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-content",
+                        { attrs: { step: "3" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mb-5", attrs: { height: "360px" } },
+                            [
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg12: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "nome"
+                                          ),
+                                          label: "Nome",
+                                          "data-vv-name": "nome",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.contato.nome,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.contato,
+                                              "nome",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.contato.nome"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md12: "", lg12: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|email",
+                                            expression: "'required|email'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "email"
+                                          ),
+                                          label: "Email",
+                                          "data-vv-name": "email",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.contato.email,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.contato,
+                                              "email",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "fornecedor.contato.email"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "" } },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          mask: _vm.celularMask,
+                                          counter: 150,
+                                          "error-messages": _vm.errors.collect(
+                                            "celular"
+                                          ),
+                                          label: "Celular",
+                                          "return-masked-value": "",
+                                          "data-vv-name": "celular",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.fornecedor.contato.celular,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.contato,
+                                              "celular",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.contato.celular"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          mask: _vm.telefoneMask,
+                                          "return-masked-value": "",
+                                          "error-messages": _vm.errors.collect(
+                                            "telefone"
+                                          ),
+                                          label: "Telefone",
+                                          "data-vv-name": "telefone",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.contato.telefone,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.contato,
+                                              "telefone",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.contato.telefone"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.validateContacts(
+                                    _vm.fornecedor.contato
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Continue\n                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { flat: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.e1--
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Voltar\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-content",
+                        { attrs: { step: "4" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mb-5", attrs: { height: "360px" } },
+                            [
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-select", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          items: _vm.list_bancos,
+                                          "item-value": "id",
+                                          "item-text": "nome",
+                                          "error-messages": _vm.errors.collect(
+                                            "banco_id"
+                                          ),
+                                          label: "Banco",
+                                          "data-vv-name": "banco_id",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.dados_bancarios
+                                              .banco_id,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.dados_bancarios,
+                                              "banco_id",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.dados_bancarios.banco_id"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "agencia"
+                                          ),
+                                          label: "Agência",
+                                          "data-vv-name": "agencia",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.dados_bancarios
+                                              .agencia,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.dados_bancarios,
+                                              "agencia",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.dados_bancarios.agencia"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-layout",
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-select", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          items: _vm.tipos,
+                                          "item-value": "value",
+                                          "error-messages": _vm.errors.collect(
+                                            "tipo"
+                                          ),
+                                          label: "Tipo de Conta",
+                                          "data-vv-name": "tipo",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.dados_bancarios.tipo,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.dados_bancarios,
+                                              "tipo",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.dados_bancarios.tipo"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md6: "", lg6: "" } },
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required",
+                                            expression: "'required'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "conta"
+                                          ),
+                                          label: "CC",
+                                          "data-vv-name": "conta",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.fornecedor.dados_bancarios
+                                              .conta,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.fornecedor.dados_bancarios,
+                                              "conta",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "fornecedor.dados_bancarios.conta"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.validateDadosBancarios(
+                                    _vm.fornecedor.dados_bancarios
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Continue\n                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { flat: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.e1--
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Voltar\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-content",
+                        { attrs: { step: "5" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mb-5", attrs: { height: "360px" } },
+                            [_c("fornecedor-confirm")],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "align-center": "",
+                                "justify-end": "",
+                                row: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: {
+                                    color: "primary",
+                                    outline: "",
+                                    round: ""
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.save_fornecedor(_vm.fornecedor)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Salvar\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { flat: "" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.e1--
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Voltar\n                            "
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
                   )
                 ],
                 1
@@ -53039,7 +55022,55 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("fornecedor-form"), _vm._v(" "), _c("fornecedor-list")],
+    [
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { "hide-overlay": "", persistent: "", width: "300" },
+              model: {
+                value: _vm.deleted,
+                callback: function($$v) {
+                  _vm.deleted = $$v
+                },
+                expression: "deleted"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                { attrs: { color: "primary", dark: "" } },
+                [
+                  _c(
+                    "v-card-text",
+                    [
+                      _vm._v(
+                        "\n            Aguarde por Favor ...\n            "
+                      ),
+                      _c("v-progress-linear", {
+                        staticClass: "mb-0",
+                        attrs: { indeterminate: "", color: "white" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("fornecedor-form"),
+      _vm._v(" "),
+      _c("fornecedor-list")
+    ],
     1
   )
 }
@@ -53074,23 +55105,80 @@ var render = function() {
         _c(
           "v-card-title",
           [
-            _c("v-spacer"),
-            _vm._v(" "),
-            _c("v-text-field", {
-              attrs: {
-                "append-icon": "search",
-                label: "Search",
-                "single-line": "",
-                "hide-details": ""
-              },
-              model: {
-                value: _vm.search,
-                callback: function($$v) {
-                  _vm.search = $$v
-                },
-                expression: "search"
-              }
-            })
+            _c(
+              "v-layout",
+              [
+                _c(
+                  "v-flex",
+                  { attrs: { lg6: "", md6: "", sm12: "", xs12: "" } },
+                  [
+                    _c("v-text-field", {
+                      attrs: {
+                        "append-icon": "search",
+                        label: "Buscar Fornecedor",
+                        "single-line": "",
+                        "hide-details": ""
+                      },
+                      model: {
+                        value: _vm.search,
+                        callback: function($$v) {
+                          _vm.search = $$v
+                        },
+                        expression: "search"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-flex",
+                  { attrs: { lg6: "", md6: "", sm12: "", xs12: "" } },
+                  [
+                    _c(
+                      "v-layout",
+                      {
+                        staticClass: "mb-2",
+                        attrs: { "justify-end": "", row: "" }
+                      },
+                      [
+                        _c(
+                          "span",
+                          { staticClass: "group pa-2" },
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: {
+                                  fab: "",
+                                  dark: "",
+                                  title: "selecione um item para deletar",
+                                  color: "danger"
+                                },
+                                nativeOn: {
+                                  click: function($event) {
+                                    return _vm.acaoComSelecionados()
+                                  }
+                                }
+                              },
+                              [
+                                _c("v-icon", { attrs: { dark: "" } }, [
+                                  _vm._v("delete")
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
           ],
           1
         ),
@@ -53353,6 +55441,411 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-btn",
+        {
+          attrs: {
+            fab: "",
+            bottom: "",
+            right: "",
+            color: "pink",
+            dark: "",
+            fixed: ""
+          },
+          on: { click: _vm.open_form_mercadoria }
+        },
+        [_c("v-icon", [_vm._v("add")])],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            value: _vm.openFormMercadoria,
+            width: "900px",
+            persistent: "",
+            "no-click-animation": ""
+          },
+          on: {
+            "update:value": function($event) {
+              _vm.openFormMercadoria = $event
+            }
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c(
+                "v-toolbar",
+                { attrs: { color: "primary", dark: "" } },
+                [
+                  _c("v-card-title", [
+                    _vm._v(
+                      "\n                    Cadastrar Mercadoria\n                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "" },
+                      on: { click: _vm.open_form_mercadoria }
+                    },
+                    [_c("v-icon", [_vm._v("close")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-container",
+                [
+                  _c(
+                    "v-layout",
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", md12: "", lg12: "" } },
+                        [
+                          _c("v-text-field", {
+                            directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required",
+                                expression: "'required'"
+                              }
+                            ],
+                            attrs: {
+                              "error-messages": _vm.errors.collect("nome"),
+                              label: "Nome",
+                              "data-vv-name": "nome",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.mercadoria.nome,
+                              callback: function($$v) {
+                                _vm.$set(_vm.mercadoria, "nome", $$v)
+                              },
+                              expression: "mercadoria.nome"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [_c("mercadoria-form"), _vm._v(" "), _c("mercadoria-list")],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card-title",
+        [
+          _c(
+            "v-layout",
+            [
+              _c(
+                "v-flex",
+                { attrs: { lg6: "", md6: "", sm12: "", xs12: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "append-icon": "search",
+                      label: "Buscar Mercadoria",
+                      "single-line": "",
+                      "hide-details": ""
+                    },
+                    model: {
+                      value: _vm.search,
+                      callback: function($$v) {
+                        _vm.search = $$v
+                      },
+                      expression: "search"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { lg6: "", md6: "", sm12: "", xs12: "" } },
+                [
+                  _c(
+                    "v-layout",
+                    {
+                      staticClass: "mb-2",
+                      attrs: { "justify-end": "", row: "" }
+                    },
+                    [
+                      _c(
+                        "span",
+                        { staticClass: "group pa-2" },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                fab: "",
+                                dark: "",
+                                title: "selecione um item para deletar",
+                                color: "danger"
+                              }
+                            },
+                            [
+                              _c("v-icon", { attrs: { dark: "" } }, [
+                                _vm._v("delete")
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-data-table",
+        {
+          attrs: {
+            headers: _vm.headers,
+            items: _vm.list_mercadorias,
+            search: _vm.search,
+            loading: true,
+            "item-key": "id",
+            "select-all": ""
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "items",
+              fn: function(props) {
+                return [
+                  _c(
+                    "td",
+                    [
+                      _c("v-checkbox", {
+                        attrs: { primary: "", "hide-details": "" },
+                        model: {
+                          value: props.selected,
+                          callback: function($$v) {
+                            _vm.$set(props, "selected", $$v)
+                          },
+                          expression: "props.selected"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.nome))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.fornecedor.nome_fantasia))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.ncm.cod))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.categoria.nome))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.grupo.nome))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.sub_grupo.nome))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm3: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", icon: "", color: "grey" } },
+                            [
+                              _c(
+                                "v-icon",
+                                { on: { click: function($event) {} } },
+                                [
+                                  _vm._v(
+                                    "\n                        info\n                    "
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              }
+            }
+          ]),
+          model: {
+            value: _vm.selected,
+            callback: function($$v) {
+              _vm.selected = $$v
+            },
+            expression: "selected"
+          }
+        },
+        [
+          _c("v-progress-linear", {
+            attrs: { color: "blue", indeterminate: "" },
+            scopedSlots: _vm._u([
+              {
+                key: "progress",
+                fn: function() {
+                  return undefined
+                },
+                proxy: true
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _vm._v(" "),
+          _c("v-alert", {
+            attrs: { value: true, color: "error", icon: "warning" },
+            scopedSlots: _vm._u([
+              {
+                key: "no-results",
+                fn: function() {
+                  return [
+                    _vm._v(
+                      '\n        Your search for "' +
+                        _vm._s(_vm.search) +
+                        '" found no results.\n    '
+                    )
+                  ]
+                },
+                proxy: true
+              }
+            ])
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/main/content-tabs.vue?vue&type=template&id=1ab4ce2d&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/main/content-tabs.vue?vue&type=template&id=1ab4ce2d& ***!
@@ -53410,6 +55903,7 @@ var render = function() {
                 staticStyle: { "margin-right": "5px" },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     return _vm.DISABLE_TAB(i.action)
                   }
                 }
@@ -53476,11 +55970,7 @@ var render = function() {
               _c(
                 "v-card",
                 { attrs: { flat: "" } },
-                [
-                  _c("v-card-text", [
-                    _vm._v("\n                    duplicate\n                ")
-                  ])
-                ],
+                [_c("v-card-text", [_c("mercadoria-index")], 1)],
                 1
               )
             ],
@@ -94049,7 +96539,9 @@ Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_1___default.a, {
     // #E53935
     secondary: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_6___default.a.red.lighten4,
     // #FFCDD2
-    accent: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_6___default.a.indigo.base // #3F51B5
+    accent: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_6___default.a.indigo.base,
+    // #3F51B5
+    danger: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_6___default.a.red.base // #3F51B5
 
   }
 });
@@ -94387,23 +96879,40 @@ function () {
   var _ref4 = _asyncToGenerator(
   /*#__PURE__*/
   _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref3, fornecedor) {
-    var commit, fornecedorRequest, saved;
+    var commit, dispatch, fornecedorRequest, saved;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            commit = _ref3.commit;
+            commit = _ref3.commit, dispatch = _ref3.dispatch;
             fornecedorRequest = JSON.parse(JSON.stringify(fornecedor));
-            _context2.next = 4;
+            saved = 0;
+
+            if (!(fornecedor.id == 0)) {
+              _context2.next = 9;
+              break;
+            }
+
+            _context2.next = 6;
+            return axios.post("/fornecedores", fornecedorRequest);
+
+          case 6:
+            saved = _context2.sent;
+            _context2.next = 12;
+            break;
+
+          case 9:
+            _context2.next = 11;
             return axios.put("/fornecedores/".concat(fornecedorRequest), fornecedorRequest);
 
-          case 4:
+          case 11:
             saved = _context2.sent;
 
+          case 12:
             if (saved.status === 200) {
               swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
+                title: "Operação realizada com sucesso",
+                text: "O fornecedor foi editado com sucesso!!!",
                 icon: "success",
                 buttons: true
               }).then(function (willDelete) {
@@ -94411,9 +96920,21 @@ function () {
                   commit('CLOSE_VIEW_FORNECEDOR');
                 }
               });
+            } else if (saved.status === 201) {
+              swal({
+                title: "Operação realizada com sucesso",
+                text: "O fornecedor foi salvo com sucesso!!!",
+                icon: "success",
+                buttons: true
+              }).then(function (willDelete) {
+                if (willDelete) {
+                  dispatch('setList');
+                  commit('CLOSE_FORM_FORNECEDOR');
+                }
+              });
             }
 
-          case 6:
+          case 13:
           case "end":
             return _context2.stop();
         }
@@ -94426,16 +96947,84 @@ function () {
   };
 }();
 
-var viewFornecedor = function viewFornecedor(_ref5, obj) {
+var close_form = function close_form(_ref5) {
   var commit = _ref5.commit;
+  commit('CLOSE_FORM_FORNECEDOR');
+};
+
+var delete_fornecedor =
+/*#__PURE__*/
+function () {
+  var _ref7 = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(_ref6, array) {
+    var commit, dispatch, i, fornecedorRequest, saved;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            commit = _ref6.commit, dispatch = _ref6.dispatch;
+            commit('DELETED');
+            _context3.t0 = _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.keys(array);
+
+          case 3:
+            if ((_context3.t1 = _context3.t0()).done) {
+              _context3.next = 11;
+              break;
+            }
+
+            i = _context3.t1.value;
+            fornecedorRequest = JSON.parse(JSON.stringify(array[i].id));
+            _context3.next = 8;
+            return axios.delete("/fornecedores/".concat(fornecedorRequest), fornecedorRequest);
+
+          case 8:
+            saved = _context3.sent;
+            _context3.next = 3;
+            break;
+
+          case 11:
+            dispatch('setList');
+            commit('DELETED');
+
+          case 13:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function delete_fornecedor(_x4, _x5) {
+    return _ref7.apply(this, arguments);
+  };
+}();
+
+var viewFornecedor = function viewFornecedor(_ref8, obj) {
+  var commit = _ref8.commit;
   var fornecedor = obj;
   commit('VIEW_FORNECEDOR', {
     fornecedor: fornecedor
   });
 };
 
-var set_fornecedor = function set_fornecedor(_ref6, fornecedor) {
-  var commit = _ref6.commit;
+var add_fornecedor = function add_fornecedor(_ref9, fornecedor) {
+  var commit = _ref9.commit;
+  console.log(fornecedor);
+  commit('ADD_FORNECEDOR', {
+    fornecedor: fornecedor
+  });
+};
+
+var set_endereco = function set_endereco(_ref10, endereco) {
+  var commit = _ref10.commit;
+  commit('SET_ENDERECO', {
+    endereco: endereco
+  });
+};
+
+var set_fornecedor = function set_fornecedor(_ref11, fornecedor) {
+  var commit = _ref11.commit;
   commit('SET_FORNECEDOR', {
     fornecedor: fornecedor
   });
@@ -94445,7 +97034,11 @@ var set_fornecedor = function set_fornecedor(_ref6, fornecedor) {
   setList: setList,
   set_fornecedor: set_fornecedor,
   viewFornecedor: viewFornecedor,
-  save_fornecedor: save_fornecedor
+  save_fornecedor: save_fornecedor,
+  delete_fornecedor: delete_fornecedor,
+  set_endereco: set_endereco,
+  add_fornecedor: add_fornecedor,
+  close_form: close_form
 });
 
 /***/ }),
@@ -94459,7 +97052,13 @@ var set_fornecedor = function set_fornecedor(_ref6, fornecedor) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+var get_fornecedor_default = function get_fornecedor_default(state) {
+  return state.fornecedor_default;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  get_fornecedor_default: get_fornecedor_default
+});
 
 /***/ }),
 
@@ -94508,18 +97107,38 @@ var VIEW_FORNECEDOR = function VIEW_FORNECEDOR(state, obj) {
   state.fornecedor = obj.fornecedor;
 };
 
+var DELETED = function DELETED(state) {
+  state.deleted = !state.deleted;
+};
+
+var CLOSE_FORM_FORNECEDOR = function CLOSE_FORM_FORNECEDOR(state) {
+  state.closeForm = !state.closeForm;
+};
+
 var CLOSE_VIEW_FORNECEDOR = function CLOSE_VIEW_FORNECEDOR(state) {
   state.view_fornecedor = !state.view_fornecedor;
+};
+
+var SET_ENDERECO = function SET_ENDERECO(state, endereco) {
+  state.fornecedor.endereco = endereco;
 };
 
 var SET_FORNECEDOR = function SET_FORNECEDOR(state, obj) {
   state.fornecedor_edit.cnpj = obj.fornecedor.cnpj, state.fornecedor_edit.contato_id = obj.fornecedor.contato_id, state.fornecedor_edit.dados_bancarios_id = obj.fornecedor.dados_bancarios_id, state.fornecedor_edit.endereco_id = obj.fornecedor.endereco_id, state.fornecedor_edit.forn_mercadoria = obj.fornecedor.forn_mercadoria, state.fornecedor_edit.id = obj.fornecedor.id, state.fornecedor_edit.ie = obj.fornecedor.ie, state.fornecedor_edit.nome_fantasia = obj.fornecedor.nome_fantasia, state.fornecedor_edit.observacao = obj.fornecedor.observacao, state.fornecedor_edit.razao_social = obj.fornecedor.razao_social, state.fornecedor_edit.endereco = obj.fornecedor.endereco, state.fornecedor_edit.contato = obj.fornecedor.contato, state.fornecedor_edit.dados_bancarios = obj.fornecedor.dados_bancarios;
 };
 
+var ADD_FORNECEDOR = function ADD_FORNECEDOR(state, obj) {
+  state.fornecedor = obj.fornecedor;
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   SET_LIST_FORNECEDORES: SET_LIST_FORNECEDORES,
   VIEW_FORNECEDOR: VIEW_FORNECEDOR,
-  SET_FORNECEDOR: SET_FORNECEDOR
+  SET_FORNECEDOR: SET_FORNECEDOR,
+  DELETED: DELETED,
+  SET_ENDERECO: SET_ENDERECO,
+  ADD_FORNECEDOR: ADD_FORNECEDOR,
+  CLOSE_FORM_FORNECEDOR: CLOSE_FORM_FORNECEDOR
 });
 
 /***/ }),
@@ -94537,7 +97156,9 @@ __webpack_require__.r(__webpack_exports__);
   list_fornecedores: [],
   view_fornecedor: false,
   fornecedor: {},
-  fornecedor_edit: {}
+  fornecedor_edit: {},
+  deleted: false,
+  closeForm: false
 });
 
 /***/ }),
@@ -95365,6 +97986,7 @@ __webpack_require__.r(__webpack_exports__);
    * @constructor
    */
   'SELECT_TAB': function SELECT_TAB(state, payload) {
+    console.log(payload);
     var index = state.navList.findIndex(function (_navList) {
       if (payload === _navList.action) {
         state.currentItem = payload;
@@ -95394,6 +98016,15 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     });
+
+    for (var i in state.navList) {
+      if (state.navList[i].showNav) {
+        state.currentItem = state.navList[i].action;
+        state.navList[i].showPage = true;
+        state.navList[i].showNav = true;
+        state.navList[i].active = true;
+      }
+    }
   }
 });
 
@@ -95421,14 +98052,364 @@ __webpack_require__.r(__webpack_exports__);
     showPage: true
   }, {
     position: 2,
-    text: "Duplicates",
-    link: "#duplicates",
-    action: "duplicates",
-    icon: "star",
+    text: "Mercadoria",
+    link: "#mercadoria",
+    action: "mercadoria",
+    icon: "featured_play_list",
     showNav: false,
     showPage: false
   }]
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/Mercadoria/actions.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/Mercadoria/actions.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var set_list_mercadorias =
+/*#__PURE__*/
+function () {
+  var _ref2 = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+    var commit, list;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            commit = _ref.commit;
+            _context.next = 3;
+            return axios.get('/mercadorias');
+
+          case 3:
+            list = _context.sent.data;
+            commit('SET_LIST_MERCADORIA', {
+              list: list
+            });
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function set_list_mercadorias(_x) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+var open_form_mercadoria = function open_form_mercadoria(_ref3) {
+  var commit = _ref3.commit;
+  commit('OPEN_FORM_MERCADORIA');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  set_list_mercadorias: set_list_mercadorias,
+  open_form_mercadoria: open_form_mercadoria
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/Mercadoria/getters.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/Mercadoria/getters.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/Mercadoria/index.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/Mercadoria/index.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/components/Mercadoria/Mercadoria/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/components/Mercadoria/Mercadoria/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/components/Mercadoria/Mercadoria/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/components/Mercadoria/Mercadoria/getters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/Mercadoria/mutations.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/Mercadoria/mutations.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var SET_LIST_MERCADORIA = function SET_LIST_MERCADORIA(state, list) {
+  state.list_mercadorias = list.list;
+};
+
+var OPEN_FORM_MERCADORIA = function OPEN_FORM_MERCADORIA(state) {
+  state.openFormMercadoria = !state.openFormMercadoria;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  SET_LIST_MERCADORIA: SET_LIST_MERCADORIA,
+  OPEN_FORM_MERCADORIA: OPEN_FORM_MERCADORIA
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/Mercadoria/state.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/Mercadoria/state.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  list_mercadorias: [],
+  openFormMercadoria: false
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-form.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-form.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true& */ "./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true&");
+/* harmony import */ var _mercadoria_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mercadoria-form.vue?vue&type=script&lang=js& */ "./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _mercadoria_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "15be8a6d",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Mercadoria/mercadoria-form.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true& ***!
+  \***********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-form.vue?vue&type=template&id=15be8a6d&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_form_vue_vue_type_template_id_15be8a6d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-index.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-index.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true& */ "./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true&");
+/* harmony import */ var _mercadoria_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mercadoria-index.vue?vue&type=script&lang=js& */ "./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _mercadoria_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "08b2f779",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Mercadoria/mercadoria-index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-index.vue?vue&type=template&id=08b2f779&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_index_vue_vue_type_template_id_08b2f779_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-list.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-list.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true& */ "./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true&");
+/* harmony import */ var _mercadoria_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mercadoria-list.vue?vue&type=script&lang=js& */ "./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _mercadoria_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "49b7b147",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Mercadoria/mercadoria-list.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-list.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true& ***!
+  \***********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Mercadoria/mercadoria-list.vue?vue&type=template&id=49b7b147&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_mercadoria_list_vue_vue_type_template_id_49b7b147_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -96220,9 +99201,12 @@ var set_endereco = function set_endereco(_ref3, endereco) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({// get_endereco: state => {
-  //     return `${state.endereco}`
-  // }
+var get_endereco = function get_endereco(state) {
+  return state.endereco;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  get_endereco: get_endereco
 });
 
 /***/ }),
@@ -96397,8 +99381,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Fornecedor/Fornecedor */ "./resources/js/components/Fornecedor/Fornecedor/index.js");
 /* harmony import */ var _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/EnderecoForm/Endereco */ "./resources/js/components/shared/EnderecoForm/Endereco/index.js");
 /* harmony import */ var _shared_ContatoForm_Contato__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/ContatoForm/Contato */ "./resources/js/components/shared/ContatoForm/Contato/index.js");
-/* harmony import */ var _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/DadosBancariosForm/DadosBancarios */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/index.js");
-/* harmony import */ var _Main_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Main/store */ "./resources/js/components/Main/store/index.js");
+/* harmony import */ var _Mercadoria_Mercadoria__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Mercadoria/Mercadoria */ "./resources/js/components/Mercadoria/Mercadoria/index.js");
+/* harmony import */ var _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/DadosBancariosForm/DadosBancarios */ "./resources/js/components/shared/DadosBancariosForm/DadosBancarios/index.js");
+/* harmony import */ var _Main_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Main/store */ "./resources/js/components/Main/store/index.js");
 
 
 /**
@@ -96411,14 +99396,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var modules = {
   Banco: _Banco_Banco__WEBPACK_IMPORTED_MODULE_2__["default"],
   Fornecedor: _Fornecedor_Fornecedor__WEBPACK_IMPORTED_MODULE_3__["default"],
-  Main: _Main_store__WEBPACK_IMPORTED_MODULE_7__["default"],
+  Main: _Main_store__WEBPACK_IMPORTED_MODULE_8__["default"],
   Endereco: _shared_EnderecoForm_Endereco__WEBPACK_IMPORTED_MODULE_4__["default"],
   Contato: _shared_ContatoForm_Contato__WEBPACK_IMPORTED_MODULE_5__["default"],
-  DadosBancarios: _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_6__["default"]
+  DadosBancarios: _shared_DadosBancariosForm_DadosBancarios__WEBPACK_IMPORTED_MODULE_7__["default"],
+  Mercadoria: _Mercadoria_Mercadoria__WEBPACK_IMPORTED_MODULE_6__["default"]
 };
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: modules

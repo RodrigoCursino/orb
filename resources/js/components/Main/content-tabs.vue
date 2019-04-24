@@ -13,7 +13,7 @@
                 :href="i.link"
         >
             <a class="btn-close"
-               @click="DISABLE_TAB(i.action)"
+               @click.prevent="DISABLE_TAB(i.action)"
                style="margin-right: 5px"
             >
                 <i class="icon-times">&times</i>
@@ -40,7 +40,7 @@
             >
                 <v-card flat>
                     <v-card-text>
-                        duplicate
+                        <mercadoria-index></mercadoria-index>
                     </v-card-text>
                 </v-card>
             </v-tab-item>
@@ -52,8 +52,9 @@
     import {mapState, mapMutations} from "vuex"
     import FornecedorIndex from "../Fornecedor/fornecedor-index.vue";
     import Pages from "./pages";
+    import MercadoriaIndex from "../Mercadoria/mercadoria-index";
     export default {
-        components: {Pages, FornecedorIndex},
+        components: {MercadoriaIndex, Pages, FornecedorIndex},
         data () {
             return {
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -67,7 +68,8 @@
         },
         methods: {
             ...mapMutations('Main',[
-                'DISABLE_TAB'
+                'DISABLE_TAB',
+                'SELECT_TAB'
             ])
         }
     }

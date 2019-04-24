@@ -12,6 +12,7 @@ use App\Models\DadosBancarios;
 use App\Models\Endereco;
 use App\Models\Fornecedor;
 use App\Traits\DadosComunsCadastro;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
@@ -78,7 +79,7 @@ class FornecedorService
 
     public function destroy($id)
     {
-
+      
       return DB::transaction(function () use ($id) {
        $fornecedor = Fornecedor::findOrFail($id);
 

@@ -94,7 +94,7 @@
                             auto-grow
                             row-height="12"
                             v-model="model.observacao"
-                            data-vv-name="razao_social"
+                            data-vv-name="observacao"
                             required
                     ></v-textarea>
                 </v-flex>
