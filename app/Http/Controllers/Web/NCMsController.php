@@ -19,10 +19,8 @@ class NCMsController extends Controller
 
     public function index()
     {
-        $ncms =  NCM::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('ncm.index',compact('ncms'));
+        $ncms =  NCM::list();
+        return $ncms;
     }
 
 

@@ -2,7 +2,7 @@ export default {
 
     sideBarControl: false,
 
-    currentItem: 'fornecedores',
+    currentItem: 'mercadorias',
 
     navList: [
         {
@@ -11,17 +11,17 @@ export default {
             link     : "#fornecedores",
             action   : "fornecedores",
             icon     : "contacts",
-            showNav  : true,
-            showPage : true
+            showNav  : false,
+            showPage : false
         },
         {
             position : 2,
             text     : "Mercadoria",
-            link     : "#mercadoria",
-            action   : "mercadoria",
+            link     : "#mercadorias",
+            action   : "mercadorias",
             icon     : "featured_play_list",
-            showNav  : false,
-            showPage : false
+            showNav  : true,
+            showPage : true
         },
     ]
 

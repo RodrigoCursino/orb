@@ -1,7 +1,7 @@
 <template>
     <v-toolbar
             :clipped-left="$vuetify.breakpoint.lgAndUp"
-            color="#892f16"
+            color="primary"
             dark
             app
             fixed

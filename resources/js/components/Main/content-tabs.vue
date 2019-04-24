@@ -1,7 +1,7 @@
 <template>
     <v-tabs
             dark
-            color="#892f16"
+            color="primary"
             show-arrows
             :value.sync="currentItem"
     >

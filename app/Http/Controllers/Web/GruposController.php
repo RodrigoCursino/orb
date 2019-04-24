@@ -21,10 +21,7 @@ class GruposController extends Controller
 
     public function index()
     {
-        $grupos = Grupo::with('ncm')
-                         ->where('ativo','=',1)
-                         ->paginate(15);
-        return view('grupo.index',compact('grupos'));
+        return Grupo::list();
     }
 
     public function create()

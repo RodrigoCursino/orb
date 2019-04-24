@@ -19,9 +19,4 @@ class NCM extends Model
         'nome',
         'descricao'
     ];
-
-    public static function list($columns = ['*'])
-    {
-        return parent::all($columns)->where('ativo','=',1);
-    }
 }

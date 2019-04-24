@@ -21,10 +21,7 @@ class ColecoesController extends Controller
 
     public function index()
     {
-        $colecoes =  Colecao::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('colecao.index',compact('colecoes'));
+        return Colecao::list();
     }
 
 

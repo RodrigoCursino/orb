@@ -21,10 +21,8 @@ class CategoriasController extends Controller
 
     public function index()
     {
-        $categorias =  Categoria::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('categoria.index',compact('categorias'));
+        $categorias =  Categoria::list();
+        return $categorias;
     }
 
 
