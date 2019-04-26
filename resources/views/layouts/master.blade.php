@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
+    <!-- helper -->
+    <script src="{{route('slc.js')}}" type="text/javascript"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 

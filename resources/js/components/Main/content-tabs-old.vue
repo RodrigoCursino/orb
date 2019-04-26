@@ -6,34 +6,51 @@
             :value.sync="currentItem"
     >
         <v-tabs-slider color="yellow"></v-tabs-slider>
-        <v-tab  v-for="i in menuTabs"
+
+        <v-tab  v-for="i in menu"
+                v-show.prevent="i.showNav"
                 :key="i.position"
-                :to="{path: i.action}"
+                :href="i.link"
         >
-            <button class="btn-close"
-               @click.prevent="DISABLE_TAB(i)"
+            <a class="btn-close"
+               @click.prevent="DISABLE_TAB(i.action)"
                style="margin-right: 5px"
             >
                 <i class="icon-times">&times</i>
-            </button>
+            </a>
             <div>
-               {{ i.text }}
+                {{ i.text }}
             </div>
 
         </v-tab>
         <v-tabs-items :value.sync="currentItem">
-            <v-card flat transition="slide-y-transition">
-                <v-card-text>
-                    <router-view></router-view>
-                </v-card-text>
-            </v-card>
+            <v-tab-item
+                    v-show="menu[0].showPage"
+                    :value="menu[0].action"
+            >
+                <v-card flat>
+                    <v-card-text>
+                        <fornecedor-index></fornecedor-index>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+            <v-tab-item
+                    v-show="menu[1].showPage"
+                    :value="menu[1].action"
+            >
+                <v-card flat>
+                    <v-card-text>
+                        <mercadoria-index></mercadoria-index>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
         </v-tabs-items>
     </v-tabs>
 </template>
 
 <script>
     import {mapState, mapMutations} from "vuex"
-    import FornecedorIndex from "../Fornecedor/fornecedor-index";
+    import FornecedorIndex from "../Fornecedor/fornecedor-index.vue";
     import Pages from "./pages";
     import MercadoriaIndex from "../Mercadoria/mercadoria-index";
     export default {
@@ -45,7 +62,7 @@
         },
         computed: {
             ...mapState('Main',{
-                menuTabs:    state => state.menuTabs,
+                menu:        state => state.navList,
                 currentItem: state => state.currentItem
             })
         },

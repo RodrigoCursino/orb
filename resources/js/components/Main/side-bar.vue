@@ -39,7 +39,7 @@
                             </v-list-tile-content>
                         </v-list-tile>
                     </template>
-                    <v-list-tile
+                    <v-list-title
                             v-for="(child, i) in item.children"
                             :key="i"
                             @click=""
@@ -53,9 +53,9 @@
                                 {{ child.text }}
                             </v-list-tile-title>
                         </v-list-tile-content>
-                    </v-list-tile>
+                    </v-list-title>
                 </v-list-group>
-                <v-list-tile v-else :key="item.text" @click="SELECT_TAB(item.action)">
+                <v-list-title v-else :key="item.text" @click="SELECT_TAB(item.action)">
                     <v-list-tile-action>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-tile-action>
@@ -64,7 +64,7 @@
                             {{ item.text }}
                         </v-list-tile-title>
                     </v-list-tile-content>
-                </v-list-tile>
+                </v-list-title>
             </template>
         </v-list>
     </v-navigation-drawer>

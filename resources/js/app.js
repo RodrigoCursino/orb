@@ -4,8 +4,9 @@ import swal from 'sweetalert';
 import money from 'v-money';
 import Vuetify from 'vuetify';
 import VeeValidate from 'vee-validate'
-import 'vuetify/dist/vuetify.min.css'
-import store from "./components/store/store";
+require('vuetify/dist/vuetify.min.css');
+import store  from "./components/store/store";
+import router from "./router";
 
 window.Vue  = require('vue');
 Vue.use(money, {precision: 2})
@@ -43,13 +44,9 @@ Vue.use(Vuetify, {
 
 Vue.use(VeeValidate);
 
-
-const app = new Vue({
+console.log(router);
+window.App = new Vue({
     store,
     el: '#app',
-    data () {
-        return {
-           hello: 'Hello World'
-        }
-    },
+    router,
 });

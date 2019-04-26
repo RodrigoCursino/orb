@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import SideBar    from "./side-bar.vue";
+    import SideBar    from "./side-bar2.vue";
     import NavMain    from "./nav-main.vue";
 
     export default {
