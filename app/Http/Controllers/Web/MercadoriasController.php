@@ -35,9 +35,13 @@ class MercadoriasController extends Controller
         $mercadorias = Mercadoria::with('precoVenda')
                                   ->with('PrecoCusto')
                                   ->with('subGrupo')
+                                  ->with('unidadeMedida')
+                                  ->with('unidadeCaixa')
                                   ->with('grupo')
                                   ->with('ncm')
                                   ->with('fornecedor')
+                                  ->with('precoVenda')
+                                  ->with('precoCusto')
                                   ->with('marca')
                                   ->with('linha')
                                   ->with('colecao')
@@ -75,10 +79,10 @@ class MercadoriasController extends Controller
             ));
     }
 
-    public function store(MercadoriaCreateRequest $request)
+    public function store(Request $request)
     {
         $mercadoria = $this->service->create($request);
-        return redirect(route('mercadorias.index'));
+        return $mercadoria;
     }
 
     public function show($id)

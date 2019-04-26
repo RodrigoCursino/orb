@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect("/home");
-});
-
-Auth::routes();
+//Route::get('/', function () {
+//    return redirect("/home");
+//});
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -24,3 +22,5 @@ Route::group(['middleware' => ['auth']], function () {
         require $file;
     }
 });
+
+Auth::routes();

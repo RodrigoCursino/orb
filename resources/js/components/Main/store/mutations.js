@@ -56,5 +56,13 @@ export default {
                 state.navList[i].active     = true;
             }
         }
+     },
+
+     'LOGOUT' () {
+       axios.post('/logout',);
+       setTimeout(function () {
+        console.log('deslogou')
+        window.location.reload();
+       },1000);
      }
 }

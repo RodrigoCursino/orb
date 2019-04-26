@@ -6,6 +6,10 @@ import Vuex               from 'vuex'
 **/
 
 import Banco              from '../Banco/Banco'
+import Linha              from '../Linha/Linha'
+import Marca              from '../Marca/Marca'
+import UnidadeCaixa       from '../UnidadeCaixa/UnidadeCaixa'
+import UnidadeMedida       from '../UnidadeMedida/UnidadeMedida'
 import Grupo              from '../Grupo/Grupo'
 import SubGrupo           from '../SubGrupo/SubGrupo'
 import NCM                from '../NCM/NCM'
@@ -29,10 +33,14 @@ const modules = {
     DadosBancarios,
     Endereco,
     Contato,
+    Linha,
     Main,
+    Marca,
     Mercadoria,
     NCM,
-    SubGrupo
+    SubGrupo,
+    UnidadeCaixa,
+    UnidadeMedida
 };
 
 const store = new Vuex.Store({

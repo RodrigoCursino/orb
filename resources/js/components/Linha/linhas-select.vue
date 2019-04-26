@@ -2,12 +2,12 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listNmcs"
+            :items="listLinhas"
             item-value="id"
-            item-text="cod"
-            :error-messages="errors.collect('ncm_id')"
-            label="Ncm"
-            data-vv-name="ncm_id"
+            item-text="nome"
+            :error-messages="errors.collect('linha_id')"
+            label="Linha"
+            data-vv-name="linha_id"
             required
     >
     </v-select>
@@ -16,23 +16,20 @@
 <script>
     import {mapState, mapActions} from 'vuex';
     export default {
-        name: "ncms-select",
-        $_veeValidate: {
-            validator: 'new'
-        },
+        name: "linhas-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_ncms();
+            this.set_list_linhas();
         },
         computed: {
-            ...mapState('NCM', {
-                listNmcs: state => {
-                    return state.listNmcs;
+            ...mapState('Linha', {
+                listLinhas: state => {
+                    return state.listLinhas;
                 }
             })
         },
         methods: {
-            ...mapActions('NCM',['set_list_ncms'])
+            ...mapActions('Linha',['set_list_linhas'])
         }
     }
 </script>

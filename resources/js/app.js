@@ -1,14 +1,17 @@
 require('./bootstrap');
 
 import swal from 'sweetalert';
+import money from 'v-money';
 import Vuetify from 'vuetify';
 import VeeValidate from 'vee-validate'
 import 'vuetify/dist/vuetify.min.css'
 import store from "./components/store/store";
 
 window.Vue  = require('vue');
+Vue.use(money, {precision: 2})
 window.swal = swal;
 
+window.EventBus = window.Bus = new Vue();
 
 Vue.component('main-component', require('./components/main/main-componet.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);

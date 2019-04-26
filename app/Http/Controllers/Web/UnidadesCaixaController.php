@@ -19,10 +19,7 @@ class UnidadesCaixaController extends Controller
 
     public function index()
     {
-        $unidadesCaixa =  UnidadeCaixa::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('unidade-caixa.index',compact('unidadesCaixa'));
+        return UnidadeCaixa::list();
     }
 
 

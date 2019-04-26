@@ -76,9 +76,9 @@
 </script>
 <style lang="scss">
     .btn-close {
-        height: 15px;
-        width: 15px;
-        background-color: #59000e;
+        height: 18px;
+        width: 18px;
+        background-color: rgba(0, 0, 0, 0.28);
         border-radius: 50%;
         margin: 1.5%;
         font-style: normal;
@@ -87,5 +87,7 @@
 
     .icon-times {
         font-style: normal;
+        align-content: center;
+        color: white;
     }
 </style>

@@ -21,11 +21,10 @@
                 class="hidden-sm-and-down"
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn icon>
-            <v-icon>apps</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>notifications</v-icon>
+        <v-btn icon
+            @click="LOGOUT"
+        >
+            <v-icon>exit_to_app</v-icon>
         </v-btn>
         <v-btn icon large>
             <v-avatar size="32px" tile>
@@ -92,7 +91,8 @@
         ,
         methods: {
             ...mapMutations('Main',[
-                'SHOW_SIDEBAR'
+                'SHOW_SIDEBAR',
+                'LOGOUT'
             ])
         }
     }

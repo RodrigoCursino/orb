@@ -25,24 +25,24 @@ use App\Models\TabelaPreco;
 use App\Models\UnidadeCaixa;
 use App\Models\UnidadeMedida;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class MercadoriaService
 {
-    public function create(MercadoriaCreateRequest $request)
+    public function create(Request $request)
     {
         return DB::transaction(function () use ($request) {
 
                 // mercadoria
                 $mercadoria = new Mercadoria();
-                $idSubGrupo = str_replace("'","",$request->input("sub_grupo_id"));
 
                 $mercadoria->nome              = $request->input("nome");
                 $mercadoria->observacao        = $request->input("observacao");
                 // foreignKeys
                 $grupo                         = Grupo::findOrFail($request->input("grupo_id"));
                 $mercadoria->grupo_id          = $grupo->id;
-                $subGrupo                      = SubGrupo::findOrFail($idSubGrupo);
+                $subGrupo                      = SubGrupo::findOrFail($request->input("sub_grupo_id"));
                 $mercadoria->sub_grupo_id      = $subGrupo->id;
                 $ncm                           = NCM::findOrFail($request->input("ncm_id"));
                 $mercadoria->ncm_id            = $ncm->id;
@@ -63,11 +63,11 @@ class MercadoriaService
 
                 $mercadoria->save();
 
-                $mercadoria->save();
 
                 // preco_custo
                 $precoCusto = new PrecoCusto();
-                $precoCusto->valor          = $request->input("valor_custo");
+
+                $precoCusto->valor          = $request->input('preco_custo')['valor'];
                 $precoCusto->data           = Carbon::now()->format('Ymd');
                 $precoCusto->mercadoria_id  = $mercadoria->id;
                 $precoCusto->fornecedor_id  = $mercadoria->fornecedor_id;
@@ -75,15 +75,15 @@ class MercadoriaService
 
                 // tabela_preco
                 $tabelaPreco = new TabelaPreco();
-                $tabelaPreco->descricao       = $request->input("descricao_preco_venda");
-                $tabelaPreco->observacao      = $request->input("observacao_preco_venda");
-                $tabelaPreco->desconto_maximo = $request->input("desconto_venda");
-                $tabelaPreco->validade        = $request->input("validade_venda");
+                $tabelaPreco->descricao       = $request->input('preco_venda')['observacoes']['descricao'];
+                $tabelaPreco->observacao      = $request->input('preco_venda')['observacoes']['observacao'];
+                $tabelaPreco->desconto_maximo = $request->input('preco_venda')['observacoes']['desconto_maximo'];
+                $tabelaPreco->validade        = $request->input('preco_venda')['observacoes']['validade'];
                 $tabelaPreco->save();
 
                 // preco_venda
                 $precoVenda = new PrecoVenda();
-                $precoVenda->valor            = $request->input("valor_venda");
+                $precoVenda->valor            = $request->input('preco_venda')['valor'];
                 $precoVenda->data             = Carbon::now()->format('Ymd');
                 $precoVenda->mercadoria_id    = $mercadoria->id;
                 $precoVenda->tabela_preco_id  = $tabelaPreco->id;

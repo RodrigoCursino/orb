@@ -19,11 +19,7 @@ class MarcasController extends Controller
 
     public function index()
     {
-        $marcas =  Marca::with('fabricante')
-            ->where('ativo','=',1)
-            ->paginate(15);
-
-        return view('marca.index',compact('marcas'));
+        return  Marca::list();
     }
 
 

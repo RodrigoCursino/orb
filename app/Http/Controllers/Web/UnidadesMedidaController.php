@@ -19,10 +19,8 @@ class UnidadesMedidaController extends Controller
 
     public function index()
     {
-        $unidadesMedida =  UnidadeMedida::where('ativo','=',1)
-            ->paginate(15);
+        return UnidadeMedida::list();
 
-        return view('unidade-medida.index',compact('unidadesMedida'));
     }
 
 

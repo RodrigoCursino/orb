@@ -20,10 +20,7 @@ class LinhasController extends Controller
 
     public function index()
     {
-        $linhas =  Linha::where('ativo','=',1)
-                   ->paginate(15);
-
-        return view('linha.index',compact('linhas'));
+        return Linha::list();
     }
 
 
