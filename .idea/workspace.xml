@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a136fc-7f64-4d46-873f-04455b1d4649" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/helpers/DateMixin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/input-date.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/LinhasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/LinhasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/MarcasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/MarcasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/MercadoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/MercadoriasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/UnidadesCaixaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/UnidadesCaixaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/UnidadesMedidaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/UnidadesMedidaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/MercadoriaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/MercadoriaService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Main/content-tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main/content-tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-list.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Main/nav-main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main/nav-main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Main/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main/store/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Mercadoria/Mercadoria/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Mercadoria/Mercadoria/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/NCM/ncms-select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NCM/ncms-select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-list.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,11 +57,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/Fornecedor/Fornecedor/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            <state relative-caret-position="36">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-list.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Main/nav-main.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="21" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding>
+                <element signature="e#25#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-list.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="51" column="61" selection-start-line="49" selection-start-column="8" selection-end-line="51" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -139,8 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/Categoria/categorias-select.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/Colecao/Colecao/state.js" />
         <option value="$PROJECT_DIR$/resources/js/components/Colecao/categorias-select.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ColecoesController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Colecao/Colecao/actions.js" />
@@ -179,17 +199,19 @@
         <option value="$PROJECT_DIR$/resources/js/components/Marca/Marca/state.js" />
         <option value="$PROJECT_DIR$/resources/js/components/NCM/ncms-select.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/Main/content-tabs.vue" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/js/components/helpers/DateMixin.js" />
         <option value="$PROJECT_DIR$/resources/js/components/shared/input-date.vue" />
         <option value="$PROJECT_DIR$/app/Service/MercadoriaService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/MercadoriasController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Mercadoria/Mercadoria/actions.js" />
         <option value="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-form.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/Main/nav-main.vue" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Main/store/mutations.js" />
         <option value="$PROJECT_DIR$/resources/sass/login.scss" />
+        <option value="$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-list.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-list.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/Main/nav-main.vue" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
       </list>
     </option>
   </component>
@@ -335,23 +357,6 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ativoinvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ativoinvest" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Fornecedor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ativoinvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ativoinvest" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Fornecedor" type="462c0819:PsiDirectoryNode" />
-              <item name="Fornecedor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -461,11 +466,12 @@
       <workItem from="1556108739319" duration="27667000" />
       <workItem from="1556152267402" duration="9619000" />
       <workItem from="1556200829153" duration="18524000" />
+      <workItem from="1556282668174" duration="2001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177880000" />
+    <option name="totallyTimeSpent" value="179881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,7 +488,7 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.28895614" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2934947" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.7076923" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -532,24 +538,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/components/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#110#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/UnidadeCaixa/UnidadeCaixa/state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/UnidadeCaixa/UnidadeCaixa/mutations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -738,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#25#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/helpers/Mixins.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -807,13 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Main/nav-main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -870,8 +841,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Fornecedor/Fornecedor/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="36">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Mercadoria/mercadoria-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="51" column="61" selection-start-line="49" selection-start-column="8" selection-end-line="51" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Main/nav-main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding>
+            <element signature="e#25#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

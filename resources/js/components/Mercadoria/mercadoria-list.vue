@@ -44,7 +44,6 @@
             :headers="headers"
             :items="list_mercadorias"
             :search="search"
-            :loading="true"
             item-key="id"
             select-all
     >

@@ -3761,7 +3761,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4820,7 +4819,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
 //
 //
 //
@@ -56405,7 +56403,6 @@ var render = function() {
               headers: _vm.headers,
               items: _vm.list_fornecedores,
               search: _vm.search,
-              loading: true,
               "item-key": "id",
               "select-all": ""
             },
@@ -58132,7 +58129,6 @@ var render = function() {
             headers: _vm.headers,
             items: _vm.list_mercadorias,
             search: _vm.search,
-            loading: true,
             "item-key": "id",
             "select-all": ""
           },
@@ -58697,17 +58693,6 @@ var render = function() {
         ],
         1
       ),
-      _vm._v(" "),
-      _c("v-text-field", {
-        staticClass: "hidden-sm-and-down",
-        attrs: {
-          flat: "",
-          "solo-inverted": "",
-          "hide-details": "",
-          "prepend-inner-icon": "search",
-          label: "Search"
-        }
-      }),
       _vm._v(" "),
       _c("v-spacer"),
       _vm._v(" "),
@@ -99261,8 +99246,7 @@ Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_2___default.a, {
     current: 'pt'
   },
   theme: {
-    //primary:   colors.red.darken1,  // #E53935
-    primary: '#892972',
+    primary: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_7___default.a.purple.darken1,
     // #E53935
     secondary: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_7___default.a.red.lighten4,
     // #FFCDD2
