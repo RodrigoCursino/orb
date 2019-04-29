@@ -15,13 +15,9 @@ js;
     return response($js)->header('Content-Type', 'text/javascript');
 })->name('slc.js');
 
-
+Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', 'HomeController@index')->name('home');
-    foreach (File::files(app()->path() . '/Routes/auth') as $file) {
-        require $file;
-    }
+    Route::get('/{any?}', 'HomeController@index')->name('home');
 });
 
-Auth::routes();

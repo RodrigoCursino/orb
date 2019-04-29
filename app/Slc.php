@@ -7,6 +7,7 @@ class Slc
     {
         $user = self::getCurrentUser();
         return [
+            'base_url'     => "http://" . $_SERVER['SERVER_NAME']. ':8000',
             'user'         => $user,
             'csrfToken'    => csrf_token(),
             'pusher'       => env('PUSHER_APP_KEY'),
@@ -29,10 +30,127 @@ class Slc
                         ],
                         [
                             "position" => 2,
+                            "text"     => "Fabricantes",
+                            "link"     => "#fabricantes",
+                            "action"   => "fabricantes",
+                            "icon"     => "how_to_reg",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 3,
                             "text"     => "Mercadoria",
                             "link"     => "#mercadorias",
                             "action"   => "mercadorias",
-                            "icon"     => "featured_play_list",
+                            "icon"     => "shopping_cart",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 12,
+                            "text"     => "Linhas",
+                            "link"     => "#linhas",
+                            "action"   => "linhas",
+                            "icon"     => "list",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 13,
+                            "text"     => "Grupos",
+                            "link"     => "#marcas",
+                            "action"   => "marcas",
+                            "icon"     => "loyalty",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 14,
+                            "text"     => "Categorias",
+                            "link"     => "#categorias",
+                            "action"   => "categorias",
+                            "icon"     => "done_all",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 4,
+                            "text"     => "Unidade Varejo",
+                            "link"     => "#unidadesvarejo",
+                            "action"   => "unidadesvarejo",
+                            "icon"     => "speaker",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 5,
+                            "text"     => "Unidade Atacado",
+                            "link"     => "#unidadesatacado",
+                            "action"   => "unidadesatacado",
+                            "icon"     => "speaker_group",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 6,
+                            "text"     => "Unidades",
+                            "link"     => "#unidades",
+                            "action"   => "unidades",
+                            "icon"     => "domain",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 7,
+                            "text"     => "Departamentos",
+                            "link"     => "#departamentos",
+                            "action"   => "departamentos",
+                            "icon"     => "dashboard",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 8,
+                            "text"     => "Centro de Custo",
+                            "link"     => "#centroscusto",
+                            "action"   => "centroscusto",
+                            "icon"     => "attach_money",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 9,
+                            "text"     => "Funcionário",
+                            "link"     => "#funcionarios",
+                            "action"   => "funcionarios",
+                            "icon"     => "face",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 9,
+                            "text"     => "Cargo",
+                            "link"     => "#cargos",
+                            "action"   => "cargos",
+                            "icon"     => "event_seat",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 11,
+                            "text"     => "Centro de Custo",
+                            "link"     => "#centroscusto",
+                            "action"   => "centroscusto",
+                            "icon"     => "attach_money",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 11,
+                            "text"     => "Banco",
+                            "link"     => "#bancos",
+                            "action"   => "bancos",
+                            "icon"     => "account_balance",
                             "showNav"  => true,
                             "showPage" => true
                         ]

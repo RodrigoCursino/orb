@@ -29,6 +29,7 @@
         "moment": "^2.24.0",
         "particlesjs": "^2.2.3",
         "sweetalert": "^2.1.2",
+        "toastr": "^2.1.4",
         "v-money": "^0.8.1",
         "vee-validate": "^2.2.3",
         "vue-router": "^3.0.6",

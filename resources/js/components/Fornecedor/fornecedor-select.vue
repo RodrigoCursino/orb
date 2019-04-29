@@ -26,7 +26,7 @@
             })
         },
         methods: {
-            ...mapActions('NCM',['set_list_ncms'])
+            ...mapActions('Fornecedor',['setList'])
         }
     }
 </script>

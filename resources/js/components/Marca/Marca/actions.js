@@ -1,5 +1,5 @@
 const set_list_marcas = async ({commit}) => {
-    const list = (await  axios.get('/marcas')).data;
+    const list = (await  http.get('marcas')).data;
     commit('SET_LIST_MARCAS',{list})
 }
 

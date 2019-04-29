@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-btn
+        <v-btn  v-if="! editar"
                 fab
                 bottom
                 right
@@ -88,7 +88,7 @@
                                                 lg6
                                         >
                                             <v-text-field
-                                                    v-model="fornecedor.cnpj"
+                                                    :value.sync="fornecedorForm.cnpj"
                                                     :mask="cnpj"
                                                     return-masked-value
                                                     v-validate="'required'"
@@ -106,7 +106,7 @@
                                                 lg6
                                         >
                                             <v-text-field
-                                                    v-model="fornecedor.ie"
+                                                    :value.sync="fornecedorForm.ie"
                                                     v-validate="'required'"
                                                     :error-messages="errors.collect('ie')"
                                                     label="Inscrição Estadual"
@@ -125,7 +125,7 @@
                                                 lg6
                                         >
                                             <v-text-field
-                                                    v-model="fornecedor.nome_fantasia"
+                                                    :value.sync="fornecedorForm.nome_fantasia"
                                                     v-validate="'required'"
                                                     :error-messages="errors.collect('nome_fantasia')"
                                                     label="Nome Fantasia"
@@ -141,7 +141,7 @@
                                                 lg6
                                         >
                                             <v-text-field
-                                                    v-model="fornecedor.razao_social"
+                                                    :value.sync="fornecedorForm.razao_social"
                                                     v-validate="'required'"
                                                     :error-messages="errors.collect('razao_social')"
                                                     label="Razão Social"
@@ -168,7 +168,7 @@
                                                     :error-messages="errors.collect('observacao')"
                                                     auto-grow
                                                     row-height="12"
-                                                    v-model="fornecedor.observacao"
+                                                    :value.sync="fornecedorForm.observacao"
                                                     data-vv-name="observacao"
                                                     required
                                             ></v-textarea>
@@ -179,7 +179,7 @@
 
                                     <v-switch right
                                               label="Fornece Mercadoria"
-                                              v-model="fornecedor.forn_mercadoria"
+                                              :value.sync="fornecedorForm.forn_mercadoria"
                                     >
                                     </v-switch>
                                     <!-- RAZÃO SOCIAL -->
@@ -187,7 +187,7 @@
 
                             <v-btn
                                     color="primary"
-                                    @click="validateFornecedor(fornecedor)"
+                                    @click="validateFornecedor(fornecedorForm)"
                             >
                                 Continue
                             </v-btn>
@@ -209,7 +209,7 @@
                                             lg4
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.cep"
+                                                :value.sync="fornecedorForm.endereco.cep"
                                                 :mask="mask"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('cep')"
@@ -231,7 +231,7 @@
                                             lg10
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.logradouro"
+                                                :value.sync="fornecedorForm.endereco.logradouro"
                                                 v-validate="'required|max:150'"
                                                 :counter="150"
                                                 :error-messages="errors.collect('logradouro')"
@@ -247,7 +247,7 @@
                                             lg2
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.numero"
+                                                :value.sync="fornecedorForm.endereco.numero"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('numero')"
                                                 label="N°"
@@ -265,7 +265,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.bairro"
+                                                :value.sync="fornecedorForm.endereco.bairro"
                                                 v-validate="'required'"
                                                 :counter="150"
                                                 :error-messages="errors.collect('bairro')"
@@ -281,7 +281,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.cidade"
+                                                :value.sync="fornecedorForm.endereco.cidade"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('cidade')"
                                                 label="Cidade"
@@ -299,7 +299,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.estado"
+                                                :value.sync="fornecedorForm.endereco.estado"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('estado')"
                                                 label="Estado"
@@ -314,7 +314,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.endereco.pais"
+                                                :value.sync="fornecedorForm.endereco.pais"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('pais')"
                                                 label="País"
@@ -328,7 +328,7 @@
 
                             <v-btn
                                     color="primary"
-                                    @click="validateAddress(fornecedor.endereco)"
+                                    @click="validateAddress(fornecedorForm.endereco)"
                             >
                                 Continue
                             </v-btn>
@@ -355,7 +355,7 @@
                                             lg12
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.contato.nome"
+                                                :value.sync="fornecedorForm.contato.nome"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('nome')"
                                                 label="Nome"
@@ -374,7 +374,7 @@
                                             lg12
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.contato.email"
+                                                :value.sync="fornecedorForm.contato.email"
                                                 v-validate="'required|email'"
                                                 :error-messages="errors.collect('email')"
                                                 label="Email"
@@ -392,7 +392,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.contato.celular"
+                                                :value.sync="fornecedorForm.contato.celular"
                                                 v-validate="'required'"
                                                 :mask="celularMask"
                                                 :counter="150"
@@ -410,7 +410,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.contato.telefone"
+                                                :value.sync="fornecedorForm.contato.telefone"
                                                 v-validate="'required'"
                                                 :mask="telefoneMask"
                                                 return-masked-value
@@ -426,7 +426,7 @@
 
                             <v-btn
                                     color="primary"
-                                    @click="validateContacts(fornecedor.contato)"
+                                    @click="validateContacts(fornecedorForm.contato)"
                             >
                                 Continue
                             </v-btn>
@@ -453,7 +453,7 @@
                                             lg6
                                     >
                                         <v-select
-                                                v-model="fornecedor.dados_bancarios.banco_id"
+                                                :value.sync="fornecedorForm.dados_bancarios.banco_id"
                                                 v-validate="'required'"
                                                 :items="list_bancos"
                                                 item-value="id"
@@ -473,7 +473,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.dados_bancarios.agencia"
+                                                :value.sync="fornecedorForm.dados_bancarios.agencia"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('agencia')"
                                                 label="Agência"
@@ -491,7 +491,7 @@
                                             lg6
                                     >
                                         <v-select
-                                                v-model="fornecedor.dados_bancarios.tipo"
+                                                :value.sync="fornecedorForm.dados_bancarios.tipo"
                                                 v-validate="'required'"
                                                 :items="tipos"
                                                 item-value="value"
@@ -510,7 +510,7 @@
                                             lg6
                                     >
                                         <v-text-field
-                                                v-model="fornecedor.dados_bancarios.conta"
+                                                :value.sync="fornecedorForm.dados_bancarios.conta"
                                                 v-validate="'required'"
                                                 :error-messages="errors.collect('conta')"
                                                 label="CC"
@@ -524,7 +524,7 @@
 
                             <v-btn
                                     color="primary"
-                                    @click="validateDadosBancarios(fornecedor.dados_bancarios)"
+                                    @click="validateDadosBancarios(fornecedorForm.dados_bancarios)"
                             >
                                 Continue
                             </v-btn>
@@ -551,7 +551,7 @@
                                 <v-btn  color="primary"
                                         outline
                                         round
-                                        @click="save_fornecedor(fornecedor)"
+                                        @click="save_fornecedor(fornecedorForm)"
                                 >
                                     Salvar
                                 </v-btn>
@@ -584,9 +584,16 @@
         $_veeValidate: {
             validator: 'new'
         },
+        props: {
+           editar: {
+               required: false,
+               default: false
+           }
+        },
         components: {FornecedorConfirm, FornecedorFormDados, DadosBancariosForm, ContatoForm, EnderecoForm},
         computed: {
             ...mapGetters('Endereco',['get_endereco']),
+            ...mapGetters('Fornecedor',['get_fornecedor_default']),
             ...mapState('Banco',{
                     list_bancos: state => {
                         return state.list_bancos;
@@ -600,9 +607,6 @@
                 }
             )
         },
-        mounted() {
-            this.get_list_bancos();
-        },
         data: () => ({
             validAddress: false,
             dialog: false,
@@ -611,7 +615,7 @@
                 {value: 'POUPANCA', text:'Poupança'},
                 {value: 'CORRENTE', text:'Corrente'}
             ],
-            fornecedor : {
+            fornecedorForm : {
                 cnpj:"00.000.000/0000-00",
                 contato: {
                     celular:"(00) 00000-0000",
@@ -756,8 +760,13 @@
                 });
             },
 
+            edit() {
+                this.fornecedorForm = this.get_fornecedor_default;
+                this.close_form();
+            },
+
             getEndereco() {
-                const cep = this.fornecedor.endereco.cep.replace('-','');
+                const cep = this.fornecedorForm.endereco.cep.replace('-','');
                 this.get_cep(cep);
                 this.fornecedor.endereco = this.get_endereco;
                 this.validAddress = true;

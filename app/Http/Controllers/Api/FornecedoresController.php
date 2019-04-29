@@ -2,84 +2,78 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\FornecedorCreateRequest;
+use App\Models\Banco;
+use App\Models\Fornecedor;
+use App\Service\FornecedorService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class FornecedoresController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private  $service;
+
+    public function __construct(FornecedorService $service)
+    {
+        $this->service = $service;
+    }
+
     public function index()
     {
-        //
+        $fornecedores = Fornecedor::with('contato')
+                                  ->with('endereco')
+                                  ->with('dadosBancarios')
+                                  ->where('ativo','=',1);
+
+        return $fornecedores->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $bancos = Banco::all();
+        return view('fornecedor.create',compact('bancos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(FornecedorCreateRequest $request)
     {
-        //
+       $fornecedor = $this->service->create($request);
+       return  [
+                    "data" => $fornecedor,
+                    "message"   => "Fornecedor Salvo Com Sucesso",
+               ];
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $fornecedor = Fornecedor::with('contato')
+            ->with('endereco')
+            ->with('dadosBancarios')
+            ->where('id','=',$id)->first();
+
+        $bancos = Banco::all();
+
+        return view('fornecedor.create',compact('bancos','fornecedor'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(FornecedorCreateRequest $request)
     {
-        //
+        $fornecedor = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $fornecedor,
+            "message"   => "Fornecedor Editado Com Sucesso",
+        ];
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+       $this->service->destroy($id);
     }
 }

@@ -21,13 +21,20 @@
                         <v-btn
                                 dark
                                 flat
-                                @click="save_fornecedor(fornecedor)">
-                            Save
+                                @click="edit()">
+                            <v-icon>edit</v-icon>
+                        </v-btn>
+                        <v-btn
+                                dark
+                                flat
+                                >
+                            <v-icon>delete</v-icon>
                         </v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-container>
-                    <fornecedor-edit></fornecedor-edit>
+                    <fornecedor-confirm></fornecedor-confirm>
+                    <fornecedor-form ref="editfornecedor"></fornecedor-form>
                 </v-container>
             </v-card>
         </v-dialog>
@@ -37,9 +44,12 @@
 <script>
     import {mapActions,mapState} from 'vuex'
     import FornecedorEdit from "./fornecedor-edit";
+    import FornecedorConfirm from "./fornecedor-confirm";
+    import FornecedorForm from "./fornecedor-form";
+    import FornecedorOps from "./fornecedor-form2";
     export default {
         name: "fornecedor-view",
-        components: {FornecedorEdit},
+        components: {FornecedorForm, FornecedorOps, FornecedorConfirm, FornecedorEdit},
         data () {
             return {
                 dialog: false,
@@ -59,7 +69,10 @@
             })
         },
         methods: {
-            ...mapActions('Fornecedor', ['viewFornecedor','save_fornecedor'])
+            ...mapActions('Fornecedor', ['viewFornecedor','save_fornecedor']),
+            edit() {
+                this.$refs.editfornecedor.edit(this.fornecedor);
+            }
         }
     }
 </script>

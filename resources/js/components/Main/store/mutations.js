@@ -17,20 +17,31 @@ const SHOW_SIDEBAR = (state) => {
  * @constructor
  */
 const  SELECT_TAB =  (state, payload) =>  {
-        state.menuTabs.push(payload);
-        state.currentItem = payload.action;
-        // console.log(payload);
-        // let index = state.navList.findIndex(function (_navList) {
-        //     if (payload === _navList.action) {
-        //         state.currentItem  = payload;
-        //         _navList.showPage   = true;
-        //         _navList.showNav    = true;
-        //         _navList.active     = true;
-        //     } else {
-        //         _navList.active   = false;
-        //         _navList.showPage = false;
-        //     }
-        // })
+        let index = state.menuTabs.findIndex(function (_index) {
+            if (payload.action === _index.action) {
+                return _index
+            }
+        });
+
+        if(index === -1) {
+            state.menuTabs.push(payload);
+            state.currentItem = payload.action;
+        } else {
+            state.menuTabs.splice(index,1);
+            if(state.menuTabs.length === 0) {
+               let index   = {
+                               position : 1,
+                               text     : "Fornecedores",
+                               link     : "#fornecedores",
+                               action   : "fornecedores",
+                               icon     : "contacts"
+                             };
+
+               state.menuTabs.push(index);
+            }
+        }
+
+
 };
 
 
@@ -45,16 +56,10 @@ const DISABLE_TAB = (state, payload) =>  {
     state.menuTabs.splice(index,1);
     let tamanho = state.menuTabs.length;
 
-    console.log('tamanho', tamanho);
-    console.log('text', payload.action);
-    console.log('index', index);
-
     if(tamanho > 0) {
-        let action = '/' + state.menuTabs[tamanho - 1].action
-        console.log('ac', action);
+        let action = '/' + state.menuTabs[tamanho - 1].action;
         App.$router.push('/' + state.menuTabs[tamanho - 1].action);
     }
-
 
 };
 

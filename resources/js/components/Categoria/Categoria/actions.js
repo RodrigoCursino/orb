@@ -1,5 +1,5 @@
 const set_list_categorias = async ({commit}) => {
-    const list = (await  axios.get('/categorias')).data;
+    const list = (await  http.get('categorias')).data;
     commit('SET_LIST_CATEGORIAS',{list})
 }
 

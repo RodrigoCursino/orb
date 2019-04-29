@@ -1,61 +1,48 @@
-// import axios from 'axios';
 
 const setList = async ({ commit }) => {
-    const list = (await axios.get('/fornecedores')).data;
+    const list = (await http.get('fornecedores')).data;
     commit('SET_LIST_FORNECEDORES',{list});
 };
 
-const save_fornecedor = async ({ commit, dispatch }, fornecedor) => {
-    let fornecedorRequest = JSON.parse(JSON.stringify(fornecedor));
+const save_fornecedor = ({ commit, dispatch }, fornecedor) => {
 
-    let saved = 0;
+    let response = false;
 
     if (fornecedor.id == 0) {
-        saved = (await axios.post(`/fornecedores`,fornecedorRequest));
+        response = http.post('fornecedores',fornecedor);
     } else {
-        saved = (await axios.put(`/fornecedores/${fornecedorRequest}`,fornecedorRequest));
+        response = http.put('fornecedores',fornecedor);
     }
 
-
-    if(saved.status === 200) {
-        swal({
-            title: "Operação realizada com sucesso",
-            text: "O fornecedor foi editado com sucesso!!!",
-            icon: "success",
-            buttons: true,
-        }).then((willDelete) => {
-                if (willDelete) {
-                    commit('CLOSE_VIEW_FORNECEDOR');
-                }
-            });
-    } else if (saved.status === 201) {
-        swal({
-            title: "Operação realizada com sucesso",
-            text: "O fornecedor foi salvo com sucesso!!!",
-            icon: "success",
-            buttons: true,
-        }).then((willDelete) => {
-            if (willDelete) {
-                dispatch('setList');
-                commit('CLOSE_FORM_FORNECEDOR')
-            }
-        });
+    if(response) {
+        commit('CLOSE_FORM_FORNECEDOR');
     }
-
 };
 
 const close_form = ({commit}) => {
     commit('CLOSE_FORM_FORNECEDOR');
 }
 
-const delete_fornecedor = async ({commit,dispatch}, array) => {
+const delete_fornecedor = ({commit,dispatch}, array) => {
+
     commit('DELETED');
-    for (let i in array) {
-        let fornecedorRequest = JSON.parse(JSON.stringify(array[i].id));
-        const saved = (await axios.delete(`/fornecedores/${fornecedorRequest}`,fornecedorRequest));
-    }
-    dispatch('setList');
+
+    swal({
+        title: "Você tem certeza?",
+        text: "Cuidado você está prestes a deletar estes dados!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then(async (willDelete) => {
+        for (let i in array) {
+            let fornecedorRequest = JSON.parse(JSON.stringify(array[i]));
+            (await http.deleteForm('fornecedores',fornecedorRequest));
+        }
+        dispatch('setList');
+    });
+
     commit('DELETED');
+
 };
 
 const viewFornecedor = ({ commit },obj) => {
