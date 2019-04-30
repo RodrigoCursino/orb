@@ -66,7 +66,7 @@ class FornecedoresController extends Controller
     {
         $fornecedor = $this->service->update($request, $request->input('id'));
         return  [
-            "data" => $fornecedor,
+            "data"      => $fornecedor,
             "message"   => "Fornecedor Editado Com Sucesso",
         ];
     }

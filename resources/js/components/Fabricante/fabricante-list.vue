@@ -1,7 +1,8 @@
 <template>
     <div>
         <template>
-            <!--<fornecedor-view></fornecedor-view>-->
+            <fabricante-modal ref="edit"></fabricante-modal>
+            <fabricante-view @edit="editar"></fabricante-view>
             <v-card-title>
                 <!--<v-spacer></v-spacer>-->
                 <!--<v-spacer></v-spacer>-->
@@ -67,9 +68,9 @@
                     <td class="text-xs-left">{{ props.item.contato.email }}</td>
                     <td>
                         <v-flex xs12 sm3>
-                            <!--<v-btn flat icon color="grey">-->
-                                <!--<v-icon @click="viewFornecedor(props.item)">info</v-icon>-->
-                            <!--</v-btn>-->
+                            <v-btn flat icon color="grey">
+                                <v-icon @click="view(props.item)">info</v-icon>
+                            </v-btn>
                         </v-flex>
                     </td>
                 </template>
@@ -82,9 +83,11 @@
 </template>
 <script>
     import {mapState, mapActions} from 'vuex'
+    import FabricanteView from "./fornecedor-view";
+    import FabricanteModal from "./fabricante-modal";
     export default {
         name: 'fabricante-list',
-        components: {},
+        components: {FabricanteModal, FabricanteView},
         mounted() {
             this.setList()
         },
@@ -92,6 +95,9 @@
             ...mapState('Fabricante',{
                 list_fabricantes: state => {
                     return state.list_fabricantes;
+                },
+                fabricante: state => {
+                    return state.fabricante;
                 }
             })
         },
@@ -121,9 +127,12 @@
         },
         methods: {
             acaoComSelecionados() {
-                this.delete_fornecedor(this.selected);
+                this.delete_form(this.selected);
             },
-            ...mapActions('Fabricante',['setList']),
+            editar(form) {
+                this.$refs.edit.edit(form);
+            },
+            ...mapActions('Fabricante',['setList','view','delete_form']),
         }
     }
 </script>

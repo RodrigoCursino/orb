@@ -24,20 +24,20 @@ const post = async (api, form) => {
 
 }
 
-const put = (api, form) => {
+const put = async (api, form) => {
 
     let form_ = JSON.parse(JSON.stringify(form));
     let url_  = base + `${api}/${form_}`;
-    let response  = axios.put(url_,form_);
+    let response  = (await axios.put(url_,form_));
 
-    if(response.status === 201) {
-        swal({
-            title: "Operação realizada com sucesso",
-            text: response.data.message,
-            icon: "success",
-            buttons: true,
-        });
-    }
+    console.log('ops ', response)
+
+    swal({
+        title: "Operação realizada com sucesso",
+        text: response.data.message,
+        icon: "success",
+        buttons: true,
+    });
 
     return response;
 };

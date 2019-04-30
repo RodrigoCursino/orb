@@ -1,5 +1,7 @@
 <template>
-    <fabricante-list></fabricante-list>
+    <div>
+        <fabricante-list></fabricante-list>
+    </div>
 </template>
 
 <script>

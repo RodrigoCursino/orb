@@ -39,7 +39,10 @@ class FabricantesController extends Controller
     public function store(FabricantesCreateRequest $request)
     {
         $fabricante = $this->service->create($request);
-        return redirect(route('fabricantes.index'));
+        return [
+            'data' => $fabricante,
+            'message' => 'Fabricante Salvo com Sucesso !!',
+        ];
     }
 
 

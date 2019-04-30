@@ -16,52 +16,42 @@
             Dados de Contato
         </v-tab>
 
-        <v-tab href="#tab-4">
-            Dados Bancários
-        </v-tab>
-
         <v-tab-item
                 value="tab-1"
         >
-           <dados-fornecedor class="confirm-content"></dados-fornecedor>
+           <dados-fabricante class="confirm-content"></dados-fabricante>
         </v-tab-item>
 
         <v-tab-item
                 value="tab-2"
         >
-            <dados-endereco v-if="fornecedor.endereco" class="confirm-content"></dados-endereco>
+           <dados-endereco v-if="fabricante.endereco" class="confirm-content"></dados-endereco>
         </v-tab-item>
 
         <v-tab-item
                 value="tab-3"
         >
-            <dados-contato v-if="fornecedor.contato" class="confirm-content"></dados-contato>
+            <dados-contato v-if="fabricante.contato" class="confirm-content"></dados-contato>
         </v-tab-item>
 
-        <v-tab-item
-                value="tab-4"
-        >
-            <dados-dados-bancarios v-if="fornecedor.dados_bancarios" class="confirm-content"></dados-dados-bancarios>
-        </v-tab-item>
     </v-tabs>
 </template>
 
 <script>
     import {mapState} from 'vuex';
-    import DadosFornecedor from "./form-confirm/dados-fornecedor";
+    import DadosFabricante from "./form-confirm/dados-fabricante";
     import DadosEndereco from "./form-confirm/dados-endereco";
     import DadosContato from "./form-confirm/dados-contato";
-    import DadosDadosBancarios from "./form-confirm/dados-dados-bancarios";
     export default {
-        name: "fornecedor-confirm",
-        components: {DadosDadosBancarios, DadosContato, DadosEndereco, DadosFornecedor},
+        name: "fabricante-confirm",
+        components: {DadosContato, DadosEndereco, DadosFabricante},
         data: () => ({
-           tab: '#dados_fornecedor'
+
         }),
         computed: {
-            ...mapState('Fornecedor',{
-                fornecedor: state => {
-                    return state.fornecedor;
+            ...mapState('Fabricante',{
+                fabricante: state => {
+                    return state.fabricante;
                 }
             })
         },

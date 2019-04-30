@@ -19,10 +19,11 @@ class CreateFabricantesTable extends Migration
             $table->string('nome',350);
             $table->string('nome_fantasia',350);
             $table->string('razao_social',350);
-            $table->string('cnpj',19);
-            $table->string('ie',14);
+            $table->string('cnpj',19)->default('');
+            $table->string('cpf',19)->default('');
+            $table->string('ie',14)->default('');
             $table->string('observacao',500);
-            $table->enum('natureza_juridica',['FISÌCA','JURÍDICA']);
+            $table->enum('natureza_juridica',['FISICA','JURIDICA']);
 
             $table->boolean('ativo')->default(1);
 

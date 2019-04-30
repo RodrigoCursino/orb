@@ -32,7 +32,7 @@ class FabricantesService
 
             $fabricante->cnpj                = $request->input('cnpj');
             $fabricante->ie                  = $request->input('ie');
-            $fabricante->nome                = $request->input('nome_fabricante');
+            $fabricante->nome                = $request->input('nome');
             $fabricante->nome_fantasia       = $request->input('nome_fantasia');
             $fabricante->razao_social        = $request->input('razao_social');
             $fabricante->observacao          = $request->input('observacao');

@@ -10,12 +10,14 @@ const save_fornecedor = ({ commit, dispatch }, fornecedor) => {
 
     if (fornecedor.id) {
         response = http.put('fornecedores',fornecedor);
+        commit('CLOSE_VIEW_FORNECEDOR');
     } else {
         response = http.post('fornecedores',fornecedor);
     }
 
     if(response) {
         commit('CLOSE_FORM_FORNECEDOR');
+        dispatch('setList');
     }
 };
 
