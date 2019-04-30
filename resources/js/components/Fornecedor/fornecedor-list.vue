@@ -1,7 +1,8 @@
 <template>
     <div>
         <template>
-            <fornecedor-view></fornecedor-view>
+            <fornecedor-modal ref="fornecedoredit"></fornecedor-modal>
+            <fornecedor-view @edit="editarFornecedor"></fornecedor-view>
                 <v-card-title>
                     <!--<v-spacer></v-spacer>-->
                     <!--<v-spacer></v-spacer>-->
@@ -83,8 +84,9 @@
 <script>
     import {mapState, mapActions} from 'vuex'
     import FornecedorView from "./fornecedor-view";
+    import FornecedorModal from "./fornecedor-modal";
     export default {
-        components: {FornecedorView},
+        components: {FornecedorModal, FornecedorView},
         mounted() {
             this.setList()
         },
@@ -125,6 +127,9 @@
         methods: {
             acaoComSelecionados() {
                 this.delete_fornecedor(this.selected);
+            },
+            editarFornecedor(fornecedor) {
+                this.$refs.fornecedoredit.edit(fornecedor);
             },
             ...mapActions('Fornecedor',['setList','viewFornecedor','delete_fornecedor']),
         }

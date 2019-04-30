@@ -25,7 +25,7 @@ class FabricantesController extends Controller
     {
         $fabricantes = Fabricante::with('contato')
             ->with('endereco')
-            ->list();
+            ->where('ativo','=',1)->get();
 
        return $fabricantes;
     }

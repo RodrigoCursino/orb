@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Fabricante extends Model
 {
     use SoftDeletes, TmontecHelper;
+
     protected $table = 'fabricantes';
 
     protected $dates = ['deleted_at'];

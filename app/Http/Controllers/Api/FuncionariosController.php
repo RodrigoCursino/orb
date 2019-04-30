@@ -29,9 +29,9 @@ class FuncionariosController extends Controller
             ->with('unidade')
             ->with('cargo')
             ->where('ativo','=',1)
-            ->paginate(5);
+            ->get();
 
-        return view('funcionario.index',compact('funcionarios'));
+        return $funcionarios;
     }
 
 

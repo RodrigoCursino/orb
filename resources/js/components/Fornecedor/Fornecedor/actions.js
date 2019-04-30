@@ -8,10 +8,10 @@ const save_fornecedor = ({ commit, dispatch }, fornecedor) => {
 
     let response = false;
 
-    if (fornecedor.id == 0) {
-        response = http.post('fornecedores',fornecedor);
-    } else {
+    if (fornecedor.id) {
         response = http.put('fornecedores',fornecedor);
+    } else {
+        response = http.post('fornecedores',fornecedor);
     }
 
     if(response) {

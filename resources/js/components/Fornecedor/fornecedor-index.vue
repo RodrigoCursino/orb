@@ -20,12 +20,10 @@
         </v-card>
         </v-dialog>
         </div>
-     <fornecedor-form></fornecedor-form>
      <fornecedor-list></fornecedor-list>
     </div>
 </template>
 <script>
-    import FornecedorForm from "./fornecedor-form.vue";
     import FornecedorList from "./fornecedor-list.vue";
     import {mapState, mapActions} from 'vuex'
 
@@ -34,8 +32,7 @@
         props: {}
         ,
         components: {
-            FornecedorList,
-            FornecedorForm}
+            FornecedorList}
         ,
         computed: {
             ...mapState('Fornecedor', {

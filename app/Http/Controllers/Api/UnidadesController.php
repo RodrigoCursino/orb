@@ -22,10 +22,10 @@ class UnidadesController extends Controller
     {
         $unidades = Unidade::with('contato')
             ->with('endereco')
-            ->where('ativo','=',1)
-            ->paginate(5);
+            ->with('centroCusto')
+            ->where('ativo','=',1)->get();
 
-        return view('unidade.index',compact('unidades'));
+        return $unidades;
     }
 
 

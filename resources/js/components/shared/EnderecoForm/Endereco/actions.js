@@ -15,8 +15,6 @@ const get_cep = async ({ commit }, CEP ) => {
              url: url_,
              method: 'GET',
              success: function (response) {
-
-                 console.log('cep ', response);
                  endereco.logradouro = response.logradouro;
                  endereco.cep        = response.cep;
                  endereco.cidade     = response.localidade;

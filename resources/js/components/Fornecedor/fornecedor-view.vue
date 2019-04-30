@@ -21,7 +21,7 @@
                         <v-btn
                                 dark
                                 flat
-                                @click="edit()">
+                                @click="editOps()">
                             <v-icon>edit</v-icon>
                         </v-btn>
                         <v-btn
@@ -34,7 +34,6 @@
                 </v-toolbar>
                 <v-container>
                     <fornecedor-confirm></fornecedor-confirm>
-                    <fornecedor-form ref="editfornecedor"></fornecedor-form>
                 </v-container>
             </v-card>
         </v-dialog>
@@ -43,13 +42,10 @@
 
 <script>
     import {mapActions,mapState} from 'vuex'
-    import FornecedorEdit from "./fornecedor-edit";
     import FornecedorConfirm from "./fornecedor-confirm";
-    import FornecedorForm from "./fornecedor-form";
-    import FornecedorOps from "./fornecedor-form2";
     export default {
         name: "fornecedor-view",
-        components: {FornecedorForm, FornecedorOps, FornecedorConfirm, FornecedorEdit},
+        components: {FornecedorConfirm},
         data () {
             return {
                 dialog: false,
@@ -70,9 +66,10 @@
         },
         methods: {
             ...mapActions('Fornecedor', ['viewFornecedor','save_fornecedor']),
-            edit() {
-                this.$refs.editfornecedor.edit(this.fornecedor);
+            editOps() {
+                this.$emit('edit',this.fornecedor)
             }
+
         }
     }
 </script>

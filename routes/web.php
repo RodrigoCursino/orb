@@ -19,5 +19,8 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/{any?}', 'HomeController@index')->name('home');
+//      foreach (File::files(app()->path() . '/Routes/auth') as $file) {
+//        require $file;
+//      }
 });
 

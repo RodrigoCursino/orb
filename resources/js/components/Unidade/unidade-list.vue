@@ -1,0 +1,129 @@
+<template>
+    <div>
+        <template>
+            <!--<fornecedor-view></fornecedor-view>-->
+            <v-card-title>
+                <!--<v-spacer></v-spacer>-->
+                <!--<v-spacer></v-spacer>-->
+                <v-layout>
+                    <v-flex lg6
+                            md6
+                            sm12
+                            xs12
+                    >
+                        <v-text-field
+                                v-model="search"
+                                append-icon="search"
+                                label="Buscar Unidades"
+                                single-line
+                                hide-details
+                        ></v-text-field>
+                    </v-flex>
+                    <v-flex lg6
+                            md6
+                            sm12
+                            xs12
+                    >
+
+
+                        <v-layout justify-end row class="mb-2">
+                                <span class="group pa-2">
+                                  <v-btn fab
+                                         dark
+                                         title="selecione um item para deletar"
+                                         color="danger"
+                                         @click.native="acaoComSelecionados()"
+                                  >
+                                     <v-icon dark>delete</v-icon>
+                                  </v-btn>
+                                </span>
+                        </v-layout>
+
+                    </v-flex>
+                </v-layout>
+            </v-card-title>
+            <v-data-table
+                    v-model="selected"
+                    :headers="headers"
+                    :items="list_unidades"
+                    :search="search"
+                    item-key="id"
+                    select-all
+            >
+                <v-progress-linear v-slot:progress
+                                   color="blue"
+                                   indeterminate></v-progress-linear>
+                <template v-slot:items="props">
+                    <td>
+                        <v-checkbox
+                                v-model="props.selected"
+                                primary
+                                hide-details
+                        ></v-checkbox>
+                    </td>
+                    <td class="text-xs-left">{{ props.item.cnpj}}</td>
+                    <td class="text-xs-left">{{ props.item.nome_fantasia}}</td>
+                    <td class="text-xs-left">{{ props.item.centro_custo.nome }}</td>
+                    <td class="text-xs-left">{{ props.item.contato.email }}</td>
+                    <td>
+                        <v-flex xs12 sm3>
+                            <!--<v-btn flat icon color="grey">-->
+                                <!--<v-icon @click="viewFornecedor(props.item)">info</v-icon>-->
+                            <!--</v-btn>-->
+                        </v-flex>
+                    </td>
+                </template>
+                <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+                    Your search for "{{ search }}" found no results.
+                </v-alert>
+            </v-data-table>
+        </template>
+    </div>
+</template>
+<script>
+    import {mapState, mapActions} from 'vuex'
+    export default {
+        name: 'unidade-list',
+        components: {},
+        mounted() {
+            this.setList()
+        },
+        computed: {
+            ...mapState('Unidade',{
+                list_unidades: state => {
+                    return state.list_unidades;
+                }
+            })
+        },
+        data () {
+            return {
+                search: '',
+                selected: [],
+                headers: [
+                    {
+                        text: 'CNPJ',
+                        align: 'left',
+                        sortable: false,
+                        value: 'cnpj'
+                    },
+                    { text: 'Nome Fantasia',
+                        value: 'nome_fantasia'
+                    },
+                    { text: 'Centro de Custo',
+                        value: 'centro_custo.nome'
+                    },
+                    { text: 'email', value: 'contato.email' },
+                    { text: 'Visualizar',
+                        sortable: false,
+                        value: 'contato.email' }
+                ],
+            }
+        },
+        methods: {
+            acaoComSelecionados() {
+                this.delete_fornecedor(this.selected);
+            },
+            ...mapActions('Unidade',['setList']),
+        }
+    }
+</script>
