@@ -92,9 +92,6 @@
                 $_veeValidate: {
                     validator: 'new'
                 },
-                props: {
-                    model : {required:true}
-                },
                 mounted () {
                     this.get_list_bancos();
                     this.set_dados_bancarios(this.model);

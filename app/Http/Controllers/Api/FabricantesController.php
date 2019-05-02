@@ -71,8 +71,8 @@ class FabricantesController extends Controller
 
     public function destroy($id)
     {
-        if($this->service->destroy($id)){
-            return redirect(route('fabricantes.index'));
-        }
+         if($this->service->destroy($id)) {
+             return "Deletado com sucesso!!!";
+         }
     }
 }

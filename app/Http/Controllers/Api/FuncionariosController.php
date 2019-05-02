@@ -8,7 +8,6 @@ use App\Models\Cargo;
 use App\Models\Funcionario;
 use App\Models\Unidade;
 use App\Service\FuncionariosService;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class FuncionariosController extends Controller
@@ -45,8 +44,11 @@ class FuncionariosController extends Controller
 
     public function store(FuncionariosCreateRequest $request)
     {
-        $fornecedor = $this->service->create($request);
-        return redirect(route('funcionarios.index'));
+        $funcionario = $this->service->create($request);
+        return  [
+            "data"      => $funcionario,
+            "message"   => "Funcionário Salvo Com Sucesso",
+        ];
     }
 
 
@@ -74,14 +76,17 @@ class FuncionariosController extends Controller
     public function update(FuncionariosCreateRequest $request, $id)
     {
         $funcionario = $this->service->update($request, $id);
-        return redirect(route('funcionarios.index'));
+        return  [
+            "data"      => $funcionario,
+            "message"   => "Funcionário Editado Com Sucesso",
+        ];
     }
 
 
     public function destroy($id)
     {
-        if($this->service->destroy($id)){
-            return redirect(route('funcionarios.index'));
+        if($this->service->destroy($id)) {
+            return "Deletado com sucesso!!!";
         }
     }
 }

@@ -1,7 +1,8 @@
 <template>
     <div>
         <template>
-            <!--<fornecedor-view></fornecedor-view>-->
+            <funcionario-modal ref="edit"></funcionario-modal>
+            <funcionario-view @edit="editar"></funcionario-view>
             <v-card-title>
                 <!--<v-spacer></v-spacer>-->
                 <!--<v-spacer></v-spacer>-->
@@ -14,7 +15,7 @@
                         <v-text-field
                                 v-model="search"
                                 append-icon="search"
-                                label="Buscar Funcionário"
+                                label="Buscar Funcionarios"
                                 single-line
                                 hide-details
                         ></v-text-field>
@@ -67,9 +68,9 @@
                     <td class="text-xs-left">{{ props.item.unidade.nome_fantasia }}</td>
                     <td>
                         <v-flex xs12 sm3>
-                            <!--<v-btn flat icon color="grey">-->
-                                <!--<v-icon @click="viewFornecedor(props.item)">info</v-icon>-->
-                            <!--</v-btn>-->
+                            <v-btn flat icon color="grey">
+                                <v-icon @click="view(props.item)">info</v-icon>
+                            </v-btn>
                         </v-flex>
                     </td>
                 </template>
@@ -82,9 +83,11 @@
 </template>
 <script>
     import {mapState, mapActions} from 'vuex'
+    import FuncionarioView from "./funcionario-view";
+    import FuncionarioModal from "./funcionario-modal";
     export default {
         name: 'funcionario-list',
-        components: {},
+        components: {FuncionarioModal, FuncionarioView},
         mounted() {
             this.setList()
         },
@@ -92,6 +95,9 @@
             ...mapState('Funcionario',{
                 list_funcionarios: state => {
                     return state.list_funcionarios;
+                },
+                funcionario: state => {
+                    return state.funcionario;
                 }
             })
         },
@@ -121,9 +127,12 @@
         },
         methods: {
             acaoComSelecionados() {
-
+                this.delete_form(this.selected);
             },
-            ...mapActions('Funcionario',['setList']),
+            editar(form) {
+                this.$refs.edit.edit(form);
+            },
+            ...mapActions('Funcionario',['setList','view','delete_form']),
         }
     }
 </script>

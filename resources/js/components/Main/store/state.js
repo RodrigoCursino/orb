@@ -2,16 +2,16 @@ export default {
 
     sideBarControl: false,
 
-    currentItem: 'fornecedores',
+    currentItem: 'funcionarios',
 
     navList: window.Slc.menu,
     menuTabs: [
         {
-            position : 1,
-            text     : "Fornecedores",
-            link     : "#fornecedores",
-            action   : "fornecedores",
-            icon     : "contacts"
+            "position" : 9,
+            "text"     : "Funcionário",
+            "link"     : "#funcionarios",
+            "action"   : "funcionarios",
+            "icon"     : "face"
         },
     ]
     // navList: [

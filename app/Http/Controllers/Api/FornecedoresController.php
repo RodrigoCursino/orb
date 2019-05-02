@@ -74,6 +74,8 @@ class FornecedoresController extends Controller
 
     public function destroy($id)
     {
-       $this->service->destroy($id);
+        if($this->service->destroy($id)) {
+            return "Deletado com sucesso!!!";
+        }
     }
 }

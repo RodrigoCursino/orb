@@ -55,4 +55,4 @@ window.App = new Vue({
     router,
 });
 
-App.$router.push('/fornecedores');
+App.$router.push('/');
