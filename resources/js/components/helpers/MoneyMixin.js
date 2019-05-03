@@ -16,8 +16,7 @@ module.exports = {
 
     watch: {
         value() {
-          this.internalValue  = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(this.value);
-
+          this.internalValue  = this.value;
         },
         internalValue(newValue) {
           this.$emit('input', newValue);
@@ -37,7 +36,21 @@ module.exports = {
 
             setTimeout(()=> {
                 this.internalValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(money)
-            },4000)
+            },5000)
+        },
+
+        getMoney( str )
+        {
+            this.internalValue = this.formatReal(parseInt( str.replace(/[\D]+/g,'') ));
+        },
+
+        formatReal( int )
+        {
+            var tmp = int+'';
+            tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
+            if( tmp.length > 6 )
+                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+            return tmp;
         },
     }
 };

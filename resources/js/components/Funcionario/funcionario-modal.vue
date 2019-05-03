@@ -59,6 +59,13 @@
                         <v-divider></v-divider>
 
                         <v-stepper-step :complete="e1 > 4"
+                                        step="4">
+                            Dados Bancários
+                        </v-stepper-step>
+
+                        <v-divider></v-divider>
+
+                        <v-stepper-step :complete="e1 > 5"
                                         step="5">
                             Comfirmar Dados
                         </v-stepper-step>
@@ -71,6 +78,63 @@
                                             height="360px"
                                     >
                                         <v-container grid-list-md>
+                                            <v-layout warp>
+                                                <v-flex
+                                                        xs12
+                                                        md6
+                                                        lg4
+                                                >
+                                                    <!-- nome -->
+                                                    <unidade-select v-model="form.unidade_id"
+                                                                 v-validate="'required'"
+                                                    ></unidade-select>
+                                                    <v-input type="hidden"
+                                                             v-validate="'required'"
+                                                             :error-messages="errors.collect('unidade_id')"
+                                                             data-vv-name="unidade_id"
+                                                             required
+                                                    >
+                                                    </v-input>
+                                                    <!-- nome -->
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg4
+                                                >
+
+                                                    <!-- nome -->
+                                                    <!--<ncms-select v-model="form.departamento_id"-->
+                                                                 <!--v-validate="'required'"-->
+                                                    <!--&gt;</ncms-select>-->
+                                                    <!--<v-input type="hidden"-->
+                                                             <!--v-validate="'required'"-->
+                                                             <!--:error-messages="errors.collect('departamento_id')"-->
+                                                             <!--data-vv-name="departamento_id"-->
+                                                             <!--required-->
+                                                    <!--&gt;-->
+                                                    <!--</v-input>-->
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg6
+                                                >
+                                                    <!-- CPF -->
+                                                    <v-text-field
+                                                            v-model="form.cpf"
+                                                            v-validate="'required'"
+                                                            :mask="cpf"
+                                                            :error-messages="errors.collect('cpf')"
+                                                            label="CPF"
+                                                            data-vv-name="cpf"
+                                                            required
+                                                    ></v-text-field>
+                                                    <!-- CPF -->
+                                                </v-flex>
+                                            </v-layout>
+
+
                                             <v-layout warp>
                                                 <v-flex
                                                         xs12
@@ -124,6 +188,71 @@
                                                 </v-flex>
                                             </v-layout>
 
+
+                                            <v-layout warp>
+                                                <v-flex
+                                                        xs12
+                                                        md6
+                                                        lg6
+                                                >
+                                                    <!-- SEXO -->
+                                                        <v-select
+                                                                v-model="form.sexo"
+                                                                v-validate="'required'"
+                                                                :items="sexo"
+                                                                item-value="value"
+                                                                :error-messages="errors.collect('sexo')"
+                                                                label="Sexo"
+                                                                data-vv-name="sexo"
+                                                                required
+                                                        ></v-select>
+                                                    <!-- SEXO -->
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg6
+                                                >
+
+                                                    <!-- apelido -->
+                                                    <v-text-field
+                                                            v-model="form.login"
+                                                            label="Login"
+                                                    ></v-text-field>
+                                                    <!-- apelido -->
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg6
+                                                >
+
+                                                    <!-- apelido -->
+                                                    <v-text-field
+                                                            v-model="form.senha"
+                                                            label="Senha"
+                                                    ></v-text-field>
+                                                    <!-- apelido -->
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg6
+                                                >
+                                                    <!-- CPF -->
+                                                    <v-text-field
+                                                            v-model="form.cpf"
+                                                            v-validate="'required'"
+                                                            :mask="cpf"
+                                                            :error-messages="errors.collect('cpf')"
+                                                            label="CPF"
+                                                            data-vv-name="cpf"
+                                                            required
+                                                    ></v-text-field>
+                                                    <!-- CPF -->
+                                                </v-flex>
+                                            </v-layout>
+
                                             <v-layout warp>
                                                 <!-- NOME FANTASIA -->
                                                 <v-flex
@@ -131,39 +260,62 @@
                                                         md12
                                                         lg4
                                                 >
-                                                    <input-money label="Salário" :value="form.salario"></input-money>
+                                                    <input-money label="Salário" v-model="form.salario"></input-money>
                                                 </v-flex>
-                                                <!-- NOME FANTASIA -->
-                                                <!-- Nome Fanrtasia -->
+                                                <!-- Data Nascimento -->
                                                 <v-flex
                                                         xs12
                                                         md12
                                                         lg4
                                                 >
-                                                    <v-text-field
-                                                            v-model="form.nome_fantasia"
-                                                            v-validate="'required'"
-                                                            :error-messages="errors.collect('nome_fantasia')"
-                                                            label="Nome Fantasia"
-                                                            data-vv-name="nome_fantasia"
-                                                            required
-                                                    ></v-text-field>
-                                                </v-flex>
-                                                <!-- Nome Fanrtasia -->
+                                                        <v-menu
+                                                                ref="menu"
+                                                                v-model="menu"
+                                                                :close-on-content-click="false"
+                                                                :nudge-right="40"
+                                                                :return-value.sync="form.data_nascimento"
+                                                                lazy
+                                                                transition="scale-transition"
+                                                                offset-y
+                                                                full-width
+                                                                min-width="290px"
+                                                        >
+                                                            <template v-slot:activator="{ on }">
+                                                                <v-text-field
+                                                                        v-model="form.data_nascimento"
+                                                                        prepend-icon="event"
+                                                                        readonly
+                                                                        :error-messages="errors.collect('estado_civil')"
+                                                                        label="Data de Nascimento"
+                                                                        v-validate="'required'"
+                                                                        data-vv-name="estado_civil"
+                                                                        v-on="on"
+                                                                ></v-text-field>
+                                                            </template>
+                                                            <v-date-picker day-format="DD/MM/YYYY"  locale="pt-br" v-model="form.data_nascimento" no-title scrollable>
+                                                                <v-spacer></v-spacer>
+                                                                <v-btn flat color="primary" @click="menu = false">Cancel</v-btn>
+                                                                <v-btn flat color="primary" @click="$refs.menu.save(form.data_nascimento)">OK</v-btn>
+                                                            </v-date-picker>
+                                                        </v-menu>
+                                                  </v-flex>
+                                                <!-- Data Nascimento -->
                                                 <!-- RAZÃO SOCIAL -->
                                                 <v-flex
                                                         xs12
                                                         md12
                                                         lg4
                                                 >
-                                                    <v-text-field
-                                                            v-model="form.razao_social"
+                                                    <v-select
+                                                            v-model="form.estado_civil"
                                                             v-validate="'required'"
-                                                            :error-messages="errors.collect('razao_social')"
-                                                            label="Razão Social"
-                                                            data-vv-name="razao_social"
+                                                            :items="estadoCivil"
+                                                            item-value="value"
+                                                            :error-messages="errors.collect('estado_civil')"
+                                                            label="estado Cívil"
+                                                            data-vv-name="estado_civil"
                                                             required
-                                                    ></v-text-field>
+                                                    ></v-select>
                                                 </v-flex>
                                                 <!-- RAZÃO SOCIAL -->
                                             </v-layout>
@@ -204,8 +356,8 @@
                         </v-stepper-content>
                         <!--Dados-->
 
-                            <!-- ENDEREÇO -->
-                            <v-stepper-content step="2">
+                        <!-- ENDEREÇO -->
+                        <v-stepper-content step="2">
                                 <v-card
                                         class="mb-5"
                                         height="360px"
@@ -349,10 +501,10 @@
                                     Voltar
                                 </v-btn>
                             </v-stepper-content>
-                            <!-- ENDEREÇO -->
+                        <!-- ENDEREÇO -->
 
-                            <!-- CONTATO -->
-                            <v-stepper-content step="3">
+                        <!-- CONTATO -->
+                        <v-stepper-content step="3">
                                 <v-card
                                         class="mb-5"
                                         height="360px"
@@ -449,10 +601,110 @@
                                     Voltar
                                 </v-btn>
                             </v-stepper-content>
-                            <!-- CONTATO -->
+                        <!-- CONTATO -->
 
-                            <!-- Confimação -->
-                            <v-stepper-content step="4">
+                        <!-- DADOS BANCÁRIOS -->
+                        <v-stepper-content step="4">
+                                <v-card
+                                        class="mb-5"
+                                        height="360px"
+                                >
+                                    <v-container grid-list-md>
+                                        <v-layout>
+                                            <!-- Banco -->
+                                            <v-flex
+                                                    xs12
+                                                    md6
+                                                    lg6
+                                            >
+                                                <v-select
+                                                        v-model="form.dados_bancarios.banco_id"
+                                                        v-validate="'required'"
+                                                        :items="list_bancos"
+                                                        item-value="id"
+                                                        item-text="nome"
+                                                        :error-messages="errors.collect('banco_id')"
+                                                        label="Banco"
+                                                        data-vv-name="banco_id"
+                                                        required
+                                                >
+                                                </v-select>
+                                            </v-flex>
+                                            <!-- Banco -->
+                                            <!-- Agência -->
+                                            <v-flex
+                                                    xs12
+                                                    md6
+                                                    lg6
+                                            >
+                                                <v-text-field
+                                                        v-model="form.dados_bancarios.agencia"
+                                                        v-validate="'required'"
+                                                        :error-messages="errors.collect('agencia')"
+                                                        label="Agência"
+                                                        data-vv-name="agencia"
+                                                        required
+                                                ></v-text-field>
+                                            </v-flex>
+                                            <!-- Agência -->
+                                        </v-layout>
+                                        <v-layout>
+                                            <!-- TIPO  -->
+                                            <v-flex
+                                                    xs12
+                                                    md6
+                                                    lg6
+                                            >
+                                                <v-select
+                                                        v-model="form.dados_bancarios.tipo"
+                                                        v-validate="'required'"
+                                                        :items="tipos"
+                                                        item-value="value"
+                                                        :error-messages="errors.collect('tipo')"
+                                                        label="Tipo de Conta"
+                                                        data-vv-name="tipo"
+                                                        required
+                                                ></v-select>
+                                            </v-flex>
+                                            <!-- TIPO -->
+
+                                            <!-- Conta -->
+                                            <v-flex
+                                                    xs12
+                                                    md6
+                                                    lg6
+                                            >
+                                                <v-text-field
+                                                        v-model="form.dados_bancarios.conta"
+                                                        v-validate="'required'"
+                                                        :error-messages="errors.collect('conta')"
+                                                        label="CC"
+                                                        data-vv-name="conta"
+                                                        required
+                                                ></v-text-field>
+                                            </v-flex>
+                                            <!-- Conta -->
+                                        </v-layout>
+                                    </v-container>
+                                </v-card>
+
+                                <v-btn
+                                        color="primary"
+                                        @click="validateDadosBancarios(form.dados_bancarios)"
+                                >
+                                    Continue
+                                </v-btn>
+
+                                <v-btn flat
+                                       @click="e1--"
+                                >
+                                    Voltar
+                                </v-btn>
+                            </v-stepper-content>
+                        <!-- DADOS BANCÁRIOS -->
+
+                        <!-- Confimação -->
+                        <v-stepper-content step="5">
                                 <v-card
                                         class="mb-5"
                                         height="360px"
@@ -475,7 +727,7 @@
                                     </v-btn>
                                 </v-layout>
                             </v-stepper-content>
-                            <!-- Confimação -->
+                        <!-- Confimação -->
 
                     </v-stepper-items>
                      <!--Dados-->
@@ -488,10 +740,12 @@
 <script>
     import {mapState, mapActions, mapGetters} from 'vuex';
     import FuncionarioConfirm from "./funcionario-confirm";
+    import UnidadeSelect from "../Unidade/unidade-select";
     import InputMoney from "../shared/input-money";
+    import InputDate from "../shared/input-date";
     export default {
         name: 'funcionario-modal',
-        components: {InputMoney, FuncionarioConfirm},
+        components: {InputDate, InputMoney, FuncionarioConfirm, UnidadeSelect},
         $_veeValidate: {
             validator: 'new'
         },
@@ -517,18 +771,33 @@
                     telefone:"(00) 0000-0000",
 
                 },
+                dados_bancarios: {
+                    agencia:"",
+                    ativo:1,
+                    banco_id:"",
+                    conta:"",
+                    tipo:"CORRENTE"
+                },
+                e1: 0,
+                menu : false,
+                sexo: [
+                    {value: 'MASCULINO',   text:'Masculino'},
+                    {value: 'FEMININO',     text:'Feminino'}
+                ],
+                tipos: [
+                    {value: 'POUPANCA', text:'Poupança'},
+                    {value: 'CORRENTE', text:'Corrente'}
+                ],
                 natureza: [
                     {value: 'FISICA', text:'Fisíca'},
                     {value: 'JURIDICA', text:'Jurídica'}
                 ],
-                e1: 0,
-                price: 0,
-                money: {
-                    decimal: ',',
-                    thousands: '.',
-                    precision: 2,
-                    masked: false /* doesn't work with directive */
-                },
+                estadoCivil: [
+                    {value: 'SOLTEIRO',   text:'Solteiro'},
+                    {value: 'CASADO',     text:'Casado'},
+                    {value: 'VIUVO',      text:'Viúvo'},
+                    {value: 'DIVORCIADO', text:'Divorciado'},
+                ],
                 cpf: "###.###.###-##",
                 cnpj: "##.###.###/####-##",
                 mask: '#####-###',
@@ -541,17 +810,20 @@
                         nome: {
                             required: () => 'Este é Obrigatório',
                         },
-                        cnpj: {
+                        cpf: {
                             required: () => 'Este campo é obrigatório',
                         },
-                        ie: {
-                            required: () => 'A Inscrição Estadual é obrigatória',
+                        salario: {
+                            required: () => 'A Salário é obrigatória',
                         },
-                        nome_fantasia: {
-                            required: () => 'O Nome Fantasia é obrigatório',
+                        data_nascimento: {
+                            required: () => 'A Data de Nascimento é obrigatória',
                         },
-                        razao_social: {
-                            required: () => 'A Razão Social é obrigatória',
+                        estado_civil: {
+                            required: () => 'O campo Estado Cívil é obrigatória',
+                        },
+                        apelido: {
+                            required: () => 'O campo Apelido é obrigatória',
                         },
                         observacao: {
                             required: () => 'O campo de observações é obrigatória',
@@ -643,11 +915,18 @@
                     ativo:              1,
                     nome:               form                   ? form.nome               : null,
                     apelido:            form                   ? form.apelido            : null,
+                    login:              form                   ? form.login              : null,
+                    senha:              form                   ? form.senha              : null,
                     salario:            form.salario           ? form.salario            : 0,
+                    unidade_id:         form.unidade_id        ? form.unidade_id         : 0,
+                    data_nascimento:    form.data_nascimento   ? form.data_nascimento    : new Date().toISOString().substr(0, 10),
+                    estado_civil:       form.estado_civil      ? form.estado_civil       : "SOLTEIRO",
+                    sexo:               form.sexo              ? form.sexo               : "FEMININO",
                     observacao:         form                   ? form.observacao         : null,
                     cpf:                form                   ? form.cpf                : null,
                     contato:            form.contato           ? form.contato            : this.contato,
                     endereco:           form.endereco          ? form.endereco           : this.endereco,
+                    dados_bancarios:    form.dados_bancarios   ? form.dados_bancarios    : this.dados_bancarios
 
                 }
             },
@@ -681,7 +960,6 @@
             validateContacts (scope) {
                 this.$validator.validateAll(scope).then(result => {
                     if (result) {
-                        this.add(this.form);
                         this.e1++;
                     }
                 });
@@ -689,6 +967,14 @@
             validateFornecedor (scope) {
                 this.$validator.validateAll(scope).then(result => {
                     if (result) {
+                        this.e1++;
+                    }
+                });
+            },
+            validateDadosBancarios (scope) {
+                this.$validator.validateAll(scope).then(result => {
+                    if (result) {
+                        this.add(this.form);
                         this.e1++;
                     }
                 });
