@@ -2,18 +2,16 @@ export default {
 
     sideBarControl: false,
 
-    currentItem: 'funcionarios',
+    currentItem: 'categorias',
 
     navList: window.Slc.menu,
-    menuTabs: [
-        {
-            "position" : 9,
-            "text"     : "Funcionário",
-            "link"     : "#funcionarios",
-            "action"   : "funcionarios",
-            "icon"     : "face"
-        },
-    ]
+    menuTabs: [{
+            "position" : 14,
+            "text"     : "Categorias",
+            "link"     : "#categorias",
+            "action"   : "categorias",
+            "icon"     : "done_all",
+    }]
     // navList: [
     //     {
     //         position : 1,
