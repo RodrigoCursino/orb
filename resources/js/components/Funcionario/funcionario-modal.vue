@@ -131,7 +131,7 @@
                                                         md12
                                                         lg4
                                                 >
-                                                    <input-money label="Salário" v-model="form.salario"></input-money>
+                                                    <input-money label="Salário" :value="form.salario"></input-money>
                                                 </v-flex>
                                                 <!-- NOME FANTASIA -->
                                                 <!-- Nome Fanrtasia -->
@@ -522,6 +522,13 @@
                     {value: 'JURIDICA', text:'Jurídica'}
                 ],
                 e1: 0,
+                price: 0,
+                money: {
+                    decimal: ',',
+                    thousands: '.',
+                    precision: 2,
+                    masked: false /* doesn't work with directive */
+                },
                 cpf: "###.###.###-##",
                 cnpj: "##.###.###/####-##",
                 mask: '#####-###',
@@ -636,7 +643,7 @@
                     ativo:              1,
                     nome:               form                   ? form.nome               : null,
                     apelido:            form                   ? form.apelido            : null,
-                    salario:            form                   ? form.salario            : 0,
+                    salario:            form.salario           ? form.salario            : 0,
                     observacao:         form                   ? form.observacao         : null,
                     cpf:                form                   ? form.cpf                : null,
                     contato:            form.contato           ? form.contato            : this.contato,

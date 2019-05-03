@@ -1,10 +1,12 @@
 <template>
     <div>
         <v-text-field
-                v-model="internalValue | money"
+                v-model.lazy="internalValue"
                 v-validate="'required'"
                 :error-messages="errors.collect('salario')"
                 :label="label"
+                @input="format"
+                type="number"
                 data-vv-name="salario"
                 required
         ></v-text-field>

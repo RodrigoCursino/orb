@@ -11,13 +11,13 @@ class Slc
         if(env('APP_ENV') == 'local') {
             $url = "http://" . $_SERVER['SERVER_NAME']. ':8000';
         } else {
-            $url = "http://" . $_SERVER['SERVER_NAME'];
+            $url = "" . $_SERVER['SERVER_NAME'];
         }
 
         $user = self::getCurrentUser();
 
         return [
-            'base_url'     => $url,
+            'base_url'     => 'http://orb.test/',
             'user'         => $user,
             'csrfToken'    => csrf_token(),
             'pusher'       => env('PUSHER_APP_KEY'),
