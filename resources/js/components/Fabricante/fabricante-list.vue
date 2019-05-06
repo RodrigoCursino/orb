@@ -83,7 +83,7 @@
 </template>
 <script>
     import {mapState, mapActions} from 'vuex'
-    import FabricanteView from "./fornecedor-view";
+    import FabricanteView from "./fabricante-view";
     import FabricanteModal from "./fabricante-modal";
     export default {
         name: 'fabricante-list',

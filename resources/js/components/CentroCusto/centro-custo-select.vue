@@ -2,12 +2,13 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="list_fabricantes"
+            :items="list_centro_custos"
             item-value="id"
-            item-text="nome_fantasia"
-            :error-messages="errors.collect('fabricante_id')"
-            label="Fabricante"
-            data-vv-name="fabricante_id"
+            item-text="nome"
+            :error-messages="errors.collect('cento_custo_id')"
+            :label="label"
+            return-object
+            data-vv-name="cento_custo_id"
             required
     >
     </v-select>
@@ -16,17 +17,21 @@
 <script>
     import {mapState, mapActions} from 'vuex';
     export default {
-        name: "fabricante-select",
+        name: "centro-custo-select",
         mixins: [require('../helpers/Mixins')],
+        props: {label : {required:true} },
+        mounted(){
+          this.setList();
+        },
         computed: {
-            ...mapState('Fabricante',{
-                list_fabricantes: state => {
-                    return state.list_fabricantes;
+            ...mapState('CentroCusto',{
+                list_centro_custos: state => {
+                    return state.list_centro_custos;
                 }
             })
         },
         methods: {
-            ...mapActions('Fabricante',['setList'])
+            ...mapActions('CentroCusto',['setList'])
         }
     }
 </script>

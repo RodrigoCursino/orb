@@ -1,10 +1,10 @@
-const SET_LIST_CATEGORIAS = (state, obj) => {
-    state.list_categorias = obj.list;
+const SET_LIST_CENTRO_CUSTO = (state, obj) => {
+    state.list_centro_custos = obj.list;
 };
 
 const VIEW = (state, obj) => {
     state.view_controller = !state.view_controller;
-    state.categoria       = obj.categoria;
+    state.centro_custo       = obj.centro_custo;
 }
 
 const DELETED = (state) => {
@@ -16,7 +16,7 @@ const CLOSE_FORM = (state) => {
 }
 
 const ADD = (state, obj) => {
-    state.categoria = obj.categoria;
+    state.centro_custo = obj.centro_custo;
 };
 
 const CLOSE_VIEW = (state) => {
@@ -24,7 +24,7 @@ const CLOSE_VIEW = (state) => {
 }
 
 export default {
-    SET_LIST_CATEGORIAS,
+    SET_LIST_CENTRO_CUSTO,
     VIEW,
     DELETED,
     CLOSE_FORM,

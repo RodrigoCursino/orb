@@ -7,9 +7,9 @@
                     lg12
             >
                 <div>
-                    <p class="text-lg-center font-weight-bold">{{`Lougradouro : ${fabricante.endereco.logradouro} Nº ${fabricante.endereco.numero}`}}</p>
-                    <p class="text-lg-center font-weight-bold">{{`CEP : ${fabricante.endereco.cep}               Bairro : ${fabricante.endereco.bairro}` }}</p>
-                    <p class="text-lg-center font-weight-bold">{{`${fabricante.endereco.cidade} - ${fabricante.endereco.estado} - ${fabricante.endereco.pais}` }}</p>
+                    <p class="text-lg-center font-weight-bold">{{`Lougradouro : ${unidade.endereco.logradouro} Nº ${unidade.endereco.numero}`}}</p>
+                    <p class="text-lg-center font-weight-bold">{{`CEP : ${unidade.endereco.cep}               Bairro : ${unidade.endereco.bairro}` }}</p>
+                    <p class="text-lg-center font-weight-bold">{{`${unidade.endereco.cidade} - ${unidade.endereco.estado} - ${unidade.endereco.pais}` }}</p>
                 </div>
             </v-flex>
 
@@ -22,9 +22,9 @@
     export default {
         name: "dados-endereco",
         computed: {
-            ...mapState('Fabricante',{
-                fabricante: state => {
-                    return state.fabricante;
+            ...mapState('Unidade',{
+                unidade: state => {
+                    return state.unidade;
                 }
             })
         },

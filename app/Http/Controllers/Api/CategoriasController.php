@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\LinhaCreateRequest;
 use App\Models\Categoria;
 use App\Service\CategoriaService;
-use App\Service\LinhaService;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class CategoriasController extends Controller
@@ -33,7 +31,10 @@ class CategoriasController extends Controller
     public function store(LinhaCreateRequest $request)
     {
         $categoria = $this->service->create($request);
-        return redirect(route('categorias.index'));
+        return  [
+            "data" => $categoria,
+            "message"   => "Categoria Categoria Com Sucesso",
+        ];
     }
 
 
@@ -60,7 +61,9 @@ class CategoriasController extends Controller
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('categorias.index'));
+            return "Deletado com Sucesso!!!";
+        } else {
+            return "Error";
         }
     }
 }

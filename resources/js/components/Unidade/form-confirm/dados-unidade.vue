@@ -6,7 +6,7 @@
                     md6
                     lg6
             >
-                <h5 class="font-weight-bold">{{`Nome Fantasia: ${fabricante.nome_fantasia}`}}</h5>
+                <h5 class="font-weight-bold">{{`Nome Fantasia: ${unidade.nome_fantasia} \\\\ Razão Social : ${unidade.razao_social}`}}</h5>
             </v-flex>
 
             <v-flex
@@ -14,7 +14,7 @@
                     md6
                     lg6
             >
-                <h5 class="font-weight-bold">{{`Nome : ${fabricante.nome}`}}</h5>
+                <h5 class="font-weight-bold">{{`Nome : ${unidade.nome} \\\\ CPNJ : ${unidade.cnpj}`}}</h5>
             </v-flex>
 
         </v-layout>
@@ -24,14 +24,15 @@
                     md6
                     lg6
             >
-                <h5 class="font-weight-light">{{fabricante.natureza_juridica == "JURIDICA" ? `CNPJ : ${fabricante.cnpj}`  : `CPF : ${fabricante.cpf}`}}</h5>
+                <h5 class="font-weight-light">{{`Centro de Custo : ${unidade.centro_custo.nome}  `}}</h5>
+                <h5 class="font-weight-light">Unidade : {{unidade.loja ? "LOJA"  : "ESTOQUE"}}</h5>
             </v-flex>
             <v-flex
                     xs12
                     md4
                     lg4
             >
-                <h5 class="font-weight-light">{{`Inscrição Estadual : ${fabricante.ie}`}}</h5>
+                <h5 class="font-weight-light">{{`Inscrição Estadual : ${unidade.ie}`}}</h5>
             </v-flex>
         </v-layout>
         <v-divider inset></v-divider>
@@ -45,7 +46,7 @@
                         box
                         disabled
                         label="Observação"
-                        :value="fabricante.observacao"
+                        :value="unidade.observacao"
                 ></v-textarea>
             </v-flex>
         </v-layout>
@@ -55,11 +56,11 @@
 <script>
     import {mapState} from 'vuex';
     export default {
-        name: "dados-fabricante",
+        name: "dados-unidade",
         computed: {
-            ...mapState('Fabricante',{
-                fabricante: state => {
-                    return state.fabricante;
+            ...mapState('Unidade',{
+                unidade: state => {
+                    return state.unidade;
                 }
             })
         },

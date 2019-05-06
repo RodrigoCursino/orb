@@ -71,23 +71,41 @@
                                             height="360px"
                                     >
                                         <v-container grid-list-md>
+
                                             <v-layout warp>
+                                                <!-- IE -->
                                                 <v-flex
                                                         xs12
-                                                        md6
-                                                        lg6
+                                                        md12
+                                                        lg2
                                                 >
-                                                    <v-select
-                                                            v-model="form.natureza_juridica"
-                                                            v-validate="'required'"
-                                                            :items="natureza"
-                                                            item-value="value"
-                                                            :error-messages="errors.collect('natureza')"
-                                                            label="Natureza"
-                                                            data-vv-name="natureza"
-                                                            required
-                                                    ></v-select>
+                                                    <v-switch right
+                                                              :label="form.loja ? 'Loja' : 'Estoque'"
+                                                              v-model="form.loja"
+                                                    >
+                                                    </v-switch>
                                                 </v-flex>
+                                                <!-- IE -->
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg5
+                                                >
+                                                    <unidade-estoque-select v-if="form.loja" label="Estoque" v-model="form.unidade_estoque_id">
+                                                    </unidade-estoque-select>
+                                                </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg5
+                                                >
+                                                    <centro-custo-select label="Centro de Custo" v-model="form.centro_custo">
+                                                    </centro-custo-select>
+                                                </v-flex>
+
+                                            </v-layout>
+
+                                            <v-layout warp>
                                                 <v-flex
                                                         xs12
                                                         md12
@@ -97,19 +115,9 @@
                                                     <!-- CNPJ -->
                                                     <v-text-field
                                                             v-model="form.cnpj"
-                                                            v-if="form.natureza_juridica === 'JURIDICA'"
                                                             :mask="cnpj"
                                                             return-masked-value
                                                             label="CNPJ"
-                                                    ></v-text-field>
-                                                    <!-- CNPJ -->
-                                                    <!-- CNPJ -->
-                                                    <v-text-field
-                                                            v-else
-                                                            v-model="form.cpf"
-                                                            :mask="cpf"
-                                                            return-masked-value
-                                                            label="CPF"
                                                     ></v-text-field>
                                                     <!-- CNPJ -->
                                                 </v-flex>
@@ -121,7 +129,6 @@
                                                 >
                                                     <v-text-field
                                                             v-model="form.ie"
-                                                            v-if="form.natureza_juridica === 'JURIDICA'"
                                                             label="Inscrição Estadual"
                                                             required
                                                     ></v-text-field>
@@ -469,7 +476,7 @@
                                         class="mb-5"
                                         height="360px"
                                 >
-                                    <fabricante-confirm></fabricante-confirm>
+                                    <unidade-confirm></unidade-confirm>
                                 </v-card>
                                 <v-layout align-center justify-end row>
                                     <v-btn  color="primary"
@@ -499,10 +506,12 @@
 </template>
 <script>
     import {mapState, mapActions, mapGetters} from 'vuex';
-    import FabricanteConfirm from "./unidade-confirm";
+    import UnidadeConfirm from "./unidade-confirm";
+    import CentroCustoSelect from "../CentroCusto/centro-custo-select";
+    import UnidadeEstoqueSelect from "./unidade-estoque-select";
     export default {
-        name: 'fabricante-modal',
-        components: {FabricanteConfirm},
+        name: 'unidade-modal',
+        components: {UnidadeEstoqueSelect, CentroCustoSelect, UnidadeConfirm},
         $_veeValidate: {
             validator: 'new'
         },
@@ -520,6 +529,12 @@
                     numero:"",
                     pais:"",
                 },
+                centro_custo: {
+                    ativo:1,
+                    dados_bancarios_id:0,
+                    id:0,
+                    nome:"",
+                },
                 contato: {
                     ativo:1,
                     celular:"(00) 00000-0000",
@@ -528,10 +543,6 @@
                     telefone:"(00) 0000-0000",
 
                 },
-                natureza: [
-                    {value: 'FISICA', text:'Fisíca'},
-                    {value: 'JURIDICA', text:'Jurídica'}
-                ],
                 e1: 0,
                 cnpj: "##.###.###/####-##",
                 cpf: "###.###.###-##",
@@ -611,9 +622,9 @@
         computed: {
             title: function () {
                 if(this.form.id) {
-                    return 'Editar Fabricante';
+                    return 'Editar Unidade';
                 } else {
-                    return 'Cadastrar Fabricante';
+                    return 'Cadastrar Unidade';
                 };
             },
             ...mapGetters('Endereco',['get_endereco']),
@@ -623,7 +634,7 @@
                     }
                 }
             ),
-            ...mapState('Fabricante',{
+            ...mapState('Unidade',{
                     closeForm: state => {
                         return state.closeForm;
                     }
@@ -631,7 +642,7 @@
             )
         },
         methods: {
-            ...mapActions('Fabricante', ['save_form','add','close_form']),
+            ...mapActions('Unidade', ['save_form','add','close_form']),
             ...mapActions('Endereco', ['get_cep','set_endereco']),
             ...mapActions('Banco',['get_list_bancos']),
 
@@ -643,15 +654,18 @@
             buildForm (form) {
                 return {
                     ativo:              1,
-                    cnpj:               form                   ? form.cnpj               : null,
-                    contato:            form.contato           ? form.contato            : this.contato,
-                    endereco:           form.endereco          ? form.endereco           : this.endereco,
-                    natureza_juridica:  form.natureza_juridica ? form.natureza_juridica  : 'JURIDICA',
-                    id:                 form                   ? form.id                 : 0,
-                    ie:                 form                   ? form.ie                 : null,
-                    nome_fantasia:      form                   ? form.nome_fantasia      : null,
-                    observacao:         form                   ? form.observacao         : null,
-                    nome:               form                   ? form.nome               : null,
+                    loja:               form.loja               ? form.loja               : true,
+                    cnpj:               form                    ? form.cnpj               : null,
+                    unidade_estoque_id: form.unidade_estoque_id ? form.unidade_estoque_id : 0,
+                    contato:            form.contato            ? form.contato            : this.contato,
+                    endereco:           form.endereco           ? form.endereco           : this.endereco,
+                    centro_custo:       form.centro_custo       ? form.centro_custo       : this.centro_custo,
+                    id:                 form                    ? form.id                 : 0,
+                    ie:                 form                    ? form.ie                 : null,
+                    nome_fantasia:      form                    ? form.nome_fantasia      : null,
+                    razao_social:       form                    ? form.razao_social      : null,
+                    observacao:         form                    ? form.observacao         : null,
+                    nome:               form                    ? form.nome               : null,
 
                 }
             },
@@ -690,7 +704,7 @@
                     }
                 });
             },
-            validateFornecedor (scope) {
+            validateUnidade (scope) {
                 this.$validator.validateAll(scope).then(result => {
                     if (result) {
                         this.e1++;

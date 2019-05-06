@@ -18,9 +18,4 @@ class Categoria extends Model
         'id',
         'nome'
     ];
-
-    public static function list($columns = ['*'])
-    {
-        return parent::all($columns)->where('ativo','=',1);
-    }
 }

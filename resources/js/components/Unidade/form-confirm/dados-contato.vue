@@ -7,9 +7,9 @@
                     lg12
             >
                 <div>
-                    <p class="text-lg-center font-weight-bold">{{`Nome para Contato: : ${fabricante.contato.nome}`}}</p>
-                    <p class="text-lg-center font-weight-normal">{{`Email : ${fabricante.contato.email}` }}</p>
-                    <p class="text-lg-center font-weight-normal">{{`Telefone: ${fabricante.contato.telefone} - Celular: ${fabricante.contato.celular}` }}</p>
+                    <p class="text-lg-center font-weight-bold">{{`Nome para Contato: : ${unidade.contato.nome}`}}</p>
+                    <p class="text-lg-center font-weight-normal">{{`Email : ${unidade.contato.email}` }}</p>
+                    <p class="text-lg-center font-weight-normal">{{`Telefone: ${unidade.contato.telefone} - Celular: ${unidade.contato.celular}` }}</p>
                 </div>
             </v-flex>
 
@@ -22,9 +22,9 @@
     export default {
         name: "dados-contato",
         computed: {
-            ...mapState('Fabricante',{
-                fabricante: state => {
-                    return state.fabricante;
+            ...mapState('Unidade',{
+                unidade: state => {
+                    return state.unidade;
                 }
             })
         },

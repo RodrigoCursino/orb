@@ -30,8 +30,6 @@ const put = async (api, form) => {
     let url_  = base + `${api}/${form_}`;
     let response  = (await axios.put(url_,form_));
 
-    console.log('ops ', response)
-
     swal({
         title: "Operação realizada com sucesso",
         text: response.data.message,

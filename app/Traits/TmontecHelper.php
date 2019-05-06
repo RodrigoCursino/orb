@@ -5,14 +5,14 @@ namespace App\Traits;
 trait TmontecHelper {
 
     // listagem de ativos
-    public static function list($columns = ['*'])
+    public static function list()
     {
-        return parent::all($columns)->where('ativo','=',1);
+        return parent::where('ativo','=',1)->get();
     }
 
     // listagem de não ativos
-    public static function listAllDisabled($columns = ['*'])
+    public static function listAllDisabled()
     {
-        return parent::all($columns)->where('ativo','=',0);
+        return parent::where('ativo','=',0)->get();
     }
 }

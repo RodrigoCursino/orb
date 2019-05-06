@@ -1,18 +1,17 @@
 const setList = async ({commit}) => {
-    const list = (await  http.get('categorias')).data;
-    commit('SET_LIST_CATEGORIAS',{list})
+    const list = (await  http.get('centroscusto')).data;
+    commit('SET_LIST_CENTRO_CUSTO',{list})
 }
 
-const save_form = ({ commit, dispatch }, categoria) => {
+const save_form = ({ commit, dispatch }, centro_custo) => {
 
     let response = false;
 
-    debugger;
-    if (categoria.id) {
-        response = http.put('categorias',categoria);
+    if (centro_custo.id) {
+        response = http.put('centroscusto',centro_custo);
         commit('CLOSE_VIEW');
     } else {
-        response = http.post('categorias',categoria);
+        response = http.post('centroscusto',centro_custo);
 
     }
 
@@ -38,8 +37,8 @@ const delete_form = ({commit,dispatch}, array) => {
         dangerMode: true,
     }).then(async (willDelete) => {
         for (let i in array) {
-            let categoriaRequest = JSON.parse(JSON.stringify(array[i]));
-            (await http.deleteForm('categorias',categoriaRequest));
+            let centro_custoRequest = JSON.parse(JSON.stringify(array[i]));
+            (await http.deleteForm('centroscusto',centro_custoRequest));
         }
         dispatch('setList');
     });
@@ -49,12 +48,12 @@ const delete_form = ({commit,dispatch}, array) => {
 };
 
 const view = ({ commit },obj) => {
-    const categoria = obj;
-    commit('VIEW',{categoria});
+    const centro_custo = obj;
+    commit('VIEW',{centro_custo});
 };
 
-const add = ({ commit }, categoria ) => {
-    commit('ADD',{categoria});
+const add = ({ commit }, centro_custo ) => {
+    commit('ADD',{centro_custo});
 };
 
 export default {

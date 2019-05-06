@@ -1,7 +1,7 @@
 export default {
-    list_categorias : [],
-    view_controller : false,
-    categoria       : {},
-    deleted         : false,
-    closeForm       : false
+    list_centro_custos : [],
+    view_controller    : false,
+    centro_custo       : {},
+    deleted            : false,
+    closeForm          : false
 }

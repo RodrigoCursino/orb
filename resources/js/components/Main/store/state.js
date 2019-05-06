@@ -2,14 +2,14 @@ export default {
 
     sideBarControl: false,
 
-    currentItem: 'categorias',
+    currentItem: 'unidades',
 
     navList: window.Slc.menu,
     menuTabs: [{
-            "position" : 14,
-            "text"     : "Categorias",
-            "link"     : "#categorias",
-            "action"   : "categorias",
+            "position" : 6,
+            "text"     : "Unidades",
+            "link"     : "#unidades",
+            "action"   : "unidades",
             "icon"     : "done_all",
     }]
     // navList: [
