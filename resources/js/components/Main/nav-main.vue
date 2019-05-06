@@ -1,7 +1,7 @@
 <template>
     <v-toolbar
             :clipped-left="$vuetify.breakpoint.lgAndUp"
-            color="#892f16"
+            color="primary"
             dark
             app
             fixed
@@ -12,20 +12,19 @@
             </v-toolbar-side-icon>
             <span class="hidden-sm-and-down">Projeto Orb</span>
         </v-toolbar-title>
-        <v-text-field
-                flat
-                solo-inverted
-                hide-details
-                prepend-inner-icon="search"
-                label="Search"
-                class="hidden-sm-and-down"
-        ></v-text-field>
+        <!--<v-text-field-->
+                <!--flat-->
+                <!--solo-inverted-->
+                <!--hide-details-->
+                <!--prepend-inner-icon="search"-->
+                <!--label="Search"-->
+                <!--class="hidden-sm-and-down"-->
+        <!--&gt;</v-text-field>-->
         <v-spacer></v-spacer>
-        <v-btn icon>
-            <v-icon>apps</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>notifications</v-icon>
+        <v-btn icon
+            @click="LOGOUT"
+        >
+            <v-icon>exit_to_app</v-icon>
         </v-btn>
         <v-btn icon large>
             <v-avatar size="32px" tile>
@@ -92,7 +91,8 @@
         ,
         methods: {
             ...mapMutations('Main',[
-                'SHOW_SIDEBAR'
+                'SHOW_SIDEBAR',
+                'LOGOUT'
             ])
         }
     }

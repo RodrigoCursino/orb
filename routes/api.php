@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['as' => 'api.', 'middleware' => ['auth:api']], function () {
+    foreach (File::files(app()->path() . '/Routes/api') as $file) {
+        require $file;
+    }
 });
+
+

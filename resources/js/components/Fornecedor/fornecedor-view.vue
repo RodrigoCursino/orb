@@ -14,19 +14,27 @@
                         </v-icon>
                     </v-btn>
                     <v-toolbar-title>
-                        {{"Fornecedor : " + fornecedor.nome_fantasia}}
+                        {{'Nome do Fornecedor ' + fornecedor.nome_fantasia}}
                     </v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
                         <v-btn
                                 dark
                                 flat
-                                @click="viewFornecedor({})">
-                            Save
+                                @click="editOps()">
+                            <v-icon>edit</v-icon>
+                        </v-btn>
+                        <v-btn
+                                dark
+                                flat
+                                >
+                            <v-icon>delete</v-icon>
                         </v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
-                <h1>Fornecedor</h1>
+                <v-container>
+                    <fornecedor-confirm></fornecedor-confirm>
+                </v-container>
             </v-card>
         </v-dialog>
     </v-layout>
@@ -34,8 +42,10 @@
 
 <script>
     import {mapActions,mapState} from 'vuex'
+    import FornecedorConfirm from "./fornecedor-confirm";
     export default {
         name: "fornecedor-view",
+        components: {FornecedorConfirm},
         data () {
             return {
                 dialog: false,
@@ -55,7 +65,11 @@
             })
         },
         methods: {
-            ...mapActions('Fornecedor', ['viewFornecedor'])
+            ...mapActions('Fornecedor', ['viewFornecedor','save_fornecedor']),
+            editOps() {
+                this.$emit('edit',this.fornecedor)
+            }
+
         }
     }
 </script>

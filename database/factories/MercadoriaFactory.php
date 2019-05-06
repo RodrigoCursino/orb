@@ -15,13 +15,17 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Mercadoria::class, function (Faker $faker) {
     return [
-        'nome'            => $faker->company,
-        'ncm'             => $faker->companySuffix,
-        'unidade_medida'  => "UN",
-        'unidade_caixa'   => "UN",
-        'observacao'      => $faker->text(200),
-        'fornecedor_id'   => $faker->numberBetween(1,20),
-        'grupo_id'        => $faker->numberBetween(1,5),
-        'sub_grupo_id'    => $faker->numberBetween(1,20),
+        'nome'               => $faker->company,
+        'observacao'         => $faker->text(200),
+        'fornecedor_id'      => $faker->numberBetween(1,20),
+        'linha_id'           => $faker->numberBetween(1,5),
+        'colecao_id'         => $faker->numberBetween(1,5),
+        'categoria_id'       => $faker->numberBetween(1,5),
+        'marca_id'           => $faker->numberBetween(1,5),
+        'grupo_id'           => $faker->numberBetween(1,5),
+        'sub_grupo_id'       => $faker->numberBetween(1,20),
+        'ncm_id'             => $faker->numberBetween(1,50),
+        'unidade_medida_id'  => $faker->numberBetween(1,5),
+        'unidade_caixa_id'   => $faker->numberBetween(1,5),
     ];
 });
