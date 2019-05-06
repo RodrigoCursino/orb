@@ -1,23 +1,53 @@
 <template>
     <div>
         <template>
-            <fornecedor-view></fornecedor-view>
+            <fornecedor-modal ref="fornecedoredit"></fornecedor-modal>
+            <fornecedor-view @edit="editarFornecedor"></fornecedor-view>
                 <v-card-title>
-                    <v-spacer></v-spacer>
-                    <v-text-field
-                            v-model="search"
-                            append-icon="search"
-                            label="Search"
-                            single-line
-                            hide-details
-                    ></v-text-field>
+                    <!--<v-spacer></v-spacer>-->
+                    <!--<v-spacer></v-spacer>-->
+                    <v-layout>
+                        <v-flex lg6
+                                md6
+                                sm12
+                                xs12
+                        >
+                            <v-text-field
+                                    v-model="search"
+                                    append-icon="search"
+                                    label="Buscar Fornecedor"
+                                    single-line
+                                    hide-details
+                            ></v-text-field>
+                        </v-flex>
+                        <v-flex lg6
+                                md6
+                                sm12
+                                xs12
+                        >
+
+
+                            <v-layout justify-end row class="mb-2">
+                                <span class="group pa-2">
+                                  <v-btn fab
+                                         dark
+                                         title="selecione um item para deletar"
+                                         color="danger"
+                                         @click.native="acaoComSelecionados()"
+                                  >
+                                     <v-icon dark>delete</v-icon>
+                                  </v-btn>
+                                </span>
+                            </v-layout>
+
+                        </v-flex>
+                    </v-layout>
                 </v-card-title>
                 <v-data-table
                         v-model="selected"
                         :headers="headers"
                         :items="list_fornecedores"
                         :search="search"
-                        :loading="true"
                         item-key="id"
                         select-all
                 >
@@ -54,10 +84,21 @@
 <script>
     import {mapState, mapActions} from 'vuex'
     import FornecedorView from "./fornecedor-view";
+    import FornecedorModal from "./fornecedor-modal";
     export default {
-        components: {FornecedorView},
+        components: {FornecedorModal, FornecedorView},
         mounted() {
             this.setList()
+        },
+        computed: {
+            ...mapState('Fornecedor',{
+                list_fornecedores: state => {
+                    return state.list_fornecedores;
+                },
+                fornecedor: state => {
+                    return state.fornecedor;
+                }
+            })
         },
         data () {
             return {
@@ -84,17 +125,13 @@
             }
         },
         methods: {
-            ...mapActions('Fornecedor',['setList','viewFornecedor'])
-        },
-        computed: {
-            ...mapState('Fornecedor',{
-                list_fornecedores: state => {
-                    return state.list_fornecedores;
-                },
-                fornecedor: state => {
-                    return state.fornecedor;
-                }
-            })
+            acaoComSelecionados() {
+                this.delete_fornecedor(this.selected);
+            },
+            editarFornecedor(fornecedor) {
+                this.$refs.fornecedoredit.edit(fornecedor);
+            },
+            ...mapActions('Fornecedor',['setList','viewFornecedor','delete_fornecedor']),
         }
     }
 </script>

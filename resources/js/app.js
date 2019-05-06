@@ -1,35 +1,35 @@
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css'
-import store from "./components/store/store";
-
 require('./bootstrap');
 
-window.Vue = require('vue');
-// let particles = window.particlesJS = require('particlesjs/dist/particles.min');
-//
-// console.log('pa', particles);
-//
-// particles.load('particles-js', './partials/particles.json', function() {
-//     console.log('callback - particles.json config loaded');
-// });
+import swal from 'sweetalert';
+import money from 'v-money';
+import Vuetify from 'vuetify';
+import VeeValidate from 'vee-validate'
+require('vuetify/dist/vuetify.min.css');
+import store  from "./components/store/store";
+import router from "./router";
+import HTTP from './http';
 
+window.http = HTTP;
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+window.Vue  = require('vue');
+Vue.use(money, {precision: 2})
+window.swal = swal;
 
-Vue.component('main-component', require('./components/main/main-componet.vue').default);
+window.EventBus = window.Bus = new Vue();
+
+Vue.component('main-component', require('./components/Main/main-componet.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('content-tabs', require('./components/main/content-tabs.vue').default);
+Vue.component('content-tabs', require('./components/Main/content-tabs.vue').default);
+Vue.component('notification', require('./components/shared/notifications').default);
 
 // Translation provided by Vuetify (javascript)
 import pt from 'vuetify/es5/locale/pt.js'
-
-
 
 // Helpers
 import colors from 'vuetify/es5/util/colors'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
+// Vuetify configurações vizuais como cor e outras coisas
 Vue.use(Vuetify, {
     iconfont: 'md',
     lang: {
@@ -37,17 +37,20 @@ Vue.use(Vuetify, {
         current: 'pt'
     },
     theme: {
-        primary:   colors.red.darken1,  // #E53935
+        primary:   colors.purple.darken1,  // #E53935
         secondary: colors.red.lighten4, // #FFCDD2
-        accent:    colors.indigo.base   // #3F51B5
+        accent:    colors.indigo.base,   // #3F51B5
+        danger:    colors.red.base,   // #3F51B5
     }
-})
-const app = new Vue({
+});
+
+Vue.use(VeeValidate);
+
+
+window.App = new Vue({
     store,
     el: '#app',
-    data () {
-        return {
-           hello: 'Hello World'
-        }
-    },
+    router,
 });
+
+App.$router.push('/');

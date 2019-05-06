@@ -17,7 +17,15 @@ class CreateGruposTable extends Migration
             $table->increments('id');
             $table->string('nome',30);
             $table->string('observacao',500);
-            $table->string('ncm',60)->default('');
+            $table->boolean('ativo')->default(1);
+
+            //foreignKeys
+            $table->integer('ncm_id')->nullable()->unsigned();
+            $table->foreign('ncm_id')->references('id')
+                ->on('ncm')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
+
             $table->timestamps();
             $table->softDeletes();
         });
