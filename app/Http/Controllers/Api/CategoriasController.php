@@ -21,8 +21,7 @@ class CategoriasController extends Controller
 
     public function index()
     {
-        $categorias =  Categoria::list();
-        return $categorias;
+        return Categoria::list();
     }
 
 
