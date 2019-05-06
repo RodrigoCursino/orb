@@ -5,42 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c8d2a09-7bbe-4d5f-81c1-82b068f7daff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ativoinvest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ativoinvest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CentrosCustoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CentrosCustoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UnidadesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UnidadesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UnidadesCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UnidadesCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Categoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Routes/api/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/api/categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Routes/api/unidades.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/api/unidades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/FuncionariosService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/FuncionariosService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/UnidadesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/UnidadesService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/TmontecHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/TmontecHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Categoria/Categoria/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Categoria/Categoria/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CentroCusto/CentroCusto/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CentroCusto/centro-custo-select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CentroCusto/centro-custo-select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Fabricante/fabricante-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Fabricante/fabricante-list.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Fornecedor/fornecedor-index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Main/store/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main/store/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/Unidade/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-contato.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-contato.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-endereco.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-endereco.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-unidade.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/form-confirm/dados-unidade.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-confirm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-confirm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-estoque-select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-estoque-select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-list.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Unidade/unidade-modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/http.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -322,7 +287,7 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1219" />
     <option name="y" value="-16" />
     <option name="width" value="1382" />
@@ -452,11 +417,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88373000" />
+    <option name="totallyTimeSpent" value="89066000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1374" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3540091" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -473,7 +437,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.94871795" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.61367524" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32991454" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
