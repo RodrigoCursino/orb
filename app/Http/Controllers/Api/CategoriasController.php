@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\LinhaCreateRequest;
 use App\Models\Categoria;
 use App\Service\CategoriaService;
+use App\Service\LinhaService;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class CategoriasController extends Controller
@@ -22,7 +24,6 @@ class CategoriasController extends Controller
         return Categoria::list();
     }
 
-
     public function create()
     {
         return view('categoria.create');
@@ -33,8 +34,8 @@ class CategoriasController extends Controller
         $categoria = $this->service->create($request);
         return  [
             "data" => $categoria,
-            "message"   => "Categoria Categoria Com Sucesso",
-        ];
+            "message"   => "Categoria Salvo Com Sucesso",
+            ];
     }
 
 
@@ -51,19 +52,20 @@ class CategoriasController extends Controller
     }
 
 
-    public function update(LinhaCreateRequest $request, $id)
+    public function update(LinhaCreateRequest $request)
     {
-        $categoria = $this->service->update($request, $id);
-        return redirect(route('categorias.index'));
+        $categoria = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $categoria,
+            "message"   => "Categoria Editada Com Sucesso",
+        ];
     }
 
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return "Deletado com Sucesso!!!";
-        } else {
-            return "Error";
+            return "Deletado com sucesso!!!";
         }
     }
 }

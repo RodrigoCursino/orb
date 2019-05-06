@@ -1,11 +1,8 @@
 <template>
     <div>
         <template>
-            <fabricante-modal ref="edit"></fabricante-modal>
-            <fabricante-view @edit="editar"></fabricante-view>
+            <colecao-modal ref="edit"></colecao-modal>
             <v-card-title>
-                <!--<v-spacer></v-spacer>-->
-                <!--<v-spacer></v-spacer>-->
                 <v-layout>
                     <v-flex lg6
                             md6
@@ -15,7 +12,7 @@
                         <v-text-field
                                 v-model="search"
                                 append-icon="search"
-                                label="Buscar Fabricantes"
+                                label="Buscar Coleções"
                                 single-line
                                 hide-details
                         ></v-text-field>
@@ -25,8 +22,6 @@
                             sm12
                             xs12
                     >
-
-
                         <v-layout justify-end row class="mb-2">
                                 <span class="group pa-2">
                                   <v-btn fab
@@ -39,21 +34,22 @@
                                   </v-btn>
                                 </span>
                         </v-layout>
-
                     </v-flex>
                 </v-layout>
             </v-card-title>
             <v-data-table
                     v-model="selected"
                     :headers="headers"
-                    :items="list_fabricantes"
+                    :items="list_colecoes"
                     :search="search"
                     item-key="id"
                     select-all
             >
                 <v-progress-linear v-slot:progress
                                    color="blue"
-                                   indeterminate></v-progress-linear>
+                                   indeterminate>
+
+                </v-progress-linear>
                 <template v-slot:items="props">
                     <td>
                         <v-checkbox
@@ -62,14 +58,12 @@
                                 hide-details
                         ></v-checkbox>
                     </td>
-                    <td class="text-xs-left">{{ props.item.cnpj}}</td>
-                    <td class="text-xs-left">{{ props.item.nome_fantasia}}</td>
-                    <td class="text-xs-left">{{ props.item.razao_social }}</td>
-                    <td class="text-xs-left">{{ props.item.contato.email }}</td>
+                    <td class="text-xs-left">{{ props.item.nome}}</td>
+                    <td class="text-xs-left">{{ props.item.ativo}}</td>
                     <td>
                         <v-flex xs12 sm3>
                             <v-btn flat icon color="grey">
-                                <v-icon @click="view(props.item)">info</v-icon>
+                                <v-icon @click="editar(props.item)">info</v-icon>
                             </v-btn>
                         </v-flex>
                     </td>
@@ -82,22 +76,21 @@
     </div>
 </template>
 <script>
-    import {mapState, mapActions} from 'vuex'
-    import FabricanteView from "./fabricante-view";
-    import FabricanteModal from "./fabricante-modal";
+    import {mapState, mapActions} from 'vuex';
+    import ColecaoModal from "./colecao-modal";
     export default {
-        name: 'fabricante-list',
-        components: {FabricanteModal, FabricanteView},
+        name: 'colecao-list',
+        components: {ColecaoModal},
         mounted() {
             this.setList()
         },
         computed: {
-            ...mapState('Fabricante',{
-                list_fabricantes: state => {
-                    return state.list_fabricantes;
+            ...mapState('Colecao',{
+                list_colecoes: state => {
+                    return state.list_colecoes;
                 },
-                fabricante: state => {
-                    return state.fabricante;
+                colecao: state => {
+                    return state.colecao;
                 }
             })
         },
@@ -107,21 +100,16 @@
                 selected: [],
                 headers: [
                     {
-                        text: 'CNPJ',
+                        text: 'Nome',
                         align: 'left',
                         sortable: false,
-                        value: 'cnpj'
+                        value: 'nome'
                     },
-                    {   text: 'Nome Fantasia',
-                        value: 'nome_fantasia'
+                    {
+                        text: 'Ativo',
+                        value: 'ativo'
                     },
-                    {   text: 'Razão Social',
-                        value: 'razao_social'
-                    },
-                    {   text: 'email',
-                        value: 'contato.email'
-                    },
-                    {   text: 'Editar',
+                    {   text: 'Visualizar',
                         sortable: false,
                         value: ''
                     }
@@ -129,13 +117,14 @@
             }
         },
         methods: {
+            ...mapActions('Colecao',['setList','view','delete_form']),
+
             acaoComSelecionados() {
                 this.delete_form(this.selected);
             },
             editar(form) {
                 this.$refs.edit.edit(form);
             },
-            ...mapActions('Fabricante',['setList','view','delete_form']),
         }
     }
 </script>

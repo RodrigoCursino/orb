@@ -1,9 +1,9 @@
 <?php
+
 namespace App;
+
 class Slc
 {
-
-
     public static function scriptVariables()
     {
         $url = "";
@@ -80,6 +80,15 @@ class Slc
                             "link"     => "#categorias",
                             "action"   => "categorias",
                             "icon"     => "done_all",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 15,
+                            "text"     => "Coleções",
+                            "link"     => "#coleções",
+                            "action"   => "coleções",
+                            "icon"     => "view_module",
                             "showNav"  => true,
                             "showPage" => true
                         ],

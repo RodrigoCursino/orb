@@ -1,7 +1,7 @@
 const setList = async ({commit}) => {
     const list = (await  http.get('categorias')).data;
     commit('SET_LIST_CATEGORIAS',{list})
-}
+};
 
 const save_form = ({ commit, dispatch }, categoria) => {
 
@@ -13,7 +13,6 @@ const save_form = ({ commit, dispatch }, categoria) => {
         commit('CLOSE_VIEW');
     } else {
         response = http.post('categorias',categoria);
-
     }
 
     if(response) {
@@ -45,7 +44,6 @@ const delete_form = ({commit,dispatch}, array) => {
     });
 
     commit('DELETED');
-
 };
 
 const view = ({ commit },obj) => {

@@ -88,7 +88,7 @@
 <script>
     import {mapState, mapActions} from 'vuex';
     export default {
-        name: 'categoria-modal',
+        name: 'colecao-modal',
         components: {},
         $_veeValidate: {
             validator: 'new'
@@ -114,12 +114,12 @@
         computed: {
             title: function () {
                 if(this.form.id) {
-                    return 'Editar Categoria';
+                    return 'Editar Coleção';
                 } else {
-                    return 'Cadastrar Categoria';
+                    return 'Cadastrar Coleção';
                 };
             },
-            ...mapState('Categoria',{
+            ...mapState('Colecao',{
                     closeForm: state => {
                         return state.closeForm;
                     }
@@ -127,7 +127,7 @@
             )
         },
         methods: {
-            ...mapActions('Categoria', ['save_form','add','close_form']),
+            ...mapActions('Colecao', ['save_form','add','close_form']),
 
             edit (form) {
                 this.form = this.buildForm(form);

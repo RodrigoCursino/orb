@@ -3,7 +3,7 @@ const base = `${window.Slc.base_url}/api/`;
 const get = (api) => {
     let url_ = base + api;
     return axios.get(url_)
-}
+};
 
 const post = async (api, form) => {
 
@@ -21,8 +21,7 @@ const post = async (api, form) => {
     }
 
     return response.data;
-
-}
+};
 
 const put = async (api, form) => {
 
