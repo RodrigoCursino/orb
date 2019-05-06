@@ -19,11 +19,8 @@ class DepartamentosController extends Controller
 
     public function index()
     {
-        $departamentos =  Departamento::with('unidade')
-            ->where('ativo','=',1)
-            ->paginate(15);
-
-        return view('departamento.index',compact('departamentos'));
+        return Departamento::with('unidade')
+            ->where('ativo','=',1)->get();
     }
 
 
@@ -43,7 +40,8 @@ class DepartamentosController extends Controller
     public function show($id)
     {
         $departamento = Departamento::where('unidade_id','=',$id)
-            ->get();
+                                    ->where('ativo','=',1)
+                                    ->get();
 
         return $departamento->toArray();
     }

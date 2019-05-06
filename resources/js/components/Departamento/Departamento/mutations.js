@@ -1,5 +1,9 @@
-const SET_LIST_CARGOS = (state, obj) => {
-    state.list_cargos = obj.list;
+const SET_LIST_DEPARTAMENTOS = (state, obj) => {
+    state.list_departamentos = obj.list;
+};
+
+const GET_DEPARATAMENTOS_BY_UNIDADE = (state, obj) => {
+    state.list_departamentos = obj.list;
 };
 
 const VIEW = (state, obj) => {
@@ -26,10 +30,11 @@ const CLOSE_VIEW = (state) => {
 
 
 export default {
-    SET_LIST_CARGOS,
+    SET_LIST_DEPARTAMENTOS,
     VIEW,
     DELETED,
     CLOSE_FORM,
     ADD,
     CLOSE_VIEW,
+    GET_DEPARATAMENTOS_BY_UNIDADE
 }

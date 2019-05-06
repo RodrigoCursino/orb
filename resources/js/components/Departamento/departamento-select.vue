@@ -2,13 +2,13 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="list_cargos"
+            :items="list_departamentos"
             item-value="id"
             item-text="nome"
-            :error-messages="errors.collect('cargo_id')"
-            label="Cargo"
+            :error-messages="errors.collect('departamento_id')"
+            label="Departamento"
             return-object
-            data-vv-name="cargo_id"
+            data-vv-name="departamento_id"
             required
     >
     </v-select>
@@ -17,20 +17,20 @@
 <script>
     import {mapState, mapActions} from 'vuex';
     export default {
-        name: "cargo-select",
+        name: "departamento-select",
         mounted() {
             this.setList();
         },
         mixins: [require('../helpers/Mixins')],
         computed: {
-            ...mapState('Cargo',{
-                list_cargos: state => {
-                    return state.list_cargos;
+            ...mapState('Departamento',{
+                list_departamentos: state => {
+                    return state.list_departamentos;
                 }
             })
         },
         methods: {
-            ...mapActions('Cargo',['setList'])
+            ...mapActions('Departamento',['setList','get_departamentos_by_unidade'])
         }
     }
 </script>

@@ -1,7 +1,7 @@
 export default {
-   list_cargos        : [],
+   list_departamentos : [],
    view_controller    : false,
-   cargo              : {},
+   departamento       : {},
    deleted            : false,
    closeForm          : false
 }

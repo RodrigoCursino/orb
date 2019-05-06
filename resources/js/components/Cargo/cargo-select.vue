@@ -4,11 +4,11 @@
             v-validate="'required'"
             :items="list_cargos"
             item-value="id"
-            item-text="nome_fantasia"
-            :error-messages="errors.collect('unidade_id')"
-            label="Unidade"
+            item-text="nome"
+            :error-messages="errors.collect('cargo_id')"
+            label="Cargo"
             return-object
-            data-vv-name="unidade_id"
+            data-vv-name="cargo_id"
             required
     >
     </v-select>

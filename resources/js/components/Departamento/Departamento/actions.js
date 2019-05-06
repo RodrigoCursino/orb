@@ -1,18 +1,23 @@
 
 const setList = async ({ commit }) => {
-    const list = (await http.get('cargos')).data;
-    commit('SET_LIST_CARGOS',{list});
+    const list = (await http.get('departamentos')).data;
+    commit('SET_LIST_DEPARTAMENTOS',{list});
 };
+
+const get_departamentos_by_unidade = async ({commit}, id) => {
+    const list = (await  http.get(`departamentos/${id}`)).data;
+    commit('GET_DEPARATAMENTOS_BY_UNIDADE',{list})
+}
 
 const save_form = ({ commit, dispatch }, fabricante) => {
 
     let response = false;
 
     if (fabricante.id) {
-        response = http.put('cargos',fabricante);
+        response = http.put('departamentos',fabricante);
         commit('CLOSE_VIEW');
     } else {
-        response = http.post('cargos',fabricante);
+        response = http.post('departamentos',fabricante);
 
     }
 
@@ -39,7 +44,7 @@ const delete_form = ({commit,dispatch}, array) => {
     }).then(async (willDelete) => {
         for (let i in array) {
              let fabricanteRequest = JSON.parse(JSON.stringify(array[i]));
-            (await http.deleteForm('cargos',fabricanteRequest));
+            (await http.deleteForm('departamentos',fabricanteRequest));
         }
         dispatch('setList');
     });
@@ -60,6 +65,7 @@ const add = ({ commit }, fabricante ) => {
 
 export default {
     setList,
+    get_departamentos_by_unidade,
     save_form,
     close_form,
     delete_form,

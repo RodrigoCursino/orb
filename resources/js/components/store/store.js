@@ -6,6 +6,8 @@ import Vuex               from 'vuex'
 **/
 
 import Banco              from '../Banco/Banco'
+import Departamento       from '../Departamento/Departamento'
+import Cargo              from '../Cargo/Cargo'
 import Linha              from '../Linha/Linha'
 import Marca              from '../Marca/Marca'
 import UnidadeCaixa       from '../UnidadeCaixa/UnidadeCaixa'
@@ -30,14 +32,16 @@ Vue.use(Vuex);
 const modules = {
     Banco,
     Categoria,
+    Cargo,
     Colecao,
+    Contato,
+    Departamento,
+    DadosBancarios,
+    Endereco,
     Fabricante,
     Fornecedor,
     Funcionario,
     Grupo,
-    DadosBancarios,
-    Endereco,
-    Contato,
     Linha,
     Main,
     Marca,
