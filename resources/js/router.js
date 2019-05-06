@@ -20,8 +20,8 @@ const router = new VueRouter({
         },
         {
             path: '/fornecedores',
-            name: 'funcionarios',
-            component: Funcionario
+            name: 'fornecedores',
+            component: Fornecedor
         },
         {
             path: '/categorias',
