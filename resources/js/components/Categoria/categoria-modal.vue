@@ -108,6 +108,9 @@
         created() {
             this.form = this.buildForm(this.form);
         },
+        mounted(){
+            this.$validator.localize('en', this.dictionary);
+        },
         computed: {
             title: function () {
                 if(this.form.id) {
@@ -151,9 +154,13 @@
             },
 
             save() {
-                this.e1 = 1;
-                this.save_form(this.form);
-                this.form = this.buildForm({});
+                this.$validator.validateAll(this.form).then((result) => {
+                    if (result) {
+                        this.save_form(this.form);
+                        this.$validator.reset();
+                        this.form = this.buildForm({});
+                    }
+                });
             }
         }
     }

@@ -6,11 +6,12 @@ export default {
 
     navList: window.Slc.menu,
     menuTabs: [{
-            "position" : 6,
-            "text"     : "Unidades",
-            "link"     : "#unidades",
-            "action"   : "unidades",
-            "icon"     : "done_all",
+        text     : "Unidades",
+        link     : "#unidades",
+        action   : "unidades",
+        icon     : "domain",
+        showNav  : true,
+        showPage : true
     }]
     // navList: [
     //     {

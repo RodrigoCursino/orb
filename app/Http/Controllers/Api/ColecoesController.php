@@ -33,15 +33,16 @@ class ColecoesController extends Controller
     public function store(LinhaCreateRequest $request)
     {
         $colecao = $this->service->create($request);
-        return redirect(route('colecoes.index'));
+        return  [
+            "data" => $colecao,
+            "message"   => "Coelção Salvo Com Sucesso",
+        ];
     }
-
 
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
@@ -50,17 +51,20 @@ class ColecoesController extends Controller
     }
 
 
-    public function update(LinhaCreateRequest $request, $id)
+    public function update(LinhaCreateRequest $request)
     {
-        $colecao = $this->service->update($request, $id);
-        return redirect(route('colecoes.index'));
+        $colecao = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $colecao,
+            "message"   => "Coleção Editada Com Sucesso",
+        ];
     }
 
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('colecoes.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }
