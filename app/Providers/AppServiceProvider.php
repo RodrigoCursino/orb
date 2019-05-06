@@ -8,11 +8,7 @@ use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+
     public function register()
     {
         if ($this->app->environment() !== 'production') {
@@ -22,11 +18,6 @@ class AppServiceProvider extends ServiceProvider
         Passport::ignoreMigrations();
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         Schema::defaultStringLength(150);

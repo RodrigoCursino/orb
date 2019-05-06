@@ -11,6 +11,8 @@ use App\Models\Contato;
 use App\Models\DadosBancarios;
 use App\Models\Endereco;
 use App\Models\Fornecedor;
+use App\Traits\DadosComunsCadastro;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
@@ -22,33 +24,9 @@ class FornecedorService
     {
         return DB::transaction(function () use ($request) {
 
-            $dados_bancario = new DadosBancarios();
-            $dados_bancario->conta         = $request->input('conta');
-            $dados_bancario->agencia       = $request->input('agencia');
-            $dados_bancario->banco_id      = $request->input('banco_id');
-            $dados_bancario->save();
-
-            $endereco = new Endereco();
-
-            $endereco->cep             = $request->input('cep');
-            $endereco->logradouro      = $request->input('logradouro');
-            $endereco->numero          = $request->input('numero');
-            $endereco->bairro          = $request->input('bairro');
-            $endereco->cidade          = $request->input('cidade');
-            $endereco->estado          = $request->input('estado');
-            $endereco->pais            = $request->input('pais');
-
-            $endereco->save();
-
-            $contato = new Contato();
-
-            $contato->email           = $request->input('email');
-            $contato->telefone        = $request->input('telefone');
-            $contato->celular         = $request->input('celular');
-            $contato->nome            = $request->input('nome');
-
-            $contato->save();
-
+            $dados_bancario = DadosComunsCadastro::saveDadosBancarios($request);
+            $endereco       = DadosComunsCadastro::saveEndereco($request);
+            $contato        = DadosComunsCadastro::saveContato($request);
 
             $fornecedor = new Fornecedor();
 
@@ -73,7 +51,7 @@ class FornecedorService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Fornecedor
+            //Banco
             $fornecedor = Fornecedor::findOrFail($id);
 
             $fornecedor->cnpj             = $request->input('cnpj');
@@ -84,27 +62,14 @@ class FornecedorService
             $fornecedor->forn_mercadoria  = $request->input('forn_mercadoria');
             $fornecedor->save();
 
+            // DadosBancarios
+            DadosComunsCadastro::findEndereco($request, $fornecedor->endereco_id);
 
-            //Endereco
-            $endereco = Endereco::findOrFail($fornecedor->endereco_id);
+            //DadosBancarios
+            DadosComunsCadastro::findContato($request, $fornecedor->contato_id);
 
-            $endereco->cep             = $request->input('cep');
-            $endereco->logradouro      = $request->input('logradouro');
-            $endereco->numero          = $request->input('numero');
-            $endereco->bairro          = $request->input('bairro');
-            $endereco->cidade          = $request->input('cidade');
-            $endereco->estado          = $request->input('estado');
-            $endereco->pais            = $request->input('pais');
-            $endereco->save();
-
-            //Contato
-            $contato =  Contato::findOrFail($fornecedor->contato_id);
-
-            $contato->email           = $request->input('email');
-            $contato->telefone        = $request->input('telefone');
-            $contato->celular         = $request->input('celular');
-            $contato->nome            = $request->input('nome');
-            $contato->save();
+            // Dados Bancários
+            DadosComunsCadastro::findDadosBancarios($request, $fornecedor->dados_bancarios_id);
 
             return $fornecedor;
 
@@ -114,22 +79,21 @@ class FornecedorService
 
     public function destroy($id)
     {
+      
       return DB::transaction(function () use ($id) {
        $fornecedor = Fornecedor::findOrFail($id);
 
-       // Contato
-       $contato    = Contato::findOrFail($fornecedor->contato_id);
-       $contato->delete();
+       // DadosBancarios
+       DadosComunsCadastro::deleteContato($fornecedor->contato_id);
 
-       // Endereco
-       $endereco   = Endereco::findOrFail($fornecedor->endereco_id);
-       $endereco->delete();
+       // DadosBancarios
+       DadosComunsCadastro::deleteEndereco($fornecedor->endereco_id);
 
        // Dados Bancários
-       $dadosBancarios   = DadosBancarios::findOrFail($fornecedor->dados_bancarios_id);
-       $dadosBancarios->delete();
+       DadosComunsCadastro::deleteDadosBancarios($fornecedor->dados_bancarios_id);
 
-       $fornecedor->delete();
+       $fornecedor->ativo = 0;
+       $fornecedor->save();
 
        return true;
 

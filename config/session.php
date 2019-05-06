@@ -93,12 +93,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | When using the "apc", "memcached", or "dynamodb" session drivers you may
-    | list a cache Fornecedor that should be used for these sessions. This value
+    | list a cache Banco that should be used for these sessions. This value
     | must match with one of the application's configured cache "stores".
     |
     */
 
-    'Fornecedor' => env('SESSION_STORE', null),
+    'Banco' => env('SESSION_STORE', null),
 
     /*
     |--------------------------------------------------------------------------

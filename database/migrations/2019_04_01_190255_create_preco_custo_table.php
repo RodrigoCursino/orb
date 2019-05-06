@@ -18,6 +18,8 @@ class CreatePrecoCustoTable extends Migration
             $table->decimal('valor',10,2);
             $table->date('data');
 
+            $table->boolean('ativo')->default(1);
+
             //Mercadorias
             $table->integer('mercadoria_id')->unsigned();
             $table->foreign('mercadoria_id')->references('id')

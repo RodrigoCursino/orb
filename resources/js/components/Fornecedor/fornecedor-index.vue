@@ -1,22 +1,26 @@
 <template>
     <div>
-     <fornecedor-form></fornecedor-form>
      <fornecedor-list></fornecedor-list>
     </div>
 </template>
 <script>
-    import FornecedorForm from "./fornecedor-form.vue";
     import FornecedorList from "./fornecedor-list.vue";
+    import {mapState, mapActions} from 'vuex'
 
     export default {
         name: 'fornecedor-index',
         props: {}
         ,
         components: {
-            FornecedorList,
-            FornecedorForm}
-        ,
-        computed: {},
+            FornecedorList
+        },
+        computed: {
+            ...mapState('Fornecedor', {
+                deleted: state => {
+                    return state.deleted;
+                }
+            })
+        },
         methods: {}
     }
 </script>

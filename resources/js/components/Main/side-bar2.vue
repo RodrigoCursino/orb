@@ -1,12 +1,12 @@
 <template>
     <v-navigation-drawer
-            v-model="showSideBar"
+            :value.sync="showSideBar"
             :clipped="$vuetify.breakpoint.lgAndUp"
             fixed
             app
     >
         <v-list dense>
-            <template v-for="item in items">
+            <template v-for="item in menu">
                 <v-layout
                         v-if="item.heading"
                         :key="item.heading"
@@ -41,7 +41,8 @@
                     <v-list-tile
                             v-for="(child, i) in item.children"
                             :key="i"
-                            @click=""
+                            :to="{path: child.action}"
+                            @click="SELECT_TAB(child)"
                     >
                         <v-list-tile-action v-if="child.icon">
                             <v-icon>{{ child.icon }}</v-icon>
@@ -68,6 +69,7 @@
     </v-navigation-drawer>
 </template>
 <script>
+    import {mapState, mapMutations} from "vuex"
     export default {
         name: 'side-bar',
         props: {
@@ -75,6 +77,16 @@
         },
         components: {
 
+        },
+        computed: {
+            ...mapState('Main',{
+                showSideBar: state => {
+                    return state.sideBarControl;
+                },
+                menu: state => {
+                    return state.navList;
+                }
+            })
         },
         data: () => ({
             items: [
@@ -110,19 +122,11 @@
                 { icon: 'keyboard', text: 'Go to the old version' }
             ]
         }),
-        props: {
-            source: String
-        },
-        computed: {
-            showSideBar() {
-                return this.$store.state.sideBarControl;
-            },
-            menu() {
-                return this.$store.state.navList;
-            }
-        },
         methods: {
-
+            ...mapMutations('Main',[
+                'SELECT_TAB',
+                'DISABLE_TAB'
+            ])
         }
     }
 </script>

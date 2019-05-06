@@ -25,24 +25,25 @@ class FornecedorCreateRequest extends FormRequest
     {
         return [
              "cnpj"            => "required",
+             "forn_mercadoria" => "required",
              "ie"              => "required",
              "nome_fantasia"   => "required",
              "razao_social"    => "required",
              "observacao"      => "required",
-             "cep"             => "required",
-             "logradouro"      => "required",
-             "numero"          => "required",
-             "bairro"          => "required",
-             "cidade"          => "required",
-             "estado"          => "required",
-             "pais"            => "required",
-             "email"           => "required",
-             "telefone"        => "required",
-             "celular"         => "required",
-             "nome"            => "required",
-             "conta"           => "required",
-             "agencia"         => "required",
-             "banco_id"        => "required"
+//             "cep"             => "required",
+//             "logradouro"      => "required",
+//             "numero"          => "required",
+//             "bairro"          => "required",
+//             "cidade"          => "required",
+//             "estado"          => "required",
+//             "pais"            => "required",
+//             "email"           => "required",
+//             "telefone"        => "required",
+//             "celular"         => "required",
+//             "nome"            => "required",
+//             "conta"           => "required",
+//             "agencia"         => "required",
+//             "banco_id"        => "required"
         ];
     }
 }
