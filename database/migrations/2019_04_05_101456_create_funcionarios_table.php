@@ -24,8 +24,8 @@ class CreateFuncionariosTable extends Migration
             $table->string('cpf',15);
             $table->enum('estado_civil',["SOLTEIRO","CASADO","DIVORCIADO","VIUVO"]);
             $table->enum('sexo',["FEMININO","MASCULINO"]);
-            $table->string('login',15);
-            $table->string('senha',15);
+            $table->string('login',15)->default("");
+            $table->string('senha',15)->default("");
             $table->string('observacao',500);
 
             $table->boolean('ativo')->default(1);

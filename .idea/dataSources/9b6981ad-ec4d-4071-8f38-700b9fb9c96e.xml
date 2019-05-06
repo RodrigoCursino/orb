@@ -1940,12 +1940,14 @@
       <Position>10</Position>
       <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="428" parent="255" name="senha">
       <Position>11</Position>
       <DataType>varchar(15)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="429" parent="255" name="observacao">

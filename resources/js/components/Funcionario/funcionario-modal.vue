@@ -75,7 +75,7 @@
                         <v-stepper-content step="1">
                                     <v-card
                                             class="mb-5"
-                                            height="360px"
+                                            height="460px"
                                     >
                                         <v-container grid-list-md>
                                             <v-layout warp>
@@ -85,13 +85,13 @@
                                                         lg4
                                                 >
                                                     <!-- nome -->
-                                                    <unidade-select v-model="form.unidade_id"
-                                                                 v-validate="'required'"
+                                                    <unidade-select v-model="form.unidade"
+                                                                    v-validate="'required'"
                                                     ></unidade-select>
                                                     <v-input type="hidden"
                                                              v-validate="'required'"
-                                                             :error-messages="errors.collect('unidade_id')"
-                                                             data-vv-name="unidade_id"
+                                                             :error-messages="errors.collect('unidade')"
+                                                             data-vv-name="unidade"
                                                              required
                                                     >
                                                     </v-input>
@@ -102,18 +102,16 @@
                                                         md12
                                                         lg4
                                                 >
-
-                                                    <!-- nome -->
-                                                    <!--<ncms-select v-model="form.departamento_id"-->
-                                                                 <!--v-validate="'required'"-->
-                                                    <!--&gt;</ncms-select>-->
-                                                    <!--<v-input type="hidden"-->
-                                                             <!--v-validate="'required'"-->
-                                                             <!--:error-messages="errors.collect('departamento_id')"-->
-                                                             <!--data-vv-name="departamento_id"-->
-                                                             <!--required-->
-                                                    <!--&gt;-->
-                                                    <!--</v-input>-->
+                                                    <cargo-select v-model="form.cargo"
+                                                                 v-validate="'required'"
+                                                    ></cargo-select>
+                                                    <v-input type="hidden"
+                                                             v-validate="'required'"
+                                                             :error-messages="errors.collect('cargo')"
+                                                             data-vv-name="cargo"
+                                                             required
+                                                    >
+                                                    </v-input>
                                                 </v-flex>
                                                 <v-flex
                                                         xs12
@@ -121,15 +119,16 @@
                                                         lg6
                                                 >
                                                     <!-- CPF -->
-                                                    <v-text-field
-                                                            v-model="form.cpf"
-                                                            v-validate="'required'"
-                                                            :mask="cpf"
-                                                            :error-messages="errors.collect('cpf')"
-                                                            label="CPF"
-                                                            data-vv-name="cpf"
-                                                            required
-                                                    ></v-text-field>
+                                                    <departamento-select v-model="form.departamento"
+                                                                  v-validate="'required'"
+                                                    ></departamento-select>
+                                                    <v-input type="hidden"
+                                                             v-validate="'required'"
+                                                             :error-messages="errors.collect('departamento')"
+                                                             data-vv-name="departamento"
+                                                             required
+                                                    >
+                                                    </v-input>
                                                     <!-- CPF -->
                                                 </v-flex>
                                             </v-layout>
@@ -186,6 +185,23 @@
                                                     ></v-text-field>
                                                     <!-- CPF -->
                                                 </v-flex>
+                                                <v-flex
+                                                        xs12
+                                                        md12
+                                                        lg6
+                                                >
+                                                    <!-- RG -->
+                                                    <v-text-field
+                                                            v-model="form.rg"
+                                                            v-validate="'required'"
+                                                            :mask="rg"
+                                                            :error-messages="errors.collect('rg')"
+                                                            label="RG"
+                                                            data-vv-name="rg"
+                                                            required
+                                                    ></v-text-field>
+                                                    <!-- RG -->
+                                                </v-flex>
                                             </v-layout>
 
 
@@ -234,23 +250,6 @@
                                                     ></v-text-field>
                                                     <!-- apelido -->
                                                 </v-flex>
-                                                <v-flex
-                                                        xs12
-                                                        md12
-                                                        lg6
-                                                >
-                                                    <!-- CPF -->
-                                                    <v-text-field
-                                                            v-model="form.cpf"
-                                                            v-validate="'required'"
-                                                            :mask="cpf"
-                                                            :error-messages="errors.collect('cpf')"
-                                                            label="CPF"
-                                                            data-vv-name="cpf"
-                                                            required
-                                                    ></v-text-field>
-                                                    <!-- CPF -->
-                                                </v-flex>
                                             </v-layout>
 
                                             <v-layout warp>
@@ -292,7 +291,7 @@
                                                                         v-on="on"
                                                                 ></v-text-field>
                                                             </template>
-                                                            <v-date-picker day-format="DD/MM/YYYY"  locale="pt-br" v-model="form.data_nascimento" no-title scrollable>
+                                                            <v-date-picker  locale="pt-br" v-model="form.data_nascimento" no-title scrollable>
                                                                 <v-spacer></v-spacer>
                                                                 <v-btn flat color="primary" @click="menu = false">Cancel</v-btn>
                                                                 <v-btn flat color="primary" @click="$refs.menu.save(form.data_nascimento)">OK</v-btn>
@@ -331,7 +330,7 @@
                                                     <v-textarea
                                                             name="observacao"
                                                             box
-                                                            label="Observacao"
+                                                            label="Observação"
                                                             v-validate="'required'"
                                                             :error-messages="errors.collect('observacao')"
                                                             auto-grow
@@ -741,11 +740,13 @@
     import {mapState, mapActions, mapGetters} from 'vuex';
     import FuncionarioConfirm from "./funcionario-confirm";
     import UnidadeSelect from "../Unidade/unidade-select";
+    import DepartamentoSelect from "../Departamento/departamento-select";
+    import CargoSelect from "../Cargo/cargo-select";
     import InputMoney from "../shared/input-money";
     import InputDate from "../shared/input-date";
     export default {
         name: 'funcionario-modal',
-        components: {InputDate, InputMoney, FuncionarioConfirm, UnidadeSelect},
+        components: {InputDate, DepartamentoSelect, InputMoney, FuncionarioConfirm, UnidadeSelect,CargoSelect},
         $_veeValidate: {
             validator: 'new'
         },
@@ -771,12 +772,34 @@
                     telefone:"(00) 0000-0000",
 
                 },
+                departamento: {
+                    descricao:"",
+                    id: 0,
+                    nome:"",
+                    unidade_id:0,
+                },
                 dados_bancarios: {
                     agencia:"",
                     ativo:1,
                     banco_id:"",
                     conta:"",
                     tipo:"CORRENTE"
+                },
+                unidade: {
+                    cnpj:"",
+                    id:"",
+                    ie:"",
+                    loja:"",
+                    nome:"",
+                    nome_fantasia:"",
+                    observacao:"",
+                    razao_social:"",
+                    unidade_estoque_id:0,
+                },
+                cargo: {
+                    id:0,
+                    nome:"",
+                    observacao:""
                 },
                 e1: 0,
                 menu : false,
@@ -801,6 +824,7 @@
                 cpf: "###.###.###-##",
                 cnpj: "##.###.###/####-##",
                 mask: '#####-###',
+                rg:   '##.###.###-#',
                 celularMask : '(##) #####-####',
                 telefoneMask: '(##) ####-####',
                 celularMask : '(##) #####-####',
@@ -809,6 +833,9 @@
                     custom: {
                         nome: {
                             required: () => 'Este é Obrigatório',
+                        },
+                        rg: {
+                            required: () => 'Este campo é obrigatório',
                         },
                         cpf: {
                             required: () => 'Este campo é obrigatório',
@@ -913,19 +940,25 @@
             buildForm (form) {
                 return {
                     ativo:              1,
+                    id:                 form.id                ? form.id                 : 0,
                     nome:               form                   ? form.nome               : null,
                     apelido:            form                   ? form.apelido            : null,
                     login:              form                   ? form.login              : null,
                     senha:              form                   ? form.senha              : null,
                     salario:            form.salario           ? form.salario            : 0,
+                    rg:                 form.rg                ? form.rg                 : null,
                     unidade_id:         form.unidade_id        ? form.unidade_id         : 0,
+                    cargo_id:           form.cargo_id          ? form.cargo_id           : 0,
                     data_nascimento:    form.data_nascimento   ? form.data_nascimento    : new Date().toISOString().substr(0, 10),
                     estado_civil:       form.estado_civil      ? form.estado_civil       : "SOLTEIRO",
                     sexo:               form.sexo              ? form.sexo               : "FEMININO",
-                    observacao:         form                   ? form.observacao         : null,
-                    cpf:                form                   ? form.cpf                : null,
+                    observacao:         form.observacao        ? form.observacao         : null,
+                    cpf:                form.cpf               ? form.cpf                : null,
                     contato:            form.contato           ? form.contato            : this.contato,
                     endereco:           form.endereco          ? form.endereco           : this.endereco,
+                    unidade:            form.unidade           ? form.unidade            : this.unidade,
+                    cargo:              form.cargo             ? form.cargo              : this.cargo,
+                    departamento:       form.departamento      ? form.departamento       : this.departamento,
                     dados_bancarios:    form.dados_bancarios   ? form.dados_bancarios    : this.dados_bancarios
 
                 }
@@ -949,7 +982,6 @@
                     }
                 });
             },
-
             validateAddress (scope) {
                     this.$validator.validateAll(scope).then(result => {
                         if (result) {
@@ -986,8 +1018,30 @@
             },
             save() {
                 this.e1 = 1;
+                this.form.salario = this.moneyFormat(this.form.salario);
                 this.save_form(this.form);
                 this.form = this.buildForm({});
+            },
+
+            moneyFormat(money) {
+
+              if(typeof money == 'number') {
+                  return money
+              }
+              let value = money.toString();
+
+              if(value.length > 2) {
+                  value = value.replace('.','');
+                  value = value.replace('.','');
+                  value = value.replace('.','');
+                  value = value.replace('.','');
+              }
+
+              value = value.replace(',','.');
+
+              console.log(value);
+
+              return parseFloat(value);
             }
 
         }

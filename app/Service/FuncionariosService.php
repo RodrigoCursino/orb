@@ -11,6 +11,7 @@ namespace App\Service;
 
 
 use App\Http\Requests\FuncionariosCreateRequest;
+use App\Models\Cargo;
 use App\Models\Departamento;
 use App\Models\Fornecedor;
 use App\Models\Funcionario;
@@ -28,11 +29,10 @@ class FuncionariosService
             $dados_bancario = DadosComunsCadastro::saveDadosBancarios($request);
             $endereco       = DadosComunsCadastro::saveEndereco($request);
             $contato        = DadosComunsCadastro::saveContato($request);
-            $departamentoId = str_replace("'","",$request->input('departamento_select'));
 
             $funcionario = new Funcionario();
 
-            $funcionario->nome               = $request->input('nome_funcionario');
+            $funcionario->nome               = $request->input('nome');
             $funcionario->data_nascimento    = $request->input('data_nascimento');
             $funcionario->cargo_id           = $request->input('cargo_id');
             $funcionario->salario            = $request->input('salario');
@@ -41,16 +41,27 @@ class FuncionariosService
             $funcionario->cpf                = $request->input('cpf');
             $funcionario->sexo               = $request->input('sexo');
             $funcionario->estado_civil       = $request->input('estado_civil');
-            $funcionario->login              = $request->input('login');
-            $funcionario->senha              = $request->input('senha');
-            $funcionario->observacao         = $request->input('observacao');
-            $unidade                         = Unidade::findOrfail($request->input('unidade_id'));
-            $funcionario->unidade_id         = $unidade->id;
-            $departamento                    = Departamento::findOrFail($departamentoId);
-            $funcionario->departamento_id    = $departamento->id;
             $funcionario->endereco_id        = $endereco->id;
             $funcionario->contato_id         = $contato->id;
             $funcionario->dados_bancarios_id = $dados_bancario->id;
+
+            /**
+             *Verificando se esse funcionário é o não um usuário
+             * TODO
+             * falta fazer a relação entre eles dois
+             */
+            if($request->input('login') && $request->input('senha')) {
+                $funcionario->login             = $request->input('login');
+                $funcionario->senha             = bcrypt($request->input('senha'));
+            }
+
+            $funcionario->observacao        = $request->input('observacao');
+            $cargo                          = Cargo::findOrfail($request->input('cargo')['id']);
+            $funcionario->cargo_id          = $cargo->id;
+            $unidade                        = Unidade::findOrfail($request->input('unidade')['id']);
+            $funcionario->unidade_id        = $unidade->id;
+            $departamento                   = Departamento::findOrFail($request->input('departamento')['id']);
+            $funcionario->departamento_id   = $departamento->id;
 
             $funcionario->save();
 
@@ -63,13 +74,9 @@ class FuncionariosService
     {
         return DB::transaction(function () use ($request, $id) {
 
-            //Banco
             $funcionario = Funcionario::findOrFail($id);
 
-            $departamentoId                 = str_replace("'","",$request->input('departamento_select'));
-
-
-            $funcionario->nome              = $request->input('nome_funcionario');
+            $funcionario->nome              = $request->input('nome');
             $funcionario->data_nascimento   = $request->input('data_nascimento');
             $funcionario->cargo_id          = $request->input('cargo_id');
             $funcionario->salario           = $request->input('salario');
@@ -78,12 +85,16 @@ class FuncionariosService
             $funcionario->cpf               = $request->input('cpf');
             $funcionario->sexo              = $request->input('sexo');
             $funcionario->estado_civil      = $request->input('estado_civil');
-            $funcionario->login             = $request->input('login');
-            $funcionario->senha             = $request->input('senha');
+            if($request->input('login') && $request->input('senha')) {
+                $funcionario->login             = $request->input('login');
+                $funcionario->senha             = bcrypt($request->input('senha'));
+            }
             $funcionario->observacao        = $request->input('observacao');
-            $unidade                        = Unidade::findOrfail($request->input('unidade_id'));
+            $cargo                          = Cargo::findOrfail($request->input('cargo')['id']);
+            $funcionario->cargo_id          = $cargo->id;
+            $unidade                        = Unidade::findOrfail($request->input('unidade')['id']);
             $funcionario->unidade_id        = $unidade->id;
-            $departamento                   = Departamento::findOrFail($departamentoId);
+            $departamento                   = Departamento::findOrFail($request->input('departamento')['id']);
             $funcionario->departamento_id   = $departamento->id;
 
             $funcionario->save();

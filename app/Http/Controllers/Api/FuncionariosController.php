@@ -75,7 +75,7 @@ class FuncionariosController extends Controller
 
     public function update(FuncionariosCreateRequest $request, $id)
     {
-        $funcionario = $this->service->update($request, $id);
+        $funcionario = $this->service->update($request, $request->input('id'));
         return  [
             "data"      => $funcionario,
             "message"   => "Funcionário Editado Com Sucesso",

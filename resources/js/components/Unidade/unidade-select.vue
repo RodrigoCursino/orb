@@ -7,6 +7,7 @@
             item-text="nome_fantasia"
             :error-messages="errors.collect('unidade_id')"
             label="Unidade"
+            @change="getDepartamentos"
             return-object
             data-vv-name="unidade_id"
             required
@@ -30,7 +31,11 @@
             })
         },
         methods: {
-            ...mapActions('Unidade',['setList'])
+            ...mapActions('Unidade',['setList']),
+            ...mapActions('Departamento',['get_departamentos_by_unidade']),
+            getDepartamentos(){
+                this.get_departamentos_by_unidade(this.internalValue.id)
+            }
         }
     }
 </script>

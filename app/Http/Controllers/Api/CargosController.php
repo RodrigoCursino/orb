@@ -19,10 +19,7 @@ class CargosController extends Controller
 
     public function index()
     {
-        $cargos =  Cargo::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('cargo.index',compact('cargos'));
+        return  Cargo::list();
     }
 
 
