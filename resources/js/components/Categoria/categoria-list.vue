@@ -63,7 +63,7 @@
                     <td>
                         <v-flex xs12 sm3>
                             <v-btn flat icon color="grey">
-                                <v-icon @click="view(props.item)">info</v-icon>
+                                <v-icon @click="editar(props.item)">info</v-icon>
                             </v-btn>
                         </v-flex>
                     </td>
@@ -87,7 +87,6 @@
         computed: {
             ...mapState('Categoria',{
                 list_categorias: state => {
-                    console.log('categoriaTesteErros', state.list_categorias);
                     return state.list_categorias;
                 },
                 categoria: state => {
@@ -110,17 +109,22 @@
                         text: 'Ativo',
                         value: 'ativo'
                     },
+                    {   text: 'Visualizar',
+                        sortable: false,
+                        value: 'contato.email'
+                    }
                 ],
             }
         },
         methods: {
+            ...mapActions('Categoria',['setList','view','delete_form']),
+
             acaoComSelecionados() {
                 this.delete_form(this.selected);
             },
             editar(form) {
                 this.$refs.edit.edit(form);
             },
-            ...mapActions('Categoria',['setList','view','delete_form']),
         }
     }
 </script>

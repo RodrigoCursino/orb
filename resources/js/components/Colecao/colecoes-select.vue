@@ -2,7 +2,7 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listColeoces"
+            :items="list_colecoes"
             item-value="id"
             item-text="nome"
             :error-messages="errors.collect('colecao_id')"
@@ -23,8 +23,8 @@
         },
         computed: {
             ...mapState('Colecao', {
-                listColeoces: state => {
-                    return state.listColeoces;
+                list_colecoes: state => {
+                    return state.list_colecoes;
                 }
             })
         },

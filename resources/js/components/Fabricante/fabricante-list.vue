@@ -112,16 +112,19 @@
                         sortable: false,
                         value: 'cnpj'
                     },
-                    { text: 'Nome Fantasia',
+                    {   text: 'Nome Fantasia',
                         value: 'nome_fantasia'
                     },
-                    { text: 'Razão Social',
+                    {   text: 'Razão Social',
                         value: 'razao_social'
                     },
-                    { text: 'email', value: 'contato.email' },
-                    { text: 'Visualizar',
+                    {   text: 'email',
+                        value: 'contato.email'
+                    },
+                    {   text: 'Editar',
                         sortable: false,
-                        value: 'contato.email' }
+                        value: ''
+                    }
                 ],
             }
         },

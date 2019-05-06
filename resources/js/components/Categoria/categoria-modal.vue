@@ -153,6 +153,7 @@
             save() {
                 this.e1 = 1;
                 this.save_form(this.form);
+                this.$validator.reset();
                 this.form = this.buildForm({});
             }
         }

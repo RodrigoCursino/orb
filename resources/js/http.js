@@ -3,7 +3,7 @@ const base = `${window.Slc.base_url}/api/`;
 const get = (api) => {
     let url_ = base + api;
     return axios.get(url_)
-}
+};
 
 const post = async (api, form) => {
 
@@ -21,16 +21,13 @@ const post = async (api, form) => {
     }
 
     return response.data;
-
-}
+};
 
 const put = async (api, form) => {
 
     let form_ = JSON.parse(JSON.stringify(form));
     let url_  = base + `${api}/${form_}`;
     let response  = (await axios.put(url_,form_));
-
-    console.log('ops ', response)
 
     swal({
         title: "Operação realizada com sucesso",
