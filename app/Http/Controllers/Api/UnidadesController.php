@@ -28,6 +28,14 @@ class UnidadesController extends Controller
         return $unidades;
     }
 
+    public function estoque()
+    {
+        $unidades = Unidade::where('loja','=',0)
+            ->where('ativo','=',1)->get();
+
+        return $unidades;
+    }
+
 
     public function create()
     {
@@ -39,7 +47,10 @@ class UnidadesController extends Controller
     public function store(UnidadesCreateRequest $request)
     {
         $unidade = $this->service->create($request);
-        return redirect(route('unidades.index'));
+        return [
+            "data" => $unidade,
+            "message" => "Unidade Salva Com Sucesso!!",
+        ];
     }
 
 
@@ -63,15 +74,17 @@ class UnidadesController extends Controller
 
     public function update(UnidadesCreateRequest $request, $id)
     {
-        $unidade = $this->service->update($request, $id);
-        return redirect(route('unidades.index'));
+        $unidade = $this->service->update($request, $request->input('id'));
+        return [
+            "data" => $unidade,
+            "message" => "Unidade Salva Com Sucesso!!",
+        ];
     }
-
 
     public function destroy($id)
     {
         if($this->service->destroy($id)){
-            return redirect(route('unidades.index'));
+            return "Deletado com Sucesso!!!";
         }
     }
 }

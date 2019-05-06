@@ -27,9 +27,11 @@ class UnidadesService
 
             $unidade = new Unidade();
 
+
+
             $unidade->cnpj                = $request->input('cnpj');
             $unidade->ie                  = $request->input('ie');
-            $unidade->nome                = $request->input('nome_unidade');
+            $unidade->nome                = $request->input('nome');
             $unidade->nome_fantasia       = $request->input('nome_fantasia');
             $unidade->unidade_estoque_id  = $request->input('unidade_estoque_id');
             $unidade->razao_social        = $request->input('razao_social');
@@ -37,7 +39,7 @@ class UnidadesService
             $unidade->observacao          = $request->input('observacao');
             $unidade->endereco_id         = $endereco->id;
             $unidade->contato_id          = $contato->id;
-            $centroCusto                  = CentroCusto::findOrfail($request->input('centro_custo_id'));
+            $centroCusto                  = CentroCusto::findOrFail($request->input('centro_custo')['id']);
             $unidade->centro_custo_id     = $centroCusto->id;
 
             $unidade->save();
@@ -55,9 +57,11 @@ class UnidadesService
             $unidade = Unidade::findOrFail($id);
 
             $unidade->cnpj                = $request->input('cnpj');
+            $centroCusto = CentroCusto::findOrfail($request->input('centro_custo')['id']);
+            $unidade->centro_custo_id     = $centroCusto->id;
             $unidade->ie                  = $request->input('ie');
-            $unidade->nome                = $request->input('nome_unidade');
-            $unidade->unidade_estoque_id   = $request->input('unidade_estoque_id');
+            $unidade->nome                = $request->input('nome');
+            $unidade->unidade_estoque_id  = $request->input('unidade_estoque_id');
             $unidade->loja                = $request->input('loja');
             $unidade->nome_fantasia       = $request->input('nome_fantasia');
             $unidade->razao_social        = $request->input('razao_social');

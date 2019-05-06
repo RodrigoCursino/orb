@@ -24,24 +24,13 @@ class UnidadesCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            "nome_unidade"      => "required",
+            "nome"              => "required",
             "cnpj"              => "required",
             "loja"              => "required",
             "ie"                => "required",
             "nome_fantasia"     => "required",
             "razao_social"      => "required",
-            "observacao"        => "required",
-            "cep"               => "required",
-            "logradouro"        => "required",
-            "numero"            => "required",
-            "bairro"            => "required",
-            "cidade"            => "required",
-            "estado"            => "required",
-            "pais"              => "required",
-            "email"             => "required",
-            "telefone"          => "required",
-            "celular"           => "required",
-            "nome"              => "required"
+            "observacao"        => "required"
         ];
     }
 }

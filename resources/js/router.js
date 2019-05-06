@@ -15,8 +15,13 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'categorias',
-            component: Categoria
+            name: 'unidades',
+            component: Unidade
+        },
+        {
+            path: '/fornecedores',
+            name: 'funcionarios',
+            component: Funcionario
         },
         {
             path: '/categorias',

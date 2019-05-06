@@ -1,22 +1,17 @@
-const setList = async ({ commit }) => {
-    const list = (await http.get('unidades')).data;
-    commit('SET_LIST_UNIDADES',{list});
-};
+const setList = async ({commit}) => {
+    const list = (await  http.get('centroscusto')).data;
+    commit('SET_LIST_CENTRO_CUSTO',{list})
+}
 
-const getEstoqueList = async ({ commit }) => {
-    const list = (await http.get('unidades-estoque')).data;
-    commit('SET_LIST_UNIDADES_ESTOQUE',{list});
-};
-
-const save_form = ({ commit, dispatch }, unidade) => {
+const save_form = ({ commit, dispatch }, centro_custo) => {
 
     let response = false;
 
-    if (unidade.id) {
-        response = http.put('unidades',unidade);
+    if (centro_custo.id) {
+        response = http.put('centroscusto',centro_custo);
         commit('CLOSE_VIEW');
     } else {
-        response = http.post('unidades',unidade);
+        response = http.post('centroscusto',centro_custo);
 
     }
 
@@ -42,8 +37,8 @@ const delete_form = ({commit,dispatch}, array) => {
         dangerMode: true,
     }).then(async (willDelete) => {
         for (let i in array) {
-             let unidadeRequest = JSON.parse(JSON.stringify(array[i]));
-            (await http.deleteForm('unidades',unidadeRequest));
+            let centro_custoRequest = JSON.parse(JSON.stringify(array[i]));
+            (await http.deleteForm('centroscusto',centro_custoRequest));
         }
         dispatch('setList');
     });
@@ -53,14 +48,13 @@ const delete_form = ({commit,dispatch}, array) => {
 };
 
 const view = ({ commit },obj) => {
-    const unidade = obj;
-    commit('VIEW',{unidade});
+    const centro_custo = obj;
+    commit('VIEW',{centro_custo});
 };
 
-const add = ({ commit }, unidade ) => {
-    commit('ADD',{unidade});
+const add = ({ commit }, centro_custo ) => {
+    commit('ADD',{centro_custo});
 };
-
 
 export default {
     setList,
@@ -68,6 +62,5 @@ export default {
     close_form,
     delete_form,
     view,
-    getEstoqueList,
     add
 }

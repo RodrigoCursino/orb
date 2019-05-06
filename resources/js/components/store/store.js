@@ -8,6 +8,7 @@ import Vuex               from 'vuex'
 import Banco              from '../Banco/Banco'
 import Departamento       from '../Departamento/Departamento'
 import Cargo              from '../Cargo/Cargo'
+import CentroCusto        from '../CentroCusto/CentroCusto'
 import Linha              from '../Linha/Linha'
 import Marca              from '../Marca/Marca'
 import UnidadeCaixa       from '../UnidadeCaixa/UnidadeCaixa'
@@ -33,6 +34,7 @@ const modules = {
     Banco,
     Categoria,
     Cargo,
+    CentroCusto,
     Colecao,
     Contato,
     Departamento,
