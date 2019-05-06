@@ -1,5 +1,6 @@
 const setList = async ({commit}) => {
     const list = (await  http.get('categorias')).data;
+    console.log('lista', list);
     commit('SET_LIST_CATEGORIAS',{list})
 };
 

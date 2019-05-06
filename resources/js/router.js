@@ -23,6 +23,11 @@ const router = new VueRouter({
             component: Categoria
         },
         {
+            path: '/categorias',
+            name: 'categorias',
+            component: Categoria
+        },
+        {
             path: '/fornecedores',
             name: 'fornecedores',
             component: Fornecedor

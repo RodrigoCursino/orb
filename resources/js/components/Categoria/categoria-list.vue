@@ -87,6 +87,7 @@
         computed: {
             ...mapState('Categoria',{
                 list_categorias: state => {
+                    console.log('categoriaTesteErros', state.list_categorias);
                     return state.list_categorias;
                 },
                 categoria: state => {

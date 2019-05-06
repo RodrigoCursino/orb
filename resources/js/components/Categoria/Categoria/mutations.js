@@ -1,4 +1,5 @@
 const SET_LIST_CATEGORIAS = (state, obj) => {
+    console.log('obj', obj.list);
     state.list_categorias = obj.list;
 };
 
