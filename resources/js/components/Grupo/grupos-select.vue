@@ -2,7 +2,7 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listGrupos"
+            :items="list_grupos"
             item-value="id"
             item-text="nome"
             :error-messages="errors.collect('grupo_id')"
@@ -20,17 +20,17 @@
         name: "grupos-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_grupos();
+            this.setList();
         },
         computed: {
             ...mapState('Grupo', {
-                listGrupos: state => {
-                    return state.listGrupos;
+                list_grupos: state => {
+                    return state.list_grupos;
                 }
             })
         },
         methods: {
-            ...mapActions('Grupo',['set_list_grupos']),
+            ...mapActions('Grupo',['setList']),
             ...mapActions('SubGrupo',['set_list_sub_grupos']),
             getSubGrupos(id) {
                 this.set_list_sub_grupos(id);

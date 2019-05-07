@@ -7,7 +7,6 @@ const save_form = ({ commit, dispatch }, categoria) => {
 
     let response = false;
 
-    debugger;
     if (categoria.id) {
         response = http.put('categorias',categoria);
         commit('CLOSE_VIEW');

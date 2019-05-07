@@ -19,7 +19,7 @@
         name: "colecoes-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_colecoes();
+            this.setList();
         },
         computed: {
             ...mapState('Colecao', {
@@ -29,7 +29,7 @@
             })
         },
         methods: {
-            ...mapActions('Colecao',['set_list_colecoes'])
+            ...mapActions('Colecao',['setList'])
         }
     }
 </script>

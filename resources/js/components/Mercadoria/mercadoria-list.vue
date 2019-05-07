@@ -22,8 +22,6 @@
                     sm12
                     xs12
             >
-
-
                 <v-layout justify-end row class="mb-2">
                                 <span class="group pa-2">
                                   <v-btn fab
@@ -35,7 +33,6 @@
                                   </v-btn>
                                 </span>
                 </v-layout>
-
             </v-flex>
         </v-layout>
     </v-card-title>
@@ -102,19 +99,22 @@
                         align: 'left',
                         value: 'nome'
                     },
-                    { text: 'Fornecedor',
+                    {   text: 'Fornecedor',
                         value: 'fornecedor.nome_fantasia'
                     },
-                    { text: 'NCM',
+                    {   text: 'NCM',
                         value: 'ncm.cod'
                     },
-                    { text: 'Categoria',
-                        value: 'categoria.nome' },
-                    { text: 'Grupo',
-                        value: 'grupo.nome' },
-                    { text: 'Sub Grupo',
-                        value: 'sub_grupo.nome' },
-                    { text: 'Visualizar',
+                    {   text: 'Categoria',
+                        value: 'categoria.nome'
+                    },
+                    {   text: 'Grupo',
+                        value: 'grupo.nome'
+                    },
+                    {   text: 'Sub Grupo',
+                        value: 'sub_grupo.nome'
+                    },
+                    {   text: 'Visualizar',
                         sortable: false
                     }
                 ],

@@ -7,6 +7,9 @@ import Mercadoria  from './components/Mercadoria/mercadoria-index';
 import Unidade     from './components/Unidade/unidade-index';
 import Categoria   from './components/Categoria/categoria-index';
 import Colecao     from './components/Colecao/colecao-index';
+import Linha       from './components/Linha/linha-index';
+import Ncm         from './components/NCM/ncm-index';
+import Grupo       from './components/Grupo/grupo-index';
 
 Vue.use(VueRouter);
 
@@ -15,13 +18,8 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'unidades',
+            name: '',
             component: Unidade
-        },
-        {
-            path: '/fornecedores',
-            name: 'funcionarios',
-            component: Funcionario
         },
         {
             path: '/categorias',
@@ -39,9 +37,24 @@ const router = new VueRouter({
             component: Fornecedor
         },
         {
+            path: '/grupos',
+            name: 'grupos',
+            component: Grupo
+        },
+        {
+            path: '/linhas',
+            name: 'linhas',
+            component: Linha,
+        },
+        {
             path: '/mercadorias',
             name: 'mercadorias',
             component: Mercadoria,
+        },
+        {
+            path: '/ncms',
+            name: 'ncms',
+            component: Ncm,
         },
         {
             path: '/fabricantes',
