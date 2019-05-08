@@ -2,14 +2,14 @@ export default {
 
     sideBarControl: false,
 
-    currentItem: 'colecoes',
+    currentItem: 'categorias',
 
     navList: window.Slc.menu,
     menuTabs: [{
-            "position" : 15,
-            "text"     : "Coleções",
-            "link"     : "#colecoes",
-            "action"   : "colecoes",
+            "position" : 14,
+            "text"     : "Categorias",
+            "link"     : "#categorias",
+            "action"   : "categorias",
             "icon"     : "done_all",
     }]
     // navList: [

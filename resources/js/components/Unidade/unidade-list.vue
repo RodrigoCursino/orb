@@ -1,7 +1,8 @@
 <template>
     <div>
         <template>
-            <!--<fornecedor-view></fornecedor-view>-->
+            <unidade-modal ref="edit"></unidade-modal>
+            <unidade-view @edit="editar"></unidade-view>
             <v-card-title>
                 <!--<v-spacer></v-spacer>-->
                 <!--<v-spacer></v-spacer>-->
@@ -63,13 +64,13 @@
                     </td>
                     <td class="text-xs-left">{{ props.item.cnpj}}</td>
                     <td class="text-xs-left">{{ props.item.nome_fantasia}}</td>
-                    <td class="text-xs-left">{{ props.item.centro_custo.nome }}</td>
+                    <td class="text-xs-left">{{ props.item.razao_social }}</td>
                     <td class="text-xs-left">{{ props.item.contato.email }}</td>
                     <td>
                         <v-flex xs12 sm3>
-                            <!--<v-btn flat icon color="grey">-->
-                                <!--<v-icon @click="viewFornecedor(props.item)">info</v-icon>-->
-                            <!--</v-btn>-->
+                            <v-btn flat icon color="grey">
+                                <v-icon @click="view(props.item)">info</v-icon>
+                            </v-btn>
                         </v-flex>
                     </td>
                 </template>
@@ -82,9 +83,11 @@
 </template>
 <script>
     import {mapState, mapActions} from 'vuex'
+    import UnidadeView from "./unidade-view";
+    import UnidadeModal from "./unidade-modal";
     export default {
         name: 'unidade-list',
-        components: {},
+        components: {UnidadeModal, UnidadeView},
         mounted() {
             this.setList()
         },
@@ -92,6 +95,9 @@
             ...mapState('Unidade',{
                 list_unidades: state => {
                     return state.list_unidades;
+                },
+                fabricante: state => {
+                    return state.fabricante;
                 }
             })
         },
@@ -109,8 +115,8 @@
                     { text: 'Nome Fantasia',
                         value: 'nome_fantasia'
                     },
-                    { text: 'Centro de Custo',
-                        value: 'centro_custo.nome'
+                    { text: 'Razão Social',
+                        value: 'razao_social'
                     },
                     { text: 'email', value: 'contato.email' },
                     { text: 'Visualizar',
@@ -121,9 +127,12 @@
         },
         methods: {
             acaoComSelecionados() {
-                this.delete_fornecedor(this.selected);
+                this.delete_form(this.selected);
             },
-            ...mapActions('Unidade',['setList']),
+            editar(form) {
+                this.$refs.edit.edit(form);
+            },
+            ...mapActions('Unidade',['setList','view','delete_form']),
         }
     }
 </script>

@@ -20,10 +20,7 @@ class CentrosCustoController extends Controller
 
     public function index()
     {
-        $centrosCusto =  CentroCusto::where('ativo','=',1)
-            ->paginate(15);
-
-        return view('centro-custo.index',compact('centrosCusto'));
+       return CentroCusto::list();
     }
 
 

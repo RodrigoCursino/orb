@@ -86,8 +86,8 @@ class Slc
                         [
                             "position" => 15,
                             "text"     => "Coleções",
-                            "link"     => "#coleções",
-                            "action"   => "coleções",
+                            "link"     => "#colecoes",
+                            "action"   => "colecoes",
                             "icon"     => "view_module",
                             "showNav"  => true,
                             "showPage" => true
