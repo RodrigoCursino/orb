@@ -93,6 +93,15 @@ class Slc
                             "showPage" => true
                         ],
                         [
+                            "position" => 17,
+                            "text"     => "Marca",
+                            "link"     => "#marcas",
+                            "action"   => "marcas",
+                            "icon"     => "copyright",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
                             "position" => 16,
                             "text"     => "NCMs",
                             "link"     => "#ncms",

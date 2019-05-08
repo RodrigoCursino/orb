@@ -23,7 +23,6 @@ class DepartamentosController extends Controller
             ->where('ativo','=',1)->get();
     }
 
-
     public function create()
     {
         $unidades = Unidade::list();
@@ -33,9 +32,11 @@ class DepartamentosController extends Controller
     public function store(DepartamentosCreateRequest $request)
     {
         $departamento = $this->service->create($request);
-        return redirect(route('departamentos.index'));
+        return  [
+            "data" => $departamento,
+            "message"   => "Departamento Salvo Com Sucesso",
+        ];
     }
-
 
     public function show($id)
     {
@@ -46,7 +47,6 @@ class DepartamentosController extends Controller
         return $departamento->toArray();
     }
 
-
     public function edit($id)
     {
         $departamento  = Departamento::with('unidade')
@@ -55,18 +55,19 @@ class DepartamentosController extends Controller
         return view('departamento.create',compact('departamento','unidades'));
     }
 
-
     public function update(DepartamentosCreateRequest $request, $id)
     {
-        $departamento = $this->service->update($request, $id);
-        return redirect(route('departamentos.index'));
+        $departamento = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $departamento,
+            "message"   => "Departamento Editada Com Sucesso",
+        ];
     }
-
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('departamentos.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }

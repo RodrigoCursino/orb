@@ -1,4 +1,3 @@
-
 const setList = async ({ commit }) => {
     const list = (await http.get('departamentos')).data;
     commit('SET_LIST_DEPARTAMENTOS',{list});
@@ -7,7 +6,7 @@ const setList = async ({ commit }) => {
 const get_departamentos_by_unidade = async ({commit}, id) => {
     const list = (await  http.get(`departamentos/${id}`)).data;
     commit('GET_DEPARATAMENTOS_BY_UNIDADE',{list})
-}
+};
 
 const save_form = ({ commit, dispatch }, fabricante) => {
 
@@ -61,7 +60,6 @@ const view = ({ commit },obj) => {
 const add = ({ commit }, fabricante ) => {
     commit('ADD',{fabricante});
 };
-
 
 export default {
     setList,

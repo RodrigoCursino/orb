@@ -37,7 +37,6 @@
                     <v-stepper-header>
                         <v-stepper-step
                                 step="1">
-                            Nome
                         </v-stepper-step>
                     </v-stepper-header>
                     <!--Dados-->
@@ -72,23 +71,23 @@
                                             ></v-text-field>
                                         </v-flex>
                                         <v-flex
-                                                xs12
-                                                md4
-                                                lg4
+                                            xs12
+                                            md4
+                                            lg4
+                                    >
+                                        <v-select
+                                                v-model="form.ncm_id"
+                                                v-validate="'required'"
+                                                :items="list_ncms"
+                                                item-value="id"
+                                                item-text="cod"
+                                                :error-messages="errors.collect('ncm_id')"
+                                                label="NCM"
+                                                data-vv-name="ncm_id"
+                                                required
                                         >
-                                            <v-select
-                                                    v-model="form.ncm_id"
-                                                    v-validate="'required'"
-                                                    :items="list_ncms"
-                                                    item-value="id"
-                                                    item-text="cod"
-                                                    :error-messages="errors.collect('ncm_id')"
-                                                    label="NCM"
-                                                    data-vv-name="ncm_id"
-                                                    required
-                                            >
-                                            </v-select>
-                                        </v-flex>
+                                        </v-select>
+                                    </v-flex>
                                     </v-layout>
                                 </v-container>
                             </v-card>

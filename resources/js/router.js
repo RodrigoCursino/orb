@@ -1,16 +1,19 @@
-import Vue         from 'vue';
-import VueRouter   from 'vue-router';
-import Fornecedor  from './components/Fornecedor/fornecedor-index';
-import Fabricante  from './components/Fabricante/fabricante-index';
-import Funcionario from './components/Funcionario/funcionario-index';
-import Mercadoria  from './components/Mercadoria/mercadoria-index';
-import Unidade     from './components/Unidade/unidade-index';
-import Banco       from './components/Banco/banco-index';
-import Categoria   from './components/Categoria/categoria-index';
-import Colecao     from './components/Colecao/colecao-index';
-import Linha       from './components/Linha/linha-index';
-import Ncm         from './components/NCM/ncm-index';
-import Grupo       from './components/Grupo/grupo-index';
+import Vue          from 'vue';
+import VueRouter    from 'vue-router';
+import Departamento from './components/Departamento/departamento-index';
+import Fornecedor   from './components/Fornecedor/fornecedor-index';
+import Fabricante   from './components/Fabricante/fabricante-index';
+import Funcionario  from './components/Funcionario/funcionario-index';
+import Mercadoria   from './components/Mercadoria/mercadoria-index';
+import Unidade      from './components/Unidade/unidade-index';
+import Banco        from './components/Banco/banco-index';
+import Cargo        from './components/Cargo/cargo-index';
+import Categoria    from './components/Categoria/categoria-index';
+import Colecao      from './components/Colecao/colecao-index';
+import Linha        from './components/Linha/linha-index';
+import Marca        from './components/Marca/marca-index';
+import Ncm          from './components/NCM/ncm-index';
+import Grupo        from './components/Grupo/grupo-index';
 
 Vue.use(VueRouter);
 
@@ -33,6 +36,11 @@ const router = new VueRouter({
             component: Banco
         },
         {
+            path: '/cargos',
+            name: 'cargos',
+            component: Cargo
+        },
+        {
             path: '/categorias',
             name: 'categorias',
             component: Categoria
@@ -41,6 +49,11 @@ const router = new VueRouter({
             path: '/colecoes',
             name: 'colecoes',
             component: Colecao
+        },
+        {
+            path: '/departamentos',
+            name: 'departamentos',
+            component: Departamento
         },
         {
             path: '/fornecedores',
@@ -56,6 +69,11 @@ const router = new VueRouter({
             path: '/linhas',
             name: 'linhas',
             component: Linha,
+        },
+        {
+            path: '/marcas',
+            name: 'marcas',
+            component: Marca,
         },
         {
             path: '/mercadorias',

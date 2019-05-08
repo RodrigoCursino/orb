@@ -19,7 +19,9 @@ class MarcasController extends Controller
 
     public function index()
     {
-        return  Marca::list();
+        $marcas = Marca::with('fabricante')->where('ativo','=',1)->get();
+
+        return $marcas;
     }
 
 
@@ -32,15 +34,16 @@ class MarcasController extends Controller
     public function store(MarcasCreateRequest $request)
     {
         $marca = $this->service->create($request);
-        return redirect(route('marcas.index'));
+        return  [
+            "data" => $marca,
+            "message"   => "Categoria Salvo Com Sucesso",
+        ];
     }
-
 
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
@@ -50,18 +53,19 @@ class MarcasController extends Controller
         return view('marca.create',compact('marca','fabricantes'));
     }
 
-
-    public function update(MarcasCreateRequest $request, $id)
+    public function update(MarcasCreateRequest $request)
     {
-        $marca = $this->service->update($request, $id);
-        return redirect(route('marcas.index'));
+        $marca = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $marca,
+            "message"   => "Marca Editada Com Sucesso",
+        ];
     }
-
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('marcas.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }
