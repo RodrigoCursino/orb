@@ -1,7 +1,7 @@
 <template>
     <div>
         <template>
-            <categoria-modal ref="edit"></categoria-modal>
+            <banco-modal ref="edit"></banco-modal>
             <v-card-title>
                 <v-layout>
                     <v-flex lg6
@@ -12,7 +12,7 @@
                         <v-text-field
                                 v-model="search"
                                 append-icon="search"
-                                label="Buscar Categorias"
+                                label="Buscar Bancos"
                                 single-line
                                 hide-details
                         ></v-text-field>
@@ -40,7 +40,7 @@
             <v-data-table
                     v-model="selected"
                     :headers="headers"
-                    :items="list_categorias"
+                    :items="list_bancos"
                     :search="search"
                     item-key="id"
                     select-all
@@ -59,6 +59,7 @@
                         ></v-checkbox>
                     </td>
                     <td class="text-xs-left">{{ props.item.nome}}</td>
+                    <td class="text-xs-left">{{ props.item.cod}}</td>
                     <td>
                         <v-flex xs12 sm3>
                             <v-btn flat icon color="grey">
@@ -76,20 +77,20 @@
 </template>
 <script>
     import {mapState, mapActions} from 'vuex';
-    import CategoriaModal from "./categoria-modal";
+    import BancoModal from "./banco-modal";
     export default {
-        name: 'categoria-list',
-        components: {CategoriaModal},
+        name: 'banco-list',
+        components: {BancoModal},
         mounted() {
             this.setList()
         },
         computed: {
-            ...mapState('Categoria',{
-                list_categorias: state => {
-                    return state.list_categorias;
+            ...mapState('Banco',{
+                list_bancos: state => {
+                    return state.list_bancos;
                 },
-                categoria: state => {
-                    return state.categoria;
+                banco: state => {
+                    return state.banco;
                 }
             })
         },
@@ -104,15 +105,21 @@
                         sortable: false,
                         value: 'nome'
                     },
+                    {
+                        text: 'Cod',
+                        align: 'left',
+                        sortable: false,
+                        value: 'cod'
+                    },
                     {   text: 'Visualizar',
                         sortable: false,
-                        value: 'contato.email'
+                        value: ''
                     }
                 ],
             }
         },
         methods: {
-            ...mapActions('Categoria',['setList','view','delete_form']),
+            ...mapActions('Banco',['setList','view','delete_form']),
 
             acaoComSelecionados() {
                 this.delete_form(this.selected);

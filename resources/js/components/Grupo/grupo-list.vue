@@ -61,7 +61,6 @@
                 <td class="text-xs-left">{{ props.item.observacao }}</td>
                 <td class="text-xs-left" v-if="props.item.ncm">{{ props.item.ncm.cod }}</td>
                 <td class="text-xs-left" v-else>Sem NCM</td>
-                <td class="text-xs-left">{{ props.item.ativo }}</td>
                 <td>
                     <v-flex xs12 sm3>
                         <v-btn flat icon color="grey">
@@ -116,11 +115,6 @@
                        text: 'NCM',
                        sortable: false,
                        value: 'ncm.cod'
-                   },
-                   {
-                       text: 'Ativo',
-                       sortable: false,
-                       value: ''
                    },
                    {   text: 'Visualizar',
                        sortable: false,
