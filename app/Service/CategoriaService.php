@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Rodrigo
- * Date: 08/04/2019
- * Time: 17:41
- */
 
 namespace App\Service;
-
 
 use App\Http\Requests\LinhaCreateRequest;
 use App\Models\Categoria;
@@ -21,7 +14,7 @@ class CategoriaService
 
             $categoria = new Categoria();
 
-            $categoria->nome       = $request->input('nome');
+            $categoria->nome = $request->input('nome');
             $categoria->save();
 
             return $categoria;
@@ -36,7 +29,7 @@ class CategoriaService
 
             $categoria = Categoria::findOrFail($id);
 
-            $categoria->nome       = $request->input('nome');
+            $categoria->nome = $request->input('nome');
             $categoria->save();
 
             return $categoria;

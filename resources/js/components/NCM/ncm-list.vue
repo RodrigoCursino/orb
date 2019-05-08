@@ -60,7 +60,6 @@
                     </td>
                     <td class="text-xs-left">{{ props.item.cod}}</td>
                     <td class="text-xs-left">{{ props.item.descricao}}</td>
-                    <td class="text-xs-left">{{ props.item.ativo}}</td>
                     <td>
                         <v-flex xs12 sm3>
                             <v-btn flat icon color="grey">
@@ -111,10 +110,6 @@
                         align: 'left',
                         sortable: false,
                         value: 'descricao'
-                    },
-                    {
-                        text: 'Ativo',
-                        value: 'ativo'
                     },
                     {   text: 'Visualizar',
                         sortable: false,

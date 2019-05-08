@@ -5,6 +5,7 @@ import Fabricante  from './components/Fabricante/fabricante-index';
 import Funcionario from './components/Funcionario/funcionario-index';
 import Mercadoria  from './components/Mercadoria/mercadoria-index';
 import Unidade     from './components/Unidade/unidade-index';
+import Banco       from './components/Banco/banco-index';
 import Categoria   from './components/Categoria/categoria-index';
 import Colecao     from './components/Colecao/colecao-index';
 import Linha       from './components/Linha/linha-index';
@@ -25,6 +26,11 @@ const router = new VueRouter({
             path: '/fornecedores',
             name: 'funcionarios',
             component: Funcionario
+        },
+        {
+            path: '/bancos',
+            name: 'bancos',
+            component: Banco
         },
         {
             path: '/categorias',
