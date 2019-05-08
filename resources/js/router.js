@@ -6,9 +6,11 @@ import Funcionario from './components/Funcionario/funcionario-index';
 import Mercadoria  from './components/Mercadoria/mercadoria-index';
 import Unidade     from './components/Unidade/unidade-index';
 import Banco       from './components/Banco/banco-index';
+import Cargo       from './components/Cargo/cargo-index';
 import Categoria   from './components/Categoria/categoria-index';
 import Colecao     from './components/Colecao/colecao-index';
 import Linha       from './components/Linha/linha-index';
+import Marca       from './components/Marca/marca-index';
 import Ncm         from './components/NCM/ncm-index';
 import Grupo       from './components/Grupo/grupo-index';
 
@@ -31,6 +33,11 @@ const router = new VueRouter({
             path: '/bancos',
             name: 'bancos',
             component: Banco
+        },
+        {
+            path: '/cargos',
+            name: 'cargos',
+            component: Cargo
         },
         {
             path: '/categorias',
@@ -56,6 +63,11 @@ const router = new VueRouter({
             path: '/linhas',
             name: 'linhas',
             component: Linha,
+        },
+        {
+            path: '/marcas',
+            name: 'marcas',
+            component: Marca,
         },
         {
             path: '/mercadorias',

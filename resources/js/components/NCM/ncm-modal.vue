@@ -37,7 +37,6 @@
                     <v-stepper-header>
                         <v-stepper-step
                                 step="1">
-                            Nome
                         </v-stepper-step>
                     </v-stepper-header>
                     <!--Dados-->
