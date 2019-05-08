@@ -21,7 +21,7 @@ class GruposController extends Controller
 
     public function index()
     {
-        $grupos = Grupo::with('ncm')->get();
+        $grupos = Grupo::with('ncm')->where('ativo','=',1)->get();
 
         return $grupos;
     }

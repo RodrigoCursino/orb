@@ -77,7 +77,7 @@
                                                 lg4
                                         >
                                             <v-select
-                                                    v-model="form.ncm.ncm_id"
+                                                    v-model="form.ncm_id"
                                                     v-validate="'required'"
                                                     :items="list_ncms"
                                                     item-value="id"
@@ -123,8 +123,8 @@
             return {
                 form: {},
                 ncm: {
-                    ncm_id:"",
                     ativo:1,
+                    ncm_id:"",
                     cod:"",
                     descricao:""
                 },
@@ -183,10 +183,10 @@
             buildForm (form) {
                 return {
                     ativo: 1,
-                    id         : form     ? form.id         : null,
-                    nome       : form     ? form.nome       : null,
-                    observacao : form     ? form.observacao : null,
-                    ncm        : form.ncm ? form.ncm        : this.ncm,
+                    id         : form        ? form.id         : null,
+                    nome       : form        ? form.nome       : null,
+                    observacao : form        ? form.observacao : null,
+                    ncm_id     : form.ncm_id ? form.ncm_id     : 0
                 }
             },
 
