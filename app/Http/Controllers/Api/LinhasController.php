@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 
 class LinhasController extends Controller
 {
-
     private $service;
 
     public function __construct(LinhaService $service)
@@ -23,7 +22,6 @@ class LinhasController extends Controller
         return Linha::list();
     }
 
-
     public function create()
     {
         return view('linha.create');
@@ -32,15 +30,16 @@ class LinhasController extends Controller
     public function store(LinhaCreateRequest $request)
     {
         $linha = $this->service->create($request);
-        return redirect(route('linhas.index'));
+        return  [
+            "data" => $linha,
+            "message"   => "Categoria Salvo Com Sucesso",
+        ];
     }
-
 
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
@@ -48,18 +47,19 @@ class LinhasController extends Controller
         return view('linha.create',compact('linha'));
     }
 
-
-    public function update(LinhaCreateRequest $request, $id)
+    public function update(LinhaCreateRequest $request)
     {
-        $linha = $this->service->update($request, $id);
-        return redirect(route('linhas.index'));
+        $linha = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $linha,
+            "message"   => "Linha Editada Com Sucesso",
+        ];
     }
-
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('linhas.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }

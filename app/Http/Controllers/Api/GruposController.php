@@ -21,7 +21,9 @@ class GruposController extends Controller
 
     public function index()
     {
-        return Grupo::list();
+        $grupos = Grupo::with('ncm')->where('ativo','=',1)->get();
+
+        return $grupos;
     }
 
     public function create()
@@ -33,7 +35,10 @@ class GruposController extends Controller
     public function store(GrupoCreateRequest $request)
     {
         $grupo = $this->service->create($request);
-        return redirect(route('grupos.index'));
+        return  [
+            "data" => $grupo,
+            "message"   => "Grupo Salvo Com Sucesso",
+        ];
     }
 
     public function show($id)
@@ -49,15 +54,19 @@ class GruposController extends Controller
         return view('grupo.create', compact('grupo','ncms'));
     }
 
-    public function update(GrupoCreateRequest $request, $id)
+    public function update(GrupoCreateRequest $request)
     {
-        $grupo = $this->service->update($request, $id);
+        $grupo = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $grupo,
+            "message"   => "Grupo Editada Com Sucesso",
+        ];
     }
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('grupos.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }

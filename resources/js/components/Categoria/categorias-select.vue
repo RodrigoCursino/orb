@@ -19,7 +19,7 @@
         name: "categorias-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_categorias();
+            this.setList();
         },
         computed: {
             ...mapState('Categoria', {
@@ -29,7 +29,7 @@
             })
         },
         methods: {
-            ...mapActions('Categoria',['set_list_categorias'])
+            ...mapActions('Categoria',['setList'])
         }
     }
 </script>

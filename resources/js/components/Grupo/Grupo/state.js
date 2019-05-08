@@ -1,3 +1,7 @@
 export default {
-   listGrupos : []
+   list_grupos : [],
+   view_controller : false,
+   grupo           : {},
+   deleted         : false,
+   closeForm       : false
 }
