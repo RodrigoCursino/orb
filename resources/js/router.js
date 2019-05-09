@@ -9,6 +9,7 @@ import Unidade      from './components/Unidade/unidade-index';
 import Banco        from './components/Banco/banco-index';
 import Cargo        from './components/Cargo/cargo-index';
 import Categoria    from './components/Categoria/categoria-index';
+import CentroCusto  from './components/CentroCusto/centro-custo-index';
 import Colecao      from './components/Colecao/colecao-index';
 import Linha        from './components/Linha/linha-index';
 import Marca        from './components/Marca/marca-index';
@@ -44,6 +45,11 @@ const router = new VueRouter({
             path: '/categorias',
             name: 'categorias',
             component: Categoria
+        },
+        {
+            path: '/centroscusto',
+            name: 'centroscusto',
+            component: CentroCusto
         },
         {
             path: '/colecoes',

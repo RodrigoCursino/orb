@@ -1,7 +1,7 @@
 const setList = async ({commit}) => {
     const list = (await  http.get('centroscusto')).data;
     commit('SET_LIST_CENTRO_CUSTO',{list})
-}
+};
 
 const save_form = ({ commit, dispatch }, centro_custo) => {
 

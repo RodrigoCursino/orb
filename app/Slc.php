@@ -175,15 +175,6 @@ class Slc
                         ],
                         [
                             "position" => 11,
-                            "text"     => "Centro de Custo",
-                            "link"     => "#centroscusto",
-                            "action"   => "centroscusto",
-                            "icon"     => "attach_money",
-                            "showNav"  => true,
-                            "showPage" => true
-                        ],
-                        [
-                            "position" => 11,
                             "text"     => "Banco",
                             "link"     => "#bancos",
                             "action"   => "bancos",

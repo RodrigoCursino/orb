@@ -23,7 +23,6 @@ class CentrosCustoController extends Controller
        return CentroCusto::list();
     }
 
-
     public function create()
     {
         $bancos = Banco::list();
@@ -36,12 +35,10 @@ class CentrosCustoController extends Controller
         return redirect(route('centroscusto.index'));
     }
 
-
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
@@ -51,13 +48,11 @@ class CentrosCustoController extends Controller
         return view('centro-custo.create',compact('centroCusto','bancos'));
     }
 
-
     public function update(CentrosCustoCreateRequest $request, $id)
     {
         $categoria = $this->service->update($request, $id);
         return redirect(route('centroscusto.index'));
     }
-
 
     public function destroy($id)
     {

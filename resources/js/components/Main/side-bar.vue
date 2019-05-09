@@ -4,6 +4,7 @@
             :clipped="$vuetify.breakpoint.lgAndUp"
             fixed
             app
+            color="primary"
     >
         <v-list dense>
             <template v-for="item in menu">
