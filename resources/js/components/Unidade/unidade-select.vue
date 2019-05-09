@@ -6,7 +6,7 @@
             item-value="id"
             item-text="nome_fantasia"
             :error-messages="errors.collect('unidade_id')"
-            label="Unidade"
+            :label="label"
             @change="getDepartamentos"
             return-object
             data-vv-name="unidade_id"
@@ -19,6 +19,7 @@
     import {mapState, mapActions} from 'vuex';
     export default {
         name: "unidade-select",
+        props: {label:{required:true}},
         mounted() {
             this.setList();
         },

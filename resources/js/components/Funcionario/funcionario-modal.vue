@@ -86,6 +86,7 @@
                                                 >
                                                     <!-- nome -->
                                                     <unidade-select v-model="form.unidade"
+                                                                    label="Unidade"
                                                                     v-validate="'required'"
                                                     ></unidade-select>
                                                     <v-input type="hidden"
