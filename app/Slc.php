@@ -68,8 +68,8 @@ class Slc
                         [
                             "position" => 13,
                             "text"     => "Grupos",
-                            "link"     => "#marcas",
-                            "action"   => "marcas",
+                            "link"     => "#grupos",
+                            "action"   => "grupos",
                             "icon"     => "loyalty",
                             "showNav"  => true,
                             "showPage" => true
@@ -89,6 +89,24 @@ class Slc
                             "link"     => "#colecoes",
                             "action"   => "colecoes",
                             "icon"     => "view_module",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 17,
+                            "text"     => "Marca",
+                            "link"     => "#marcas",
+                            "action"   => "marcas",
+                            "icon"     => "copyright",
+                            "showNav"  => true,
+                            "showPage" => true
+                        ],
+                        [
+                            "position" => 16,
+                            "text"     => "NCMs",
+                            "link"     => "#ncms",
+                            "action"   => "ncms",
+                            "icon"     => "filter_none",
                             "showNav"  => true,
                             "showPage" => true
                         ],

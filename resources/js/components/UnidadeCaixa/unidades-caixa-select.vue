@@ -3,10 +3,10 @@
             v-model="internalValue"
             v-validate="'required'"
             :items="listUnidadesCaixa"
-            item-value="id"
             item-text="legenda"
             :error-messages="errors.collect('unidade_caixa_id')"
-            label="Unidade Caixa"
+            label="Unidade Varejo"
+            return-object
             data-vv-name="unidade_caixa_id"
             required
     >

@@ -12,6 +12,11 @@ import HTTP from './http';
 window.http = HTTP;
 
 window.Vue  = require('vue');
+import currency from 'v-currency-field'
+
+import 'v-currency-field/dist/index.css'
+
+Vue.use(currency);
 Vue.use(money, {precision: 2})
 window.swal = swal;
 

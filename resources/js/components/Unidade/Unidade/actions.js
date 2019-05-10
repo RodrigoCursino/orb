@@ -17,7 +17,6 @@ const save_form = ({ commit, dispatch }, unidade) => {
         commit('CLOSE_VIEW');
     } else {
         response = http.post('unidades',unidade);
-
     }
 
     if(response) {
@@ -49,7 +48,6 @@ const delete_form = ({commit,dispatch}, array) => {
     });
 
     commit('DELETED');
-
 };
 
 const view = ({ commit },obj) => {
@@ -60,7 +58,6 @@ const view = ({ commit },obj) => {
 const add = ({ commit }, unidade ) => {
     commit('ADD',{unidade});
 };
-
 
 export default {
     setList,

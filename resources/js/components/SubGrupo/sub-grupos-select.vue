@@ -3,10 +3,10 @@
             v-model="internalValue"
             v-validate="'required'"
             :items="listSubGrupos"
-            item-value="id"
             item-text="nome"
             :error-messages="errors.collect('sub_grupo_id')"
             label="Sub Grupo"
+            return-object
             data-vv-name="sub_grupo"
             required
     >
@@ -18,6 +18,9 @@
     export default {
         name: "sub-grupos-select",
         mixins: [require('../helpers/Mixins')],
+        mounted() {
+            this.setList();
+        },
         computed: {
             ...mapState('SubGrupo', {
                 listSubGrupos: state => {
@@ -26,7 +29,7 @@
             })
         },
         methods: {
-            ...mapActions('SubGrupo',['set_list_sub_grupos']),
+            ...mapActions('SubGrupo',['setList']),
         }
     }
 </script>

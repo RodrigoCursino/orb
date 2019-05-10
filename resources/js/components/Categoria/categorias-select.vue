@@ -3,10 +3,10 @@
             v-model="internalValue"
             v-validate="'required'"
             :items="list_categorias"
-            item-value="id"
             item-text="nome"
             :error-messages="errors.collect('categoria_id')"
             label="Categoria"
+            return-object
             data-vv-name="categoria_id"
             required
     >
@@ -19,7 +19,7 @@
         name: "categorias-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_categorias();
+            this.setList();
         },
         computed: {
             ...mapState('Categoria', {
@@ -29,7 +29,7 @@
             })
         },
         methods: {
-            ...mapActions('Categoria',['set_list_categorias'])
+            ...mapActions('Categoria',['setList'])
         }
     }
 </script>

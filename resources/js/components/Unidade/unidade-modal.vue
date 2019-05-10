@@ -60,7 +60,7 @@
 
                         <v-stepper-step :complete="e1 > 4"
                                         step="5">
-                            Comfirmar Dados
+                            Confirmar Dados
                         </v-stepper-step>
                     </v-stepper-header>
                      <!--Dados-->

@@ -3,10 +3,10 @@
             v-model="internalValue"
             v-validate="'required'"
             :items="list_colecoes"
-            item-value="id"
             item-text="nome"
             :error-messages="errors.collect('colecao_id')"
             label="Coleção"
+            return-object
             data-vv-name="colecao_id"
             required
     >
@@ -19,7 +19,7 @@
         name: "colecoes-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_colecoes();
+            this.setList();
         },
         computed: {
             ...mapState('Colecao', {
@@ -29,7 +29,7 @@
             })
         },
         methods: {
-            ...mapActions('Colecao',['set_list_colecoes'])
+            ...mapActions('Colecao',['setList'])
         }
     }
 </script>

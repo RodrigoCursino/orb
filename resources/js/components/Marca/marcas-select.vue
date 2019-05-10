@@ -2,11 +2,11 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listMarcas"
-            item-value="id"
+            :items="list_marcas"
             item-text="nome"
             :error-messages="errors.collect('marca_id')"
             label="Marca"
+            return-object
             data-vv-name="marca_id"
             required
     >
@@ -19,17 +19,17 @@
         name: "marcas-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_marcas();
+            this.setList();
         },
         computed: {
             ...mapState('Marca', {
-                listMarcas: state => {
-                    return state.listMarcas;
+                list_marcas: state => {
+                    return state.list_marcas;
                 }
             })
         },
         methods: {
-            ...mapActions('Marca',['set_list_marcas'])
+            ...mapActions('Marca',['setList'])
         }
     }
 </script>

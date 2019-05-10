@@ -52,9 +52,9 @@ class Mercadoria extends Model
         return $this->belongsTo(UnidadeMedida::class);
     }
 
-    public function unidadeCaixa()
+    public function unidadeVarejo()
     {
-        return $this->belongsTo(UnidadeCaixa::class);
+        return $this->belongsTo(UnidadeCaixa::class,'unidade_caixa_id');
     }
 
     public function grupo()

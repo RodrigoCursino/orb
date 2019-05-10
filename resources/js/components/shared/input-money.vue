@@ -13,7 +13,6 @@
     </div>
 </template>
 <script>
-
     export default {
         props: {label:{required:true}},
         mixins: [require('../helpers/MoneyMixin')],

@@ -3,8 +3,8 @@
             v-model="internalValue"
             v-validate="'required'"
             :items="listUnidadesMedida"
-            item-value="id"
             item-text="legenda"
+            return-object
             :error-messages="errors.collect('unidade_medida_id')"
             label="Unidade Medida"
             data-vv-name="unidade_medida_id"

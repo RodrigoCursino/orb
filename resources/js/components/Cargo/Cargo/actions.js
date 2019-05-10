@@ -1,19 +1,17 @@
-
-const setList = async ({ commit }) => {
-    const list = (await http.get('cargos')).data;
-    commit('SET_LIST_CARGOS',{list});
+const setList = async ({commit}) => {
+    const list = (await  http.get('cargos')).data;
+    commit('SET_LIST_CARGOS',{list})
 };
 
-const save_form = ({ commit, dispatch }, fabricante) => {
+const save_form = ({ commit, dispatch }, cargo) => {
 
     let response = false;
 
-    if (fabricante.id) {
-        response = http.put('cargos',fabricante);
+    if (cargo.id) {
+        response = http.put('cargos',cargo);
         commit('CLOSE_VIEW');
     } else {
-        response = http.post('cargos',fabricante);
-
+        response = http.post('cargos',cargo);
     }
 
     if(response) {
@@ -38,25 +36,23 @@ const delete_form = ({commit,dispatch}, array) => {
         dangerMode: true,
     }).then(async (willDelete) => {
         for (let i in array) {
-             let fabricanteRequest = JSON.parse(JSON.stringify(array[i]));
-            (await http.deleteForm('cargos',fabricanteRequest));
+            let cargoRequest = JSON.parse(JSON.stringify(array[i]));
+            (await http.deleteForm('cargos',cargoRequest));
         }
         dispatch('setList');
     });
 
     commit('DELETED');
-
 };
 
 const view = ({ commit },obj) => {
-    const fabricante = obj;
-    commit('VIEW',{fabricante});
+    const cargo = obj;
+    commit('VIEW',{cargo});
 };
 
-const add = ({ commit }, fabricante ) => {
-    commit('ADD',{fabricante});
+const add = ({ commit }, cargo ) => {
+    commit('ADD',{cargo});
 };
-
 
 export default {
     setList,

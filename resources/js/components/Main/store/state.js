@@ -6,10 +6,10 @@ export default {
 
     navList: window.Slc.menu,
     menuTabs: [{
-        text     : "Unidades",
-        link     : "#unidades",
-        action   : "unidades",
-        icon     : "domain",
+        text     : "Mercadorias",
+        link     : "#mercadorias",
+        action   : "mercadorias",
+        icon     : "shopping_cart",
         showNav  : true,
         showPage : true
     }]

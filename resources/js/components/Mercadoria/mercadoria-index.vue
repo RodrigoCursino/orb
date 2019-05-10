@@ -1,6 +1,5 @@
 <template>
  <div>
-     <mercadoria-form></mercadoria-form>
      <mercadoria-list></mercadoria-list>
  </div>
 </template>
@@ -8,15 +7,14 @@
 <script>
     import {mapActions} from 'vuex'
     import MercadoriaList from "./mercadoria-list";
-    import MercadoriaForm from "./mercadoria-form";
     export default {
         name: "mercadoria-index",
-        components: {MercadoriaForm, MercadoriaList},
+        components: {MercadoriaList},
         mounted(){
-            this.set_list_mercadorias();
+            this.setList();
         },
         methods: {
-            ...mapActions('Mercadoria',['set_list_mercadorias'])
+            ...mapActions('Mercadoria',['setList'])
         }
     }
 </script>

@@ -48,10 +48,13 @@ class CargosController extends Controller
     }
 
 
-    public function update(CargosCreateRequest $request, $id)
+    public function update(CargosCreateRequest $request)
     {
-        $cargo = $this->service->update($request, $id);
-        return redirect(route('cargos.index'));
+        $cargo = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $cargo,
+            "message"   => "Cargo Editada Com Sucesso",
+        ];
     }
 
 

@@ -36,7 +36,7 @@ class MercadoriasController extends Controller
                                   ->with('PrecoCusto')
                                   ->with('subGrupo')
                                   ->with('unidadeMedida')
-                                  ->with('unidadeCaixa')
+                                  ->with('unidadeVarejo')
                                   ->with('grupo')
                                   ->with('ncm')
                                   ->with('fornecedor')
@@ -82,7 +82,22 @@ class MercadoriasController extends Controller
     public function store(Request $request)
     {
         $mercadoria = $this->service->create($request);
-        return $mercadoria;
+        return $mercadoria->with('precoVenda')
+                          ->with('PrecoCusto')
+                          ->with('subGrupo')
+                          ->with('unidadeMedida')
+                          ->with('unidadeVarejo')
+                          ->with('grupo')
+                          ->with('ncm')
+                          ->with('fornecedor')
+                          ->with('precoVenda')
+                          ->with('precoCusto')
+                          ->with('marca')
+                          ->with('linha')
+                          ->with('colecao')
+                          ->with('categoria')
+                          ->where('id','=',$mercadoria->id)
+                          ->first();
     }
 
     public function show($id)
@@ -142,14 +157,29 @@ class MercadoriasController extends Controller
 
     public function update(MercadoriaCreateRequest $request, $id)
     {
-        $mercadoria = $this->service->update($request,$id);
-        return redirect(route('mercadorias.index'));
+        $mercadoria = $this->service->update($request,$request->input('id'));
+        return $mercadoria->with('precoVenda')
+                          ->with('PrecoCusto')
+                          ->with('subGrupo')
+                          ->with('unidadeMedida')
+                          ->with('unidadeVarejo')
+                          ->with('grupo')
+                          ->with('ncm')
+                          ->with('fornecedor')
+                          ->with('precoVenda')
+                          ->with('precoCusto')
+                          ->with('marca')
+                          ->with('linha')
+                          ->with('colecao')
+                          ->with('categoria')
+                          ->where('id','=',$mercadoria->id)
+                          ->first();
     }
 
     public function destroy($id)
     {
        if($this->service->destroy($id)) {
-         return redirect(route('mercadorias.index'));
+         return "Deletado com Sucesso !!!";
        }
     }
 }

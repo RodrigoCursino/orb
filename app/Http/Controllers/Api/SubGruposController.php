@@ -20,11 +20,9 @@ class SubGruposController extends Controller
 
     public function index()
     {
-        $subGrupos =  SubGrupo::with('grupo')
+        return  SubGrupo::with('grupo')
             ->where('ativo','=',1)
-            ->paginate(15);
-
-        return view('sub-grupo.index',compact('subGrupos'));
+            ->get();
     }
 
 

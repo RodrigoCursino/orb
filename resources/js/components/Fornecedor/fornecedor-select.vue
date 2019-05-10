@@ -7,6 +7,7 @@
             item-text="nome_fantasia"
             :error-messages="errors.collect('fornecedor_id')"
             label="Fornecedor"
+            return-object
             data-vv-name="fornecedor_id"
             required
     >
@@ -18,6 +19,9 @@
     export default {
         name: "fornecedor-select",
         mixins: [require('../helpers/Mixins')],
+        mounted() {
+            this.setList();
+        },
         computed: {
             ...mapState('Fornecedor',{
                 list_fornecedores: state => {

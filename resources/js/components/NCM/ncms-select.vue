@@ -2,11 +2,11 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listNmcs"
-            item-value="id"
+            :items="list_ncms"
             item-text="cod"
             :error-messages="errors.collect('ncm_id')"
             label="Ncm"
+            return-object
             data-vv-name="ncm_id"
             required
     >
@@ -22,17 +22,17 @@
         },
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_ncms();
+            this.setList();
         },
         computed: {
             ...mapState('NCM', {
-                listNmcs: state => {
-                    return state.listNmcs;
+                list_ncms: state => {
+                    return state.list_ncms;
                 }
             })
         },
         methods: {
-            ...mapActions('NCM',['set_list_ncms'])
+            ...mapActions('NCM',['setList'])
         }
     }
 </script>

@@ -24,40 +24,19 @@ class MercadoriaCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            "fornecedor_id"           =>  "required|numeric",
-            "grupo_id"                =>  "required|numeric",
-            "sub_grupo_id"            =>  "required",
-            "nome"                    =>  "required",
-            "ncm_id"                  =>  "required|numeric",
-            "categoria_id"            =>  "required|numeric",
-            "colecao_id"              =>  "required|numeric",
-            "linha_id"                =>  "required|numeric",
-            "marca_id"                =>  "required|numeric",
-            "unidade_medida_id"       =>  "required|numeric",
-            "unidade_caixa_id"        =>  "required|numeric",
-            "observacao"              =>  "required",
-            "valor_custo"             =>  "required",
-            "valor_venda"             =>  "required",
-            "desconto_venda"          =>  "required",
-            "validade_venda"          =>  "required",
-            "descricao_preco_venda"   =>  "required",
-            "observacao_preco_venda"  =>  "required"
+            "fornecedor"           =>  "required",
+            "grupo"                =>  "required",
+            "sub_grupo"            =>  "required",
+            "nome"                 =>  "required",
+            "ncm"                  =>  "required",
+            "categoria"            =>  "required",
+            "colecao"              =>  "required",
+            "linha"                =>  "required",
+            "marca"                =>  "required",
+            "unidade_medida"       =>  "required",
+            "unidade_varejo"       =>  "required",
+            "observacao"           =>  "required"
         ];
     }
 
-    public function messages()
-    {
-        return [
-          "ncm_id.numeric"            => "Por favor selecione uma das opções.",
-          "linha_id.numeric"          => "Por favor selecione uma das opções.",
-          "categoria_id.numeric"      => "Por favor selecione uma das opções.",
-          "colecao_id.numeric"        => "Por favor selecione uma das opções.",
-          "marca_id.numeric"          => "Por favor selecione uma das opções.",
-          "unidade_medida_id.numeric" => "Por favor selecione uma das opções.",
-          "unidade_caixa_id.numeric"  => "Por favor selecione uma das opções.",
-          "fornecedor_id.numeric"     => "Por favor selecione uma das opções.",
-          "grupo_id.numeric"          => "Por favor selecione uma das opções.",
-          "sub_grupo_id.required"     => "O campo Sub Grupo é obrigatório."
-        ];
-    }
 }

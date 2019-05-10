@@ -2,11 +2,11 @@
     <v-select
             v-model="internalValue"
             v-validate="'required'"
-            :items="listLinhas"
-            item-value="id"
+            :items="list_linhas"
             item-text="nome"
             :error-messages="errors.collect('linha_id')"
             label="Linha"
+            return-object
             data-vv-name="linha_id"
             required
     >
@@ -19,17 +19,17 @@
         name: "linhas-select",
         mixins: [require('../helpers/Mixins')],
         mounted() {
-            this.set_list_linhas();
+            this.setList();
         },
         computed: {
             ...mapState('Linha', {
-                listLinhas: state => {
-                    return state.listLinhas;
+                list_linhas: state => {
+                    return state.list_linhas;
                 }
             })
         },
         methods: {
-            ...mapActions('Linha',['set_list_linhas'])
+            ...mapActions('Linha',['setList'])
         }
     }
 </script>

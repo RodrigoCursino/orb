@@ -4,7 +4,7 @@
 module.exports = {
 
     props: {
-        value: {required: true},
+        value: {required: false},
         name: {required: false},
     },
 
@@ -35,13 +35,13 @@ module.exports = {
                 money = parseFloat(money).toFixed(2);
 
             setTimeout(()=> {
-                this.internalValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(money)
+                this.value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(money)
             },5000)
         },
 
         getMoney( str )
         {
-            this.internalValue = this.formatReal(parseInt( str.replace(/[\D]+/g,'') ));
+            this.value = this.formatReal(parseInt( str.replace(/[\D]+/g,'') ));
         },
 
         formatReal( int )

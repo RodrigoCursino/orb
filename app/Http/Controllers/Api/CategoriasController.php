@@ -11,7 +11,6 @@ use App\Http\Controllers\Controller;
 
 class CategoriasController extends Controller
 {
-
     private $service;
 
     public function __construct(CategoriaService $service)
@@ -38,19 +37,16 @@ class CategoriasController extends Controller
             ];
     }
 
-
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
         $categoria = Categoria::findOrFail($id);
         return view('categoria.create',compact('categoria'));
     }
-
 
     public function update(LinhaCreateRequest $request)
     {
@@ -60,7 +56,6 @@ class CategoriasController extends Controller
             "message"   => "Categoria Editada Com Sucesso",
         ];
     }
-
 
     public function destroy($id)
     {

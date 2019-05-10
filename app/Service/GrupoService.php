@@ -25,7 +25,7 @@ class GrupoService
 
             $grupo->nome       = $request->input('nome');
             $grupo->observacao = $request->input('observacao');
-            $ncm               = NCM::find($request->input('ncm_id'));
+            $ncm               = NCM::find($request->input('ncm')['id']);
             $grupo->ncm_id     = isset($ncm->id) ? $ncm->id : null;
 
             $grupo->save();
@@ -43,7 +43,7 @@ class GrupoService
 
             $grupo->nome       = $request->input('nome');
             $grupo->observacao = $request->input('observacao');
-            $ncm               = NCM::find($request->input('ncm_id'));
+            $ncm               = NCM::find($request->input('ncm')['id']);
             $grupo->ncm_id     = isset($ncm->id) ? $ncm->id : null;
 
             $grupo->save();

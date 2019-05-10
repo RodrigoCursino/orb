@@ -9,20 +9,17 @@ use App\Http\Controllers\Controller;
 
 class NCMsController extends Controller
 {
-
     private $service;
 
     public function __construct(NCMsService $service)
     {
         $this->service = $service;
     }
-
     public function index()
     {
         $ncms =  NCM::list();
         return $ncms;
     }
-
 
     public function create()
     {
@@ -32,15 +29,16 @@ class NCMsController extends Controller
     public function store(NCMsCreateRequest $request)
     {
         $ncm = $this->service->create($request);
-        return redirect(route('ncms.index'));
+        return  [
+            "data" => $ncm,
+            "message"   => "Ncm Salvo Com Sucesso",
+        ];
     }
-
 
     public function show($id)
     {
         //
     }
-
 
     public function edit($id)
     {
@@ -48,18 +46,19 @@ class NCMsController extends Controller
         return view('ncm.create',compact('ncm'));
     }
 
-
-    public function update(NCMsCreateRequest $request, $id)
+    public function update(NCMsCreateRequest $request)
     {
-        $ncm = $this->service->update($request, $id);
-        return redirect(route('ncms.index'));
+        $ncm = $this->service->update($request, $request->input('id'));
+        return  [
+            "data" => $ncm,
+            "message"   => "Ncm Editada Com Sucesso",
+        ];
     }
-
 
     public function destroy($id)
     {
         if($this->service->destroy($id)) {
-            return redirect(route('ncms.index'));
+            return "Deletado com sucesso!!!";
         }
     }
 }
