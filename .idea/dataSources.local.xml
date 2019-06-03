@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="orb@localhost [2]" uuid="7f18305d-514d-48fd-a25e-4051e8add166">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
