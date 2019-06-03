@@ -24,7 +24,8 @@ class CreateDadosBancariosTable extends Migration
 
             //Banco
             $table->integer('banco_id')->unsigned();
-            $table->foreign('banco_id')->references('id')
+            $table->foreign('banco_id')
+                ->references('id')
                 ->on('bancos')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

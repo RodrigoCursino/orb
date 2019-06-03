@@ -27,11 +27,6 @@ const router = new VueRouter({
             component: Unidade
         },
         {
-            path: '/fornecedores',
-            name: 'funcionarios',
-            component: Funcionario
-        },
-        {
             path: '/bancos',
             name: 'bancos',
             component: Banco
