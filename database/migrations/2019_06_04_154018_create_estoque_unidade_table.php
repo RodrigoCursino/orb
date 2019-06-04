@@ -14,7 +14,25 @@ class CreateEstoqueUnidadeTable extends Migration
     public function up()
     {
         Schema::create('estoque_unidade', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('estoque');
+            $table->integer('estoque_min');
+            $table->integer('estoque_max');
+
+            $table->integer('unidade_id')->unsigned();
+            $table->foreign('unidade_id')
+                ->references('id')
+                ->on('unidades')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->integer('mercadoria_variacao_id')->unsigned();
+            $table->foreign('mercadoria_variacao_id')
+                ->references('id')
+                ->on('mercadoria_variacao')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
