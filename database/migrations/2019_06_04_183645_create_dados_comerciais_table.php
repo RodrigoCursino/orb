@@ -14,7 +14,19 @@ class CreateDadosComerciaisTable extends Migration
     public function up()
     {
         Schema::create('dados_comerciais', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('empregador');
+            $table->string('funcao');
+            $table->string('telefone');
+            $table->date('admissao');
+
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')
+                ->references('id')
+                ->on('clientes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
