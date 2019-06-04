@@ -15,7 +15,7 @@ class CreateRetencaoTable extends Migration
     {
         Schema::create('retencao', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome',30);
+            $table->string('nome',50);
             $table->string('observacao',30);
 
             $table->boolean('ativo')->default(1);
