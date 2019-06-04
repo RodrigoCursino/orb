@@ -15,35 +15,18 @@ class CreateVendaFormaTable extends Migration
     {
         Schema::create('venda_forma', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo', 10);
-            $table->string('nome_tipo', 30);
-            $table->float('taxa_desconto');
-            $table->integer('dias_credito');
-            $table->string('observacao', 30);
-            $table->integer('pai_id');
-            $table->integer('cod_forma');
-            $table->string('nome_ecf', 30);
-            $table->float('taxa_desc');
-            $table->float('porc_entrada');
-            $table->integer('quant_parcela');
-            $table->integer('intervalo');
-            $table->enum('dia_mes', ['Dia(s)','Mês(es)']);
-            $table->boolean('cheque');
-            $table->boolean('crediario');
-            $table->boolean('troca');
-            $table->boolean('desconto');
 
-            $table->integer('contacontabil_id')->unsigned();
-            $table->foreign('contacontabil_id')
+            $table->integer('venda_id')->unsigned();
+            $table->foreign('venda_id')
                 ->references('id')
-                ->on('conta_contabeis')
+                ->on('vendas')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->integer('resumocaixa_id')->unsigned();
-            $table->foreign('resumocaixa_id')
+            $table->integer('forma_pagamento_id')->unsigned();
+            $table->foreign('forma_pagamento_id')
                 ->references('id')
-                ->on('resumo_caixa')
+                ->on('forma_pagamento')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

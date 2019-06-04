@@ -15,6 +15,7 @@ class CreateVendaMercadoriaTable extends Migration
     {
         Schema::create('venda_mercadoria', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('quantidade');
 
             $table->integer('venda_id')->unsigned();
             $table->foreign('venda_id')

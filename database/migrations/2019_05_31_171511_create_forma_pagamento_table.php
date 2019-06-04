@@ -14,8 +14,7 @@ class CreateFormaPagamentoTable extends Migration
     public function up()
     {
         Schema::create('forma_pagamento', function (Blueprint $table) {
-
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('codigo', 10)->unique();
             $table->string('nome_tipo',30);
             $table->integer('dias_credito');
@@ -33,7 +32,6 @@ class CreateFormaPagamentoTable extends Migration
             $table->boolean('crediario')->default(0);
             $table->boolean('troca')->default(0);
             $table->boolean('desconto')->default(0);
-
 
             //Conta contabil
             $table->integer('conta_contabil_id')->unsigned();

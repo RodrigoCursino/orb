@@ -6,18 +6,15 @@ use App\Traits\TmontecHelper;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ContaContabil extends Model
+class VendaForma extends Model
 {
     use SoftDeletes, TmontecHelper;
 
+    protected $table = 'venda_forma';
     protected $dates = ['deleted_at'];
-
-    protected $table = 'conta_contabeis';
-
     protected $fillable = [
         'id',
-        'nome',
-        'cod_contabilidade',
-        'ativo'
+        'venda_id',
+        'forma_pagamento_id'
     ];
 }
